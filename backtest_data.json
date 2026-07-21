@@ -13,7 +13,9 @@
       "sold": [],
       "held": [],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2000-07",
@@ -28,7 +30,9 @@
       "sold": [],
       "held": [],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2000-08",
@@ -43,7 +47,9 @@
       "sold": [],
       "held": [],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2000-09",
@@ -58,7 +64,9 @@
       "sold": [],
       "held": [],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2000-10",
@@ -73,7 +81,9 @@
       "sold": [],
       "held": [],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2000-11",
@@ -92,7 +102,9 @@
       "sold": [],
       "held": [],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2000-12",
@@ -113,7 +125,9 @@
         "FEDERALBNK"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2001-01",
@@ -134,7 +148,9 @@
         "JINDALSTEL"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2001-02",
@@ -154,7 +170,9 @@
         "JINDALSTEL"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2001-03",
@@ -173,7 +191,9 @@
         "TATAPOWER"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2001-04",
@@ -192,7 +212,9 @@
         "TATAPOWER"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2001-05",
@@ -210,7 +232,9 @@
         "JINDALSTEL"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2001-06",
@@ -229,7 +253,9 @@
         "TATAPOWER"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2001-07",
@@ -246,7 +272,9 @@
         "TATAPOWER"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2001-08",
@@ -263,7 +291,9 @@
       ],
       "held": [],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2001-09",
@@ -278,7 +308,9 @@
       "sold": [],
       "held": [],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2001-10",
@@ -295,7 +327,9 @@
       "sold": [],
       "held": [],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2001-11",
@@ -316,7 +350,9 @@
         "GAIL"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2001-12",
@@ -336,7 +372,9 @@
         "TATAPOWER"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2002-01",
@@ -360,7 +398,9 @@
         "AUROPHARMA"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2002-02",
@@ -383,7 +423,9 @@
         "FEDERALBNK"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2002-03",
@@ -405,7 +447,9 @@
         "MFSL"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2002-04",
@@ -429,7 +473,9 @@
         "MFSL"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2002-05",
@@ -454,7 +500,9 @@
         "JINDALSTEL"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2002-06",
@@ -480,7 +528,9 @@
         "TATAPOWER"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2002-07",
@@ -506,7 +556,9 @@
         "JINDALSTEL"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 3
+      "lossesThisMonth": 3,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2002-08",
@@ -529,7 +581,9 @@
         "JINDALSTEL"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2002-09",
@@ -550,7 +604,9 @@
         "JINDALSTEL"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2002-10",
@@ -570,7 +626,9 @@
         "JINDALSTEL"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2002-11",
@@ -588,7 +646,9 @@
         "JINDALSTEL"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2002-12",
@@ -612,7 +672,9 @@
         "JINDALSTEL"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2003-01",
@@ -637,7 +699,9 @@
         "TATAPOWER"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2003-02",
@@ -661,7 +725,9 @@
         "AUROPHARMA"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2003-03",
@@ -686,7 +752,9 @@
         "TATAPOWER"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2003-04",
@@ -715,7 +783,9 @@
         "TATAPOWER"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2003-05",
@@ -748,7 +818,9 @@
         "BOSCHLTD"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2003-06",
@@ -782,7 +854,9 @@
         "LICHSGFIN"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2003-07",
@@ -814,7 +888,9 @@
         "ATUL"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2003-08",
@@ -846,7 +922,9 @@
         "VOLTAS"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2003-09",
@@ -877,7 +955,9 @@
         "AUROPHARMA"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2003-10",
@@ -905,7 +985,9 @@
         "EXIDEIND"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2003-11",
@@ -937,7 +1019,9 @@
         "EXIDEIND"
       ],
       "winsThisMonth": 4,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2003-12",
@@ -967,7 +1051,9 @@
         "BOSCHLTD"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2004-01",
@@ -996,7 +1082,9 @@
         "SIEMENS"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2004-02",
@@ -1021,7 +1109,9 @@
         "TATAPOWER"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2004-03",
@@ -1049,7 +1139,9 @@
         "TATAPOWER"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2004-04",
@@ -1077,7 +1169,9 @@
         "LUPIN"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2004-05",
@@ -1106,7 +1200,9 @@
         "FEDERALBNK"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2004-06",
@@ -1135,7 +1231,9 @@
         "MFSL"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2004-07",
@@ -1160,7 +1258,9 @@
         "SIEMENS"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2004-08",
@@ -1190,7 +1290,9 @@
         "TRENT"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2004-09",
@@ -1218,7 +1320,9 @@
         "VOLTAS"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2004-10",
@@ -1245,7 +1349,9 @@
         "ATUL"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2004-11",
@@ -1272,7 +1378,9 @@
         "MOTHERSON"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2004-12",
@@ -1300,7 +1408,9 @@
         "TRENT"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2005-01",
@@ -1324,7 +1434,9 @@
         "HAVELLS"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2005-02",
@@ -1348,7 +1460,9 @@
         "HAVELLS"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2005-03",
@@ -1375,7 +1489,9 @@
         "HAVELLS"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2005-04",
@@ -1402,7 +1518,9 @@
         "HAVELLS"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2005-05",
@@ -1426,7 +1544,9 @@
         "SRF"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2005-06",
@@ -1448,7 +1568,9 @@
         "SRF"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2005-07",
@@ -1479,7 +1601,9 @@
         "SRF"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2005-08",
@@ -1511,7 +1635,9 @@
         "THERMAX"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2005-09",
@@ -1543,7 +1669,9 @@
         "TRENT"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2005-10",
@@ -1574,7 +1702,9 @@
         "AARTIIND"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2005-11",
@@ -1607,7 +1737,9 @@
         "MFSL"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2005-12",
@@ -1638,7 +1770,9 @@
         "SIEMENS"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2006-01",
@@ -1671,7 +1805,9 @@
         "SIEMENS"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2006-02",
@@ -1703,7 +1839,9 @@
         "AUROPHARMA"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2006-03",
@@ -1731,7 +1869,9 @@
         "BHARATFORG"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2006-04",
@@ -1762,7 +1902,9 @@
         "CUMMINSIND"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2006-05",
@@ -1789,7 +1931,9 @@
         "LUPIN"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2006-06",
@@ -1817,7 +1961,9 @@
         "LUPIN"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2006-07",
@@ -1846,7 +1992,9 @@
         "LUPIN"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2006-08",
@@ -1875,7 +2023,9 @@
         "OFSS"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2006-09",
@@ -1901,7 +2051,9 @@
         "EXIDEIND"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2006-10",
@@ -1928,7 +2080,9 @@
         "EXIDEIND"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2006-11",
@@ -1955,7 +2109,9 @@
         "MRF"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2006-12",
@@ -1978,7 +2134,9 @@
         "HINDZINC"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2007-01",
@@ -2001,7 +2159,9 @@
         "HINDZINC"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2007-02",
@@ -2027,7 +2187,9 @@
         "HINDZINC"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2007-03",
@@ -2057,7 +2219,9 @@
         "COFORGE"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2007-04",
@@ -2083,7 +2247,9 @@
         "BEL"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2007-05",
@@ -2112,7 +2278,9 @@
         "BEL"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2007-06",
@@ -2147,7 +2315,9 @@
         "TATAELXSI"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2007-07",
@@ -2185,7 +2355,9 @@
         "SOLARINDS"
       ],
       "winsThisMonth": 4,
-      "lossesThisMonth": 3
+      "lossesThisMonth": 3,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2007-08",
@@ -2219,7 +2391,9 @@
         "TATAPOWER"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2007-09",
@@ -2251,7 +2425,9 @@
         "BANKBARODA"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 5021.35,
+      "niftyMonthReturn": 0.0
     },
     {
       "month": "2007-10",
@@ -2284,7 +2460,9 @@
         "GLENMARK"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 5900.65,
+      "niftyMonthReturn": 17.51
     },
     {
       "month": "2007-11",
@@ -2312,7 +2490,9 @@
         "EXIDEIND"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 5762.75,
+      "niftyMonthReturn": -2.34
     },
     {
       "month": "2007-12",
@@ -2343,7 +2523,9 @@
         "EXIDEIND"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 6138.6,
+      "niftyMonthReturn": 6.52
     },
     {
       "month": "2008-01",
@@ -2377,7 +2559,9 @@
         "EXIDEIND"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 5137.45,
+      "niftyMonthReturn": -16.31
     },
     {
       "month": "2008-02",
@@ -2405,7 +2589,9 @@
         "AARTIIND"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 5223.5,
+      "niftyMonthReturn": 1.67
     },
     {
       "month": "2008-03",
@@ -2438,7 +2624,9 @@
         "COROMANDEL"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 4
+      "lossesThisMonth": 4,
+      "niftyValue": 4734.5,
+      "niftyMonthReturn": -9.36
     },
     {
       "month": "2008-04",
@@ -2468,7 +2656,9 @@
         "ABBOTINDIA"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 5165.9,
+      "niftyMonthReturn": 9.11
     },
     {
       "month": "2008-05",
@@ -2498,7 +2688,9 @@
         "AARTIIND"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 4870.1,
+      "niftyMonthReturn": -5.73
     },
     {
       "month": "2008-06",
@@ -2528,7 +2720,9 @@
         "LUPIN"
       ],
       "winsThisMonth": 4,
-      "lossesThisMonth": 3
+      "lossesThisMonth": 3,
+      "niftyValue": 4040.55,
+      "niftyMonthReturn": -17.03
     },
     {
       "month": "2008-07",
@@ -2554,7 +2748,9 @@
         "OFSS"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 4332.95,
+      "niftyMonthReturn": 7.24
     },
     {
       "month": "2008-08",
@@ -2584,7 +2780,9 @@
         "LICHSGFIN"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 4360.0,
+      "niftyMonthReturn": 0.62
     },
     {
       "month": "2008-09",
@@ -2612,7 +2810,9 @@
         "AARTIIND"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 6
+      "lossesThisMonth": 6,
+      "niftyValue": 3921.2,
+      "niftyMonthReturn": -10.06
     },
     {
       "month": "2008-10",
@@ -2633,7 +2833,9 @@
         "LUPIN"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 2885.6,
+      "niftyMonthReturn": -26.41
     },
     {
       "month": "2008-11",
@@ -2652,7 +2854,9 @@
         "ABBOTINDIA"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 2755.1,
+      "niftyMonthReturn": -4.52
     },
     {
       "month": "2008-12",
@@ -2672,7 +2876,9 @@
         "ABBOTINDIA"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 2959.15,
+      "niftyMonthReturn": 7.41
     },
     {
       "month": "2009-01",
@@ -2692,7 +2898,9 @@
         "PFC"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 2874.8,
+      "niftyMonthReturn": -2.85
     },
     {
       "month": "2009-02",
@@ -2709,7 +2917,9 @@
         "PFC"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 2763.65,
+      "niftyMonthReturn": -3.87
     },
     {
       "month": "2009-03",
@@ -2735,7 +2945,9 @@
         "PFC"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 3020.95,
+      "niftyMonthReturn": 9.31
     },
     {
       "month": "2009-04",
@@ -2771,7 +2983,9 @@
         "HINDZINC"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 3473.95,
+      "niftyMonthReturn": 15.0
     },
     {
       "month": "2009-05",
@@ -2808,7 +3022,9 @@
         "AUROPHARMA"
       ],
       "winsThisMonth": 5,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 4448.95,
+      "niftyMonthReturn": 28.07
     },
     {
       "month": "2009-06",
@@ -2842,7 +3058,9 @@
         "COROMANDEL"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 4291.1,
+      "niftyMonthReturn": -3.55
     },
     {
       "month": "2009-07",
@@ -2875,7 +3093,9 @@
         "HAVELLS"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 4636.45,
+      "niftyMonthReturn": 8.05
     },
     {
       "month": "2009-08",
@@ -2907,7 +3127,9 @@
         "BHARATFORG"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 4662.1,
+      "niftyMonthReturn": 0.55
     },
     {
       "month": "2009-09",
@@ -2941,7 +3163,9 @@
         "NAVINFLUOR"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 5083.95,
+      "niftyMonthReturn": 9.05
     },
     {
       "month": "2009-10",
@@ -2973,7 +3197,9 @@
         "COFORGE"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 4711.7,
+      "niftyMonthReturn": -7.32
     },
     {
       "month": "2009-11",
@@ -3006,7 +3232,9 @@
         "OFSS"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 5032.7,
+      "niftyMonthReturn": 6.81
     },
     {
       "month": "2009-12",
@@ -3042,7 +3270,9 @@
         "LUPIN"
       ],
       "winsThisMonth": 4,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 5201.05,
+      "niftyMonthReturn": 3.35
     },
     {
       "month": "2010-01",
@@ -3076,7 +3306,9 @@
         "HAVELLS"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 4882.05,
+      "niftyMonthReturn": -6.13
     },
     {
       "month": "2010-02",
@@ -3111,7 +3343,9 @@
         "CUMMINSIND"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 4922.3,
+      "niftyMonthReturn": 0.82
     },
     {
       "month": "2010-03",
@@ -3148,7 +3382,9 @@
         "CGPOWER"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 5249.1,
+      "niftyMonthReturn": 6.64
     },
     {
       "month": "2010-04",
@@ -3184,7 +3420,9 @@
         "JBCHEPHARM"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 3
+      "lossesThisMonth": 3,
+      "niftyValue": 5278.0,
+      "niftyMonthReturn": 0.55
     },
     {
       "month": "2010-05",
@@ -3218,7 +3456,9 @@
         "BANKBARODA"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 5086.3,
+      "niftyMonthReturn": -3.63
     },
     {
       "month": "2010-06",
@@ -3252,7 +3492,9 @@
         "FEDERALBNK"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 5312.5,
+      "niftyMonthReturn": 4.45
     },
     {
       "month": "2010-07",
@@ -3287,7 +3529,9 @@
         "FEDERALBNK"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 5367.6,
+      "niftyMonthReturn": 1.04
     },
     {
       "month": "2010-08",
@@ -3322,7 +3566,9 @@
         "TRENT"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 5402.4,
+      "niftyMonthReturn": 0.65
     },
     {
       "month": "2010-09",
@@ -3355,7 +3601,9 @@
         "MOTHERSON"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 6029.95,
+      "niftyMonthReturn": 11.62
     },
     {
       "month": "2010-10",
@@ -3390,7 +3638,9 @@
         "FEDERALBNK"
       ],
       "winsThisMonth": 4,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 6017.7,
+      "niftyMonthReturn": -0.2
     },
     {
       "month": "2010-11",
@@ -3429,7 +3679,9 @@
         "NAUKRI"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 5
+      "lossesThisMonth": 5,
+      "niftyValue": 5862.7,
+      "niftyMonthReturn": -2.58
     },
     {
       "month": "2010-12",
@@ -3465,7 +3717,9 @@
         "CUMMINSIND"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 6134.5,
+      "niftyMonthReturn": 4.64
     },
     {
       "month": "2011-01",
@@ -3499,7 +3753,9 @@
         "GLENMARK"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 3
+      "lossesThisMonth": 3,
+      "niftyValue": 5505.9,
+      "niftyMonthReturn": -10.25
     },
     {
       "month": "2011-02",
@@ -3534,7 +3790,9 @@
         "BANKBARODA"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 3
+      "lossesThisMonth": 3,
+      "niftyValue": 5333.25,
+      "niftyMonthReturn": -3.14
     },
     {
       "month": "2011-03",
@@ -3567,7 +3825,9 @@
         "ABBOTINDIA"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 5833.75,
+      "niftyMonthReturn": 9.38
     },
     {
       "month": "2011-04",
@@ -3600,7 +3860,9 @@
         "NMDC"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 5749.5,
+      "niftyMonthReturn": -1.44
     },
     {
       "month": "2011-05",
@@ -3636,7 +3898,9 @@
         "NAUKRI"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 5473.1,
+      "niftyMonthReturn": -4.81
     },
     {
       "month": "2011-06",
@@ -3670,7 +3934,9 @@
         "COROMANDEL"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 5647.4,
+      "niftyMonthReturn": 3.18
     },
     {
       "month": "2011-07",
@@ -3703,7 +3969,9 @@
         "BALKRISIND"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 5482.0,
+      "niftyMonthReturn": -2.93
     },
     {
       "month": "2011-08",
@@ -3737,7 +4005,9 @@
         "NAVINFLUOR"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 5001.0,
+      "niftyMonthReturn": -8.77
     },
     {
       "month": "2011-09",
@@ -3769,7 +4039,9 @@
         "GLENMARK"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 4943.25,
+      "niftyMonthReturn": -1.15
     },
     {
       "month": "2011-10",
@@ -3802,7 +4074,9 @@
         "LUPIN"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 5326.6,
+      "niftyMonthReturn": 7.76
     },
     {
       "month": "2011-11",
@@ -3836,7 +4110,9 @@
         "LICHSGFIN"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 3
+      "lossesThisMonth": 3,
+      "niftyValue": 4832.05,
+      "niftyMonthReturn": -9.28
     },
     {
       "month": "2011-12",
@@ -3868,7 +4144,9 @@
         "MRF"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 4
+      "lossesThisMonth": 4,
+      "niftyValue": 4624.3,
+      "niftyMonthReturn": -4.3
     },
     {
       "month": "2012-01",
@@ -3901,7 +4179,9 @@
         "MRF"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 5199.25,
+      "niftyMonthReturn": 12.43
     },
     {
       "month": "2012-02",
@@ -3939,7 +4219,9 @@
         "OBEROIRLTY"
       ],
       "winsThisMonth": 5,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 5385.2,
+      "niftyMonthReturn": 3.58
     },
     {
       "month": "2012-03",
@@ -3972,7 +4254,9 @@
         "FEDERALBNK"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 5295.55,
+      "niftyMonthReturn": -1.66
     },
     {
       "month": "2012-04",
@@ -4005,7 +4289,9 @@
         "JUBLFOOD"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 5248.15,
+      "niftyMonthReturn": -0.9
     },
     {
       "month": "2012-05",
@@ -4040,7 +4326,9 @@
         "BOSCHLTD"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 4924.25,
+      "niftyMonthReturn": -6.17
     },
     {
       "month": "2012-06",
@@ -4072,7 +4360,9 @@
         "NAVINFLUOR"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 5278.9,
+      "niftyMonthReturn": 7.2
     },
     {
       "month": "2012-07",
@@ -4104,7 +4394,9 @@
         "ATUL"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 5229.0,
+      "niftyMonthReturn": -0.95
     },
     {
       "month": "2012-08",
@@ -4138,7 +4430,9 @@
         "LUPIN"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 5258.5,
+      "niftyMonthReturn": 0.56
     },
     {
       "month": "2012-09",
@@ -4175,7 +4469,9 @@
         "PERSISTENT"
       ],
       "winsThisMonth": 4,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 5703.3,
+      "niftyMonthReturn": 8.46
     },
     {
       "month": "2012-10",
@@ -4208,7 +4504,9 @@
         "DEEPAKNTR"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 5619.7,
+      "niftyMonthReturn": -1.47
     },
     {
       "month": "2012-11",
@@ -4241,7 +4539,9 @@
         "AUROPHARMA"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 5879.85,
+      "niftyMonthReturn": 4.63
     },
     {
       "month": "2012-12",
@@ -4274,7 +4574,9 @@
         "RECLTD"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 5905.1,
+      "niftyMonthReturn": 0.43
     },
     {
       "month": "2013-01",
@@ -4306,7 +4608,9 @@
         "GLENMARK"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 6034.75,
+      "niftyMonthReturn": 2.2
     },
     {
       "month": "2013-02",
@@ -4340,7 +4644,9 @@
         "MFSL"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 5693.05,
+      "niftyMonthReturn": -5.66
     },
     {
       "month": "2013-03",
@@ -4375,7 +4681,9 @@
         "PIIND"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 3
+      "lossesThisMonth": 3,
+      "niftyValue": 5682.55,
+      "niftyMonthReturn": -0.18
     },
     {
       "month": "2013-04",
@@ -4409,7 +4717,9 @@
         "IGL"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 3
+      "lossesThisMonth": 3,
+      "niftyValue": 5930.2,
+      "niftyMonthReturn": 4.36
     },
     {
       "month": "2013-05",
@@ -4442,7 +4752,9 @@
         "PAGEIND"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 5985.95,
+      "niftyMonthReturn": 0.94
     },
     {
       "month": "2013-06",
@@ -4477,7 +4789,9 @@
         "HAVELLS"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 5842.2,
+      "niftyMonthReturn": -2.4
     },
     {
       "month": "2013-07",
@@ -4511,7 +4825,9 @@
         "BIOCON"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 4
+      "lossesThisMonth": 4,
+      "niftyValue": 5742.0,
+      "niftyMonthReturn": -1.72
     },
     {
       "month": "2013-08",
@@ -4546,7 +4862,9 @@
         "OFSS"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 5471.8,
+      "niftyMonthReturn": -4.71
     },
     {
       "month": "2013-09",
@@ -4579,7 +4897,9 @@
         "AUROPHARMA"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 5735.3,
+      "niftyMonthReturn": 4.82
     },
     {
       "month": "2013-10",
@@ -4611,7 +4931,9 @@
         "MRF"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 6299.15,
+      "niftyMonthReturn": 9.83
     },
     {
       "month": "2013-11",
@@ -4647,7 +4969,9 @@
         "MOTHERSON"
       ],
       "winsThisMonth": 4,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 6176.1,
+      "niftyMonthReturn": -1.95
     },
     {
       "month": "2013-12",
@@ -4681,7 +5005,9 @@
         "CGPOWER"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 6304.0,
+      "niftyMonthReturn": 2.07
     },
     {
       "month": "2014-01",
@@ -4715,7 +5041,9 @@
         "SRF"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 6089.5,
+      "niftyMonthReturn": -3.4
     },
     {
       "month": "2014-02",
@@ -4748,7 +5076,9 @@
         "NAUKRI"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 6276.95,
+      "niftyMonthReturn": 3.08
     },
     {
       "month": "2014-03",
@@ -4780,7 +5110,9 @@
         "DEEPAKNTR"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 6704.2,
+      "niftyMonthReturn": 6.81
     },
     {
       "month": "2014-04",
@@ -4813,7 +5145,9 @@
         "SRF"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 6696.4,
+      "niftyMonthReturn": -0.12
     },
     {
       "month": "2014-05",
@@ -4847,7 +5181,9 @@
         "AARTIIND"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 7229.95,
+      "niftyMonthReturn": 7.97
     },
     {
       "month": "2014-06",
@@ -4881,7 +5217,9 @@
         "BHARATFORG"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 7611.35,
+      "niftyMonthReturn": 5.28
     },
     {
       "month": "2014-07",
@@ -4914,7 +5252,9 @@
         "BEL"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 7721.3,
+      "niftyMonthReturn": 1.44
     },
     {
       "month": "2014-08",
@@ -4947,7 +5287,9 @@
         "BEL"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 7954.35,
+      "niftyMonthReturn": 3.02
     },
     {
       "month": "2014-09",
@@ -4980,7 +5322,9 @@
         "PIIND"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 7964.8,
+      "niftyMonthReturn": 0.13
     },
     {
       "month": "2014-10",
@@ -5012,7 +5356,9 @@
         "CHOLAFIN"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 8322.2,
+      "niftyMonthReturn": 4.49
     },
     {
       "month": "2014-11",
@@ -5048,7 +5394,9 @@
         "AUROPHARMA"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 8588.25,
+      "niftyMonthReturn": 3.2
     },
     {
       "month": "2014-12",
@@ -5083,7 +5431,9 @@
         "MOTHERSON"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 8282.7,
+      "niftyMonthReturn": -3.56
     },
     {
       "month": "2015-01",
@@ -5117,7 +5467,9 @@
         "PERSISTENT"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 8808.9,
+      "niftyMonthReturn": 6.35
     },
     {
       "month": "2015-02",
@@ -5150,7 +5502,9 @@
         "MFSL"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 8844.6,
+      "niftyMonthReturn": 0.41
     },
     {
       "month": "2015-03",
@@ -5183,7 +5537,9 @@
         "SIEMENS"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 8491.0,
+      "niftyMonthReturn": -4.0
     },
     {
       "month": "2015-04",
@@ -5215,7 +5571,9 @@
         "AUROPHARMA"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 8181.5,
+      "niftyMonthReturn": -3.65
     },
     {
       "month": "2015-05",
@@ -5246,7 +5604,9 @@
         "VINATIORGA"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 8433.65,
+      "niftyMonthReturn": 3.08
     },
     {
       "month": "2015-06",
@@ -5281,7 +5641,9 @@
         "NAVINFLUOR"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 8368.5,
+      "niftyMonthReturn": -0.77
     },
     {
       "month": "2015-07",
@@ -5315,7 +5677,9 @@
         "GLENMARK"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 8532.85,
+      "niftyMonthReturn": 1.96
     },
     {
       "month": "2015-08",
@@ -5349,7 +5713,9 @@
         "COFORGE"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 3
+      "lossesThisMonth": 3,
+      "niftyValue": 7971.3,
+      "niftyMonthReturn": -6.58
     },
     {
       "month": "2015-09",
@@ -5380,7 +5746,9 @@
         "CUMMINSIND"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 7948.9,
+      "niftyMonthReturn": -0.28
     },
     {
       "month": "2015-10",
@@ -5411,7 +5779,9 @@
         "ATUL"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 8065.8,
+      "niftyMonthReturn": 1.47
     },
     {
       "month": "2015-11",
@@ -5442,7 +5812,9 @@
         "GODREJPROP"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 7935.25,
+      "niftyMonthReturn": -1.62
     },
     {
       "month": "2015-12",
@@ -5475,7 +5847,9 @@
         "MPHASIS"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 7946.35,
+      "niftyMonthReturn": 0.14
     },
     {
       "month": "2016-01",
@@ -5504,7 +5878,9 @@
         "BEL"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 7563.55,
+      "niftyMonthReturn": -4.82
     },
     {
       "month": "2016-02",
@@ -5538,7 +5914,9 @@
         "IGL"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 8
+      "lossesThisMonth": 8,
+      "niftyValue": 6987.05,
+      "niftyMonthReturn": -7.62
     },
     {
       "month": "2016-03",
@@ -5571,7 +5949,9 @@
         "CHOLAFIN"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 7738.4,
+      "niftyMonthReturn": 10.75
     },
     {
       "month": "2016-04",
@@ -5606,7 +5986,9 @@
         "NMDC"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 7849.8,
+      "niftyMonthReturn": 1.44
     },
     {
       "month": "2016-05",
@@ -5642,7 +6024,9 @@
         "ATUL"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 8160.1,
+      "niftyMonthReturn": 3.95
     },
     {
       "month": "2016-06",
@@ -5677,7 +6061,9 @@
         "BOSCHLTD"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 8287.75,
+      "niftyMonthReturn": 1.56
     },
     {
       "month": "2016-07",
@@ -5712,7 +6098,9 @@
         "EXIDEIND"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 8638.5,
+      "niftyMonthReturn": 4.23
     },
     {
       "month": "2016-08",
@@ -5748,7 +6136,9 @@
         "NAVINFLUOR"
       ],
       "winsThisMonth": 5,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 8786.2,
+      "niftyMonthReturn": 1.71
     },
     {
       "month": "2016-09",
@@ -5783,7 +6173,9 @@
         "MFSL"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 8611.15,
+      "niftyMonthReturn": -1.99
     },
     {
       "month": "2016-10",
@@ -5817,7 +6209,9 @@
         "FEDERALBNK"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 8638.0,
+      "niftyMonthReturn": 0.31
     },
     {
       "month": "2016-11",
@@ -5851,7 +6245,9 @@
         "RECLTD"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 8224.5,
+      "niftyMonthReturn": -4.79
     },
     {
       "month": "2016-12",
@@ -5886,7 +6282,9 @@
         "AARTIIND"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 8185.8,
+      "niftyMonthReturn": -0.47
     },
     {
       "month": "2017-01",
@@ -5922,7 +6320,9 @@
         "NMDC"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 3
+      "lossesThisMonth": 3,
+      "niftyValue": 8561.3,
+      "niftyMonthReturn": 4.59
     },
     {
       "month": "2017-02",
@@ -5956,7 +6356,9 @@
         "BEL"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 8879.6,
+      "niftyMonthReturn": 3.72
     },
     {
       "month": "2017-03",
@@ -5991,7 +6393,9 @@
         "JINDALSTEL"
       ],
       "winsThisMonth": 4,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 9173.75,
+      "niftyMonthReturn": 3.31
     },
     {
       "month": "2017-04",
@@ -6027,7 +6431,9 @@
         "COROMANDEL"
       ],
       "winsThisMonth": 5,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 9304.05,
+      "niftyMonthReturn": 1.42
     },
     {
       "month": "2017-05",
@@ -6064,7 +6470,9 @@
         "FEDERALBNK"
       ],
       "winsThisMonth": 4,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 9621.25,
+      "niftyMonthReturn": 3.41
     },
     {
       "month": "2017-06",
@@ -6096,7 +6504,9 @@
         "MOTHERSON"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 9520.9,
+      "niftyMonthReturn": -1.04
     },
     {
       "month": "2017-07",
@@ -6130,7 +6540,9 @@
         "MUTHOOTFIN"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 10077.1,
+      "niftyMonthReturn": 5.84
     },
     {
       "month": "2017-08",
@@ -6166,7 +6578,9 @@
         "JUBLFOOD"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 9917.9,
+      "niftyMonthReturn": -1.58
     },
     {
       "month": "2017-09",
@@ -6200,7 +6614,9 @@
         "PAGEIND"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 9788.6,
+      "niftyMonthReturn": -1.3
     },
     {
       "month": "2017-10",
@@ -6235,7 +6651,9 @@
         "NAUKRI"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 10335.3,
+      "niftyMonthReturn": 5.59
     },
     {
       "month": "2017-11",
@@ -6271,7 +6689,9 @@
         "JINDALSTEL"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 10226.55,
+      "niftyMonthReturn": -1.05
     },
     {
       "month": "2017-12",
@@ -6306,7 +6726,9 @@
         "BIOCON"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 10530.7,
+      "niftyMonthReturn": 2.97
     },
     {
       "month": "2018-01",
@@ -6341,7 +6763,9 @@
         "GAIL"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 3
+      "lossesThisMonth": 3,
+      "niftyValue": 11027.7,
+      "niftyMonthReturn": 4.72
     },
     {
       "month": "2018-02",
@@ -6375,7 +6799,9 @@
         "MPHASIS"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 10492.85,
+      "niftyMonthReturn": -4.85
     },
     {
       "month": "2018-03",
@@ -6411,7 +6837,9 @@
         "AARTIIND"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 3
+      "lossesThisMonth": 3,
+      "niftyValue": 10113.7,
+      "niftyMonthReturn": -3.61
     },
     {
       "month": "2018-04",
@@ -6443,7 +6871,9 @@
         "SRF"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 10739.35,
+      "niftyMonthReturn": 6.19
     },
     {
       "month": "2018-05",
@@ -6475,7 +6905,9 @@
         "TATAELXSI"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 10736.15,
+      "niftyMonthReturn": -0.03
     },
     {
       "month": "2018-06",
@@ -6503,7 +6935,9 @@
         "EXIDEIND"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 10714.3,
+      "niftyMonthReturn": -0.2
     },
     {
       "month": "2018-07",
@@ -6537,7 +6971,9 @@
         "EXIDEIND"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 11356.5,
+      "niftyMonthReturn": 5.99
     },
     {
       "month": "2018-08",
@@ -6572,7 +7008,9 @@
         "HAVELLS"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 11680.5,
+      "niftyMonthReturn": 2.85
     },
     {
       "month": "2018-09",
@@ -6607,7 +7045,9 @@
         "NAUKRI"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 3
+      "lossesThisMonth": 3,
+      "niftyValue": 10930.45,
+      "niftyMonthReturn": -6.42
     },
     {
       "month": "2018-10",
@@ -6639,7 +7079,9 @@
         "GAIL"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 10386.6,
+      "niftyMonthReturn": -4.98
     },
     {
       "month": "2018-11",
@@ -6675,7 +7117,9 @@
         "PFC"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 10876.75,
+      "niftyMonthReturn": 4.72
     },
     {
       "month": "2018-12",
@@ -6710,7 +7154,9 @@
         "SRF"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 10862.55,
+      "niftyMonthReturn": -0.13
     },
     {
       "month": "2019-01",
@@ -6744,7 +7190,9 @@
         "RECLTD"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 10830.95,
+      "niftyMonthReturn": -0.29
     },
     {
       "month": "2019-02",
@@ -6779,7 +7227,9 @@
         "VBL"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 3
+      "lossesThisMonth": 3,
+      "niftyValue": 10792.5,
+      "niftyMonthReturn": -0.36
     },
     {
       "month": "2019-03",
@@ -6814,7 +7264,9 @@
         "OBEROIRLTY"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 11570.0,
+      "niftyMonthReturn": 7.2
     },
     {
       "month": "2019-04",
@@ -6847,7 +7299,9 @@
         "IDFCFIRSTB"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 11748.15,
+      "niftyMonthReturn": 1.54
     },
     {
       "month": "2019-05",
@@ -6879,7 +7333,9 @@
         "PRESTIGE"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 11922.8,
+      "niftyMonthReturn": 1.49
     },
     {
       "month": "2019-06",
@@ -6912,7 +7368,9 @@
         "PRESTIGE"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 11788.85,
+      "niftyMonthReturn": -1.12
     },
     {
       "month": "2019-07",
@@ -6945,7 +7403,9 @@
         "DEEPAKNTR"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 11118.0,
+      "niftyMonthReturn": -5.69
     },
     {
       "month": "2019-08",
@@ -6981,7 +7441,9 @@
         "BEL"
       ],
       "winsThisMonth": 4,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 11023.25,
+      "niftyMonthReturn": -0.85
     },
     {
       "month": "2019-09",
@@ -7017,7 +7479,9 @@
         "SIEMENS"
       ],
       "winsThisMonth": 5,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 11474.45,
+      "niftyMonthReturn": 4.09
     },
     {
       "month": "2019-10",
@@ -7051,7 +7515,9 @@
         "MUTHOOTFIN"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 11877.45,
+      "niftyMonthReturn": 3.51
     },
     {
       "month": "2019-11",
@@ -7087,7 +7553,9 @@
         "IGL"
       ],
       "winsThisMonth": 4,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 12056.05,
+      "niftyMonthReturn": 1.5
     },
     {
       "month": "2019-12",
@@ -7123,7 +7591,9 @@
         "JUBLFOOD"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 4
+      "lossesThisMonth": 4,
+      "niftyValue": 12168.45,
+      "niftyMonthReturn": 0.93
     },
     {
       "month": "2020-01",
@@ -7156,7 +7626,9 @@
         "PRESTIGE"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 11962.1,
+      "niftyMonthReturn": -1.7
     },
     {
       "month": "2020-02",
@@ -7191,7 +7663,9 @@
         "AUBANK"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 11201.75,
+      "niftyMonthReturn": -6.36
     },
     {
       "month": "2020-03",
@@ -7225,7 +7699,9 @@
         "ALKEM"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 4
+      "lossesThisMonth": 4,
+      "niftyValue": 8597.75,
+      "niftyMonthReturn": -23.25
     },
     {
       "month": "2020-04",
@@ -7257,7 +7733,9 @@
         "IGL"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 9859.9,
+      "niftyMonthReturn": 14.68
     },
     {
       "month": "2020-05",
@@ -7288,7 +7766,9 @@
         "MUTHOOTFIN"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 9580.3,
+      "niftyMonthReturn": -2.84
     },
     {
       "month": "2020-06",
@@ -7319,7 +7799,9 @@
         "BALKRISIND"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 10302.1,
+      "niftyMonthReturn": 7.53
     },
     {
       "month": "2020-07",
@@ -7351,7 +7833,9 @@
         "BALKRISIND"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 11073.45,
+      "niftyMonthReturn": 7.49
     },
     {
       "month": "2020-08",
@@ -7387,7 +7871,9 @@
         "CDSL"
       ],
       "winsThisMonth": 5,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 11387.5,
+      "niftyMonthReturn": 2.84
     },
     {
       "month": "2020-09",
@@ -7420,7 +7906,9 @@
         "INDIAMART"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 11247.55,
+      "niftyMonthReturn": -1.23
     },
     {
       "month": "2020-10",
@@ -7453,7 +7941,9 @@
         "PERSISTENT"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 11642.4,
+      "niftyMonthReturn": 3.51
     },
     {
       "month": "2020-11",
@@ -7485,7 +7975,9 @@
         "CHOLAFIN"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 12968.95,
+      "niftyMonthReturn": 11.39
     },
     {
       "month": "2020-12",
@@ -7516,7 +8008,9 @@
         "DEEPAKNTR"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 13981.75,
+      "niftyMonthReturn": 7.81
     },
     {
       "month": "2021-01",
@@ -7549,7 +8043,9 @@
         "CHOLAFIN"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 13634.6,
+      "niftyMonthReturn": -2.48
     },
     {
       "month": "2021-02",
@@ -7581,7 +8077,9 @@
         "IDFCFIRSTB"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 14529.15,
+      "niftyMonthReturn": 6.56
     },
     {
       "month": "2021-03",
@@ -7615,7 +8113,9 @@
         "THERMAX"
       ],
       "winsThisMonth": 4,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 14690.7,
+      "niftyMonthReturn": 1.11
     },
     {
       "month": "2021-04",
@@ -7644,7 +8144,9 @@
         "JINDALSTEL"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 14631.1,
+      "niftyMonthReturn": -0.41
     },
     {
       "month": "2021-05",
@@ -7677,7 +8179,9 @@
         "JINDALSTEL"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 15582.8,
+      "niftyMonthReturn": 6.5
     },
     {
       "month": "2021-06",
@@ -7707,7 +8211,9 @@
         "CDSL"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 15721.5,
+      "niftyMonthReturn": 0.89
     },
     {
       "month": "2021-07",
@@ -7741,7 +8247,9 @@
         "LAURUSLABS"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 15763.05,
+      "niftyMonthReturn": 0.26
     },
     {
       "month": "2021-08",
@@ -7773,7 +8281,9 @@
         "MPHASIS"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 17132.2,
+      "niftyMonthReturn": 8.69
     },
     {
       "month": "2021-09",
@@ -7805,7 +8315,9 @@
         "SRF"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 17618.15,
+      "niftyMonthReturn": 2.84
     },
     {
       "month": "2021-10",
@@ -7836,7 +8348,9 @@
         "GODREJPROP"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 17671.65,
+      "niftyMonthReturn": 0.3
     },
     {
       "month": "2021-11",
@@ -7864,7 +8378,9 @@
         "TATAPOWER"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 16983.2,
+      "niftyMonthReturn": -3.9
     },
     {
       "month": "2021-12",
@@ -7896,7 +8412,9 @@
         "TATAPOWER"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 17354.05,
+      "niftyMonthReturn": 2.18
     },
     {
       "month": "2022-01",
@@ -7929,7 +8447,9 @@
         "SOLARINDS"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 17339.85,
+      "niftyMonthReturn": -0.08
     },
     {
       "month": "2022-02",
@@ -7960,7 +8480,9 @@
         "PAGEIND"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 16793.9,
+      "niftyMonthReturn": -3.15
     },
     {
       "month": "2022-03",
@@ -7993,7 +8515,9 @@
         "BANKBARODA"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 17464.75,
+      "niftyMonthReturn": 3.99
     },
     {
       "month": "2022-04",
@@ -8027,7 +8551,9 @@
         "NMDC"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 17102.55,
+      "niftyMonthReturn": -2.07
     },
     {
       "month": "2022-05",
@@ -8058,7 +8584,9 @@
         "CUMMINSIND"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 16584.55,
+      "niftyMonthReturn": -3.03
     },
     {
       "month": "2022-06",
@@ -8090,7 +8618,9 @@
         "COROMANDEL"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 15780.25,
+      "niftyMonthReturn": -4.85
     },
     {
       "month": "2022-07",
@@ -8122,7 +8652,9 @@
         "BEL"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 17158.25,
+      "niftyMonthReturn": 8.73
     },
     {
       "month": "2022-08",
@@ -8152,7 +8684,9 @@
         "TRENT"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 17759.3,
+      "niftyMonthReturn": 3.5
     },
     {
       "month": "2022-09",
@@ -8185,7 +8719,9 @@
         "SOLARINDS"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 17094.35,
+      "niftyMonthReturn": -3.74
     },
     {
       "month": "2022-10",
@@ -8216,7 +8752,9 @@
         "FEDERALBNK"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 18012.2,
+      "niftyMonthReturn": 5.37
     },
     {
       "month": "2022-11",
@@ -8247,7 +8785,9 @@
         "CUMMINSIND"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 18758.35,
+      "niftyMonthReturn": 4.14
     },
     {
       "month": "2022-12",
@@ -8277,7 +8817,9 @@
         "KPITTECH"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 18105.3,
+      "niftyMonthReturn": -3.48
     },
     {
       "month": "2023-01",
@@ -8307,7 +8849,9 @@
         "NMDC"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 17662.15,
+      "niftyMonthReturn": -2.45
     },
     {
       "month": "2023-02",
@@ -8339,7 +8883,9 @@
         "HINDZINC"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 17303.95,
+      "niftyMonthReturn": -2.03
     },
     {
       "month": "2023-03",
@@ -8369,7 +8915,9 @@
         "PFC"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 17359.75,
+      "niftyMonthReturn": 0.32
     },
     {
       "month": "2023-04",
@@ -8402,7 +8950,9 @@
         "RECLTD"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 18065.0,
+      "niftyMonthReturn": 4.06
     },
     {
       "month": "2023-05",
@@ -8439,7 +8989,9 @@
         "GLENMARK"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 5
+      "lossesThisMonth": 5,
+      "niftyValue": 18534.4,
+      "niftyMonthReturn": 2.6
     },
     {
       "month": "2023-06",
@@ -8472,7 +9024,9 @@
         "OFSS"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 19189.05,
+      "niftyMonthReturn": 3.53
     },
     {
       "month": "2023-07",
@@ -8507,7 +9061,9 @@
         "IDFCFIRSTB"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 19753.8,
+      "niftyMonthReturn": 2.94
     },
     {
       "month": "2023-08",
@@ -8541,7 +9097,9 @@
         "GODREJPROP"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 19253.8,
+      "niftyMonthReturn": -2.53
     },
     {
       "month": "2023-09",
@@ -8575,7 +9133,9 @@
         "LUPIN"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 19638.3,
+      "niftyMonthReturn": 2.0
     },
     {
       "month": "2023-10",
@@ -8612,7 +9172,9 @@
         "LUPIN"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 4
+      "lossesThisMonth": 4,
+      "niftyValue": 19079.6,
+      "niftyMonthReturn": -2.84
     },
     {
       "month": "2023-11",
@@ -8642,7 +9204,9 @@
         "MFSL"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 20133.15,
+      "niftyMonthReturn": 5.52
     },
     {
       "month": "2023-12",
@@ -8676,7 +9240,9 @@
         "SOLARINDS"
       ],
       "winsThisMonth": 4,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 21731.4,
+      "niftyMonthReturn": 7.94
     },
     {
       "month": "2024-01",
@@ -8709,7 +9275,9 @@
         "VBL"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 21725.7,
+      "niftyMonthReturn": -0.03
     },
     {
       "month": "2024-02",
@@ -8741,7 +9309,9 @@
         "OFSS"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 21982.8,
+      "niftyMonthReturn": 1.18
     },
     {
       "month": "2024-03",
@@ -8773,7 +9343,9 @@
         "CUMMINSIND"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 22326.9,
+      "niftyMonthReturn": 1.57
     },
     {
       "month": "2024-04",
@@ -8803,7 +9375,9 @@
         "HAL"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 22604.85,
+      "niftyMonthReturn": 1.24
     },
     {
       "month": "2024-05",
@@ -8836,7 +9410,9 @@
         "EXIDEIND"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 22530.7,
+      "niftyMonthReturn": -0.33
     },
     {
       "month": "2024-06",
@@ -8868,7 +9444,9 @@
         "SIEMENS"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 24010.6,
+      "niftyMonthReturn": 6.57
     },
     {
       "month": "2024-07",
@@ -8897,7 +9475,9 @@
         "DIXON"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 24951.15,
+      "niftyMonthReturn": 3.92
     },
     {
       "month": "2024-08",
@@ -8935,7 +9515,9 @@
         "DIXON"
       ],
       "winsThisMonth": 5,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 25235.9,
+      "niftyMonthReturn": 1.14
     },
     {
       "month": "2024-09",
@@ -8972,7 +9554,9 @@
         "CDSL"
       ],
       "winsThisMonth": 4,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 25810.85,
+      "niftyMonthReturn": 2.28
     },
     {
       "month": "2024-10",
@@ -9009,7 +9593,9 @@
         "MCX"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 6
+      "lossesThisMonth": 6,
+      "niftyValue": 24205.35,
+      "niftyMonthReturn": -6.22
     },
     {
       "month": "2024-11",
@@ -9043,7 +9629,9 @@
         "LUPIN"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 24131.1,
+      "niftyMonthReturn": -0.31
     },
     {
       "month": "2024-12",
@@ -9076,7 +9664,9 @@
         "LAURUSLABS"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 23644.8,
+      "niftyMonthReturn": -2.02
     },
     {
       "month": "2025-01",
@@ -9112,7 +9702,9 @@
         "JUBLFOOD"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 4
+      "lossesThisMonth": 4,
+      "niftyValue": 23508.4,
+      "niftyMonthReturn": -0.58
     },
     {
       "month": "2025-02",
@@ -9145,7 +9737,9 @@
         "SRF"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 6
+      "lossesThisMonth": 6,
+      "niftyValue": 22124.7,
+      "niftyMonthReturn": -5.89
     },
     {
       "month": "2025-03",
@@ -9178,7 +9772,9 @@
         "CHOLAFIN"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 23519.35,
+      "niftyMonthReturn": 6.3
     },
     {
       "month": "2025-04",
@@ -9214,7 +9810,9 @@
         "SOLARINDS"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 24334.2,
+      "niftyMonthReturn": 3.46
     },
     {
       "month": "2025-05",
@@ -9249,7 +9847,9 @@
         "HAL"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 24750.7,
+      "niftyMonthReturn": 1.71
     },
     {
       "month": "2025-06",
@@ -9283,7 +9883,9 @@
         "AUBANK"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 25517.05,
+      "niftyMonthReturn": 3.1
     },
     {
       "month": "2025-07",
@@ -9319,7 +9921,9 @@
         "MCX"
       ],
       "winsThisMonth": 4,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 24768.35,
+      "niftyMonthReturn": -2.93
     },
     {
       "month": "2025-08",
@@ -9353,7 +9957,9 @@
         "PRESTIGE"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 24426.85,
+      "niftyMonthReturn": -1.38
     },
     {
       "month": "2025-09",
@@ -9388,7 +9994,9 @@
         "AUBANK"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 24611.1,
+      "niftyMonthReturn": 0.75
     },
     {
       "month": "2025-10",
@@ -9424,7 +10032,9 @@
         "IDFCFIRSTB"
       ],
       "winsThisMonth": 3,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 25722.1,
+      "niftyMonthReturn": 4.51
     },
     {
       "month": "2025-11",
@@ -9460,7 +10070,9 @@
         "FEDERALBNK"
       ],
       "winsThisMonth": 4,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 26202.95,
+      "niftyMonthReturn": 1.87
     },
     {
       "month": "2025-12",
@@ -9493,7 +10105,9 @@
         "BHARATFORG"
       ],
       "winsThisMonth": 0,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 26129.6,
+      "niftyMonthReturn": -0.28
     },
     {
       "month": "2026-01",
@@ -9528,7 +10142,9 @@
         "HINDZINC"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 2
+      "lossesThisMonth": 2,
+      "niftyValue": 25320.65,
+      "niftyMonthReturn": -3.1
     },
     {
       "month": "2026-02",
@@ -9561,7 +10177,9 @@
         "NMDC"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 25178.65,
+      "niftyMonthReturn": -0.56
     },
     {
       "month": "2026-03",
@@ -9598,7 +10216,9 @@
         "NMDC"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 4
+      "lossesThisMonth": 4,
+      "niftyValue": 22331.4,
+      "niftyMonthReturn": -11.31
     },
     {
       "month": "2026-04",
@@ -9631,7 +10251,9 @@
         "GLENMARK"
       ],
       "winsThisMonth": 2,
-      "lossesThisMonth": 0
+      "lossesThisMonth": 0,
+      "niftyValue": 23997.55,
+      "niftyMonthReturn": 7.46
     },
     {
       "month": "2026-05",
@@ -9667,7 +10289,9 @@
         "THERMAX"
       ],
       "winsThisMonth": 4,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 23547.75,
+      "niftyMonthReturn": -1.87
     },
     {
       "month": "2026-06",
@@ -9700,7 +10324,9 @@
         "MOTHERSON"
       ],
       "winsThisMonth": 1,
-      "lossesThisMonth": 1
+      "lossesThisMonth": 1,
+      "niftyValue": 23865.75,
+      "niftyMonthReturn": 1.35
     }
   ],
   "completedTrades": [
