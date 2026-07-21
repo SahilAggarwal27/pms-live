@@ -1,14 +1,14 @@
 name: 25-Year Backtest
 
 on:
-  workflow_dispatch:  # manual button
+  workflow_dispatch:
   
   schedule:
-    - cron: '0 3 1 * *'  # 1st of every month at 8:30 AM IST (3 AM UTC)
+    - cron: '0 3 1 * *'  # 1st of every month at 8:30 AM IST
   
   push:
     paths:
-      - 'backtest.py'  # auto-run when algo code changes
+      - 'backtest.py'
       - '.github/workflows/backtest.yml'
 
 permissions:
