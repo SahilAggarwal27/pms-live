@@ -1,0 +1,127 @@
+{
+  "_meta": "Real Indian equity trading cost regime timeline. All values in %. When govt changes any rate, add a new entry with startDate and re-trigger backtest. Order MUST be chronological.",
+  "_maintainedBy": "Update as govt announces changes. E.g., budget day rate changes.",
+  "regimes": [
+    {
+      "startDate": "2000-01-01",
+      "event": "Pre-STT era - full-service brokers dominant",
+      "brokeragePerSide": 0.50,
+      "sttBuyDelivery": 0.00,
+      "sttSellDelivery": 0.00,
+      "stampBuy": 0.02,
+      "gstOnBrokerage": 12.0,
+      "exchangeSebi": 0.0035,
+      "notes": "Service tax at 12%. Stamp duty state-varying (0.01-0.02% avg). Zerodha didn't exist."
+    },
+    {
+      "startDate": "2004-10-01",
+      "event": "STT introduced by Finance Act 2004 (P. Chidambaram)",
+      "brokeragePerSide": 0.50,
+      "sttBuyDelivery": 0.075,
+      "sttSellDelivery": 0.075,
+      "stampBuy": 0.02,
+      "gstOnBrokerage": 12.0,
+      "exchangeSebi": 0.0035,
+      "notes": "First-ever STT. Replaced long-term capital gains tax on equity."
+    },
+    {
+      "startDate": "2005-06-01",
+      "event": "STT increased to 0.10%",
+      "brokeragePerSide": 0.50,
+      "sttBuyDelivery": 0.10,
+      "sttSellDelivery": 0.10,
+      "stampBuy": 0.02,
+      "gstOnBrokerage": 12.0,
+      "exchangeSebi": 0.0035,
+      "notes": "Both sides delivery."
+    },
+    {
+      "startDate": "2006-06-01",
+      "event": "STT peak at 0.125%",
+      "brokeragePerSide": 0.45,
+      "sttBuyDelivery": 0.125,
+      "sttSellDelivery": 0.125,
+      "stampBuy": 0.02,
+      "gstOnBrokerage": 12.0,
+      "exchangeSebi": 0.0035,
+      "notes": "Peak STT rate. Brokers reducing rates due to competition."
+    },
+    {
+      "startDate": "2010-08-15",
+      "event": "Zerodha launched — discount brokerage era begins",
+      "brokeragePerSide": 0.35,
+      "sttBuyDelivery": 0.125,
+      "sttSellDelivery": 0.125,
+      "stampBuy": 0.02,
+      "gstOnBrokerage": 12.0,
+      "exchangeSebi": 0.0035,
+      "notes": "Full-service still dominant for PMS. Rate reflects HNI-negotiated broking."
+    },
+    {
+      "startDate": "2013-06-01",
+      "event": "STT reduced to 0.10% (still current in 2026)",
+      "brokeragePerSide": 0.30,
+      "sttBuyDelivery": 0.10,
+      "sttSellDelivery": 0.10,
+      "stampBuy": 0.02,
+      "gstOnBrokerage": 12.0,
+      "exchangeSebi": 0.0035,
+      "notes": "P. Chidambaram budget 2013. STT cut to boost trading volumes."
+    },
+    {
+      "startDate": "2015-06-01",
+      "event": "Service Tax raised to 14%",
+      "brokeragePerSide": 0.25,
+      "sttBuyDelivery": 0.10,
+      "sttSellDelivery": 0.10,
+      "stampBuy": 0.02,
+      "gstOnBrokerage": 14.0,
+      "exchangeSebi": 0.0035,
+      "notes": "Pre-GST era. Service tax on brokerage bumped."
+    },
+    {
+      "startDate": "2016-06-01",
+      "event": "Swachh Bharat + Krishi Kalyan cess added → 15%",
+      "brokeragePerSide": 0.22,
+      "sttBuyDelivery": 0.10,
+      "sttSellDelivery": 0.10,
+      "stampBuy": 0.02,
+      "gstOnBrokerage": 15.0,
+      "exchangeSebi": 0.0035,
+      "notes": "Service tax effective 15% including cesses."
+    },
+    {
+      "startDate": "2017-07-01",
+      "event": "GST replaces Service Tax at 18%",
+      "brokeragePerSide": 0.20,
+      "sttBuyDelivery": 0.10,
+      "sttSellDelivery": 0.10,
+      "stampBuy": 0.02,
+      "gstOnBrokerage": 18.0,
+      "exchangeSebi": 0.0035,
+      "notes": "Big change: 15% → 18% on brokerage."
+    },
+    {
+      "startDate": "2020-07-01",
+      "event": "Stamp Duty nationalized to 0.015% on buy only",
+      "brokeragePerSide": 0.15,
+      "sttBuyDelivery": 0.10,
+      "sttSellDelivery": 0.10,
+      "stampBuy": 0.015,
+      "gstOnBrokerage": 18.0,
+      "exchangeSebi": 0.0035,
+      "notes": "State-varying rates replaced by uniform central rate. Stamp on sell removed."
+    },
+    {
+      "startDate": "2023-10-01",
+      "event": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "brokeragePerSide": 0.10,
+      "sttBuyDelivery": 0.10,
+      "sttSellDelivery": 0.10,
+      "stampBuy": 0.015,
+      "gstOnBrokerage": 18.0,
+      "exchangeSebi": 0.00325,
+      "notes": "Delivery STT unchanged. Discount broking now default even for HNIs."
+    }
+  ]
+}
