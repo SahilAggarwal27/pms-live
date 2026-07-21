@@ -1,13 +1,652 @@
 {
-  "holdings": {},
-  "monthlyJournal": [],
+  "holdings": {
+    "THERMAX": {
+      "shares": 138,
+      "entryPrice": 4818.0,
+      "entryDate": "2026-07-21"
+    },
+    "CGPOWER": {
+      "shares": 737,
+      "entryPrice": 903.8,
+      "entryDate": "2026-07-21"
+    },
+    "BHARATFORG": {
+      "shares": 304,
+      "entryPrice": 2190.6,
+      "entryDate": "2026-07-21"
+    },
+    "SOLARINDS": {
+      "shares": 35,
+      "entryPrice": 18906.0,
+      "entryDate": "2026-07-21"
+    },
+    "LAURUSLABS": {
+      "shares": 421,
+      "entryPrice": 1582.1,
+      "entryDate": "2026-07-21"
+    },
+    "CUMMINSIND": {
+      "shares": 120,
+      "entryPrice": 5521.5,
+      "entryDate": "2026-07-21"
+    },
+    "OFSS": {
+      "shares": 57,
+      "entryPrice": 11607.0,
+      "entryDate": "2026-07-21"
+    },
+    "AARTIIND": {
+      "shares": 1340,
+      "entryPrice": 497.15,
+      "entryDate": "2026-07-21"
+    },
+    "AUROPHARMA": {
+      "shares": 429,
+      "entryPrice": 1551.2,
+      "entryDate": "2026-07-21"
+    },
+    "MOTHERSON": {
+      "shares": 4654,
+      "entryPrice": 143.23,
+      "entryDate": "2026-07-21"
+    },
+    "NAVINFLUOR": {
+      "shares": 85,
+      "entryPrice": 7840.0,
+      "entryDate": "2026-07-21"
+    },
+    "SIEMENS": {
+      "shares": 182,
+      "entryPrice": 3643.7,
+      "entryDate": "2026-07-21"
+    },
+    "JBCHEPHARM": {
+      "shares": 276,
+      "entryPrice": 2408.9,
+      "entryDate": "2026-07-21"
+    },
+    "EXIDEIND": {
+      "shares": 1506,
+      "entryPrice": 442.55,
+      "entryDate": "2026-07-21"
+    },
+    "FEDERALBNK": {
+      "shares": 1890,
+      "entryPrice": 352.65,
+      "entryDate": "2026-07-21"
+    }
+  },
+  "monthlyJournal": [
+    {
+      "month": "2026-07",
+      "date": "2026-07-21",
+      "nav": 10000000,
+      "navCr": 1.0,
+      "monthReturn": 0.0,
+      "totalReturn": 0.0,
+      "cash": 25483,
+      "holdingsCount": 15,
+      "bought": [
+        "THERMAX",
+        "CGPOWER",
+        "BHARATFORG",
+        "SOLARINDS",
+        "LAURUSLABS",
+        "CUMMINSIND",
+        "OFSS",
+        "AARTIIND",
+        "AUROPHARMA",
+        "MOTHERSON",
+        "NAVINFLUOR",
+        "SIEMENS",
+        "JBCHEPHARM",
+        "EXIDEIND",
+        "FEDERALBNK"
+      ],
+      "sold": [],
+      "held": [],
+      "winsThisMonth": 0,
+      "lossesThisMonth": 0
+    }
+  ],
   "completedTrades": [],
-  "navHistory": [],
-  "startDate": null,
-  "lastExecuteDate": null,
-  "lastRun": null,
-  "todayExecutedBuys": [],
+  "navHistory": [
+    {
+      "date": "2026-07-21",
+      "nav": 10000000.0
+    }
+  ],
+  "startDate": "2026-07-21",
+  "lastExecuteDate": "2026-07-21",
+  "lastRun": "2026-07-21T05:07:00.222092",
+  "todayExecutedBuys": [
+    "THERMAX",
+    "CGPOWER",
+    "BHARATFORG",
+    "SOLARINDS",
+    "LAURUSLABS",
+    "CUMMINSIND",
+    "OFSS",
+    "AARTIIND",
+    "AUROPHARMA",
+    "MOTHERSON",
+    "NAVINFLUOR",
+    "SIEMENS",
+    "JBCHEPHARM",
+    "EXIDEIND",
+    "FEDERALBNK"
+  ],
   "todayExecutedSells": [],
-  "prices": {},
+  "prices": {
+    "PERSISTENT": {
+      "ticker": "PERSISTENT",
+      "cmp": 5213.9,
+      "dma200": 5466.44,
+      "ret6m": -0.18278888266175575,
+      "ret1m": 0.07970592303660173
+    },
+    "COFORGE": {
+      "ticker": "COFORGE",
+      "cmp": 1517.9,
+      "dma200": 1514.91,
+      "ret6m": -0.12167250022179565,
+      "ret1m": 0.037312904916297684,
+      "score": -0.1403289526799445
+    },
+    "MPHASIS": {
+      "ticker": "MPHASIS",
+      "cmp": 2403.0,
+      "dma200": 2446.93,
+      "ret6m": -0.14616114704476768,
+      "ret1m": 0.0821557383943281
+    },
+    "KPITTECH": {
+      "ticker": "KPITTECH",
+      "cmp": 566.8,
+      "dma200": 917.03,
+      "ret6m": -0.5115713468825818,
+      "ret1m": -0.2506610662366986
+    },
+    "TATAELXSI": {
+      "ticker": "TATAELXSI",
+      "cmp": 3503.3,
+      "dma200": 4657.99,
+      "ret6m": -0.36381672978024027,
+      "ret1m": -0.13828556171980688
+    },
+    "OFSS": {
+      "ticker": "OFSS",
+      "cmp": 11607.0,
+      "dma200": 8291.78,
+      "ret6m": 0.500034738311347,
+      "ret1m": 0.20423302381075903,
+      "score": 0.3979182264059675
+    },
+    "BOSCHLTD": {
+      "ticker": "BOSCHLTD",
+      "cmp": 40825.0,
+      "dma200": 36829.7,
+      "ret6m": 0.08997463623014279,
+      "ret1m": 0.015673591242691964,
+      "score": 0.08213784060879681
+    },
+    "MRF": {
+      "ticker": "MRF",
+      "cmp": 132600.0,
+      "dma200": 140775.66,
+      "ret6m": -0.0700499065765281,
+      "ret1m": 0.03254260026041078
+    },
+    "MOTHERSON": {
+      "ticker": "MOTHERSON",
+      "cmp": 143.23,
+      "dma200": 122.62,
+      "ret6m": 0.2812629011359653,
+      "ret1m": -0.016256511586132616,
+      "score": 0.2893911569290316
+    },
+    "EXIDEIND": {
+      "ticker": "EXIDEIND",
+      "cmp": 442.55,
+      "dma200": 359.97,
+      "ret6m": 0.2990673109861586,
+      "ret1m": 0.16604360719431854,
+      "score": 0.2160455073889993
+    },
+    "BALKRISIND": {
+      "ticker": "BALKRISIND",
+      "cmp": 2063.9,
+      "dma200": 2283.49,
+      "ret6m": -0.1536532165643707,
+      "ret1m": -0.0805888071052906
+    },
+    "BHARATFORG": {
+      "ticker": "BHARATFORG",
+      "cmp": 2190.6,
+      "dma200": 1670.12,
+      "ret6m": 0.554489973089596,
+      "ret1m": 0.04441782775197578,
+      "score": 0.5322810592136081
+    },
+    "MUTHOOTFIN": {
+      "ticker": "MUTHOOTFIN",
+      "cmp": 3031.1,
+      "dma200": 3424.42,
+      "ret6m": -0.2234116196402759,
+      "ret1m": -0.030389302016024633
+    },
+    "CHOLAFIN": {
+      "ticker": "CHOLAFIN",
+      "cmp": 1757.6,
+      "dma200": 1649.1,
+      "ret6m": 0.03514274439314358,
+      "ret1m": 0.03791186385159584,
+      "score": 0.016186812467345657
+    },
+    "LICHSGFIN": {
+      "ticker": "LICHSGFIN",
+      "cmp": 548.15,
+      "dma200": 541.45,
+      "ret6m": 0.027171365757775012,
+      "ret1m": -0.0031823966581283614,
+      "score": 0.028762564086839193
+    },
+    "MFSL": {
+      "ticker": "MFSL",
+      "cmp": 1531.1,
+      "dma200": 1648.44,
+      "ret6m": -0.07301566819104899,
+      "ret1m": -0.08278923452929032
+    },
+    "PFC": {
+      "ticker": "PFC",
+      "cmp": 415.55,
+      "dma200": 399.44,
+      "ret6m": 0.13658036828005105,
+      "ret1m": -0.05760295659576231,
+      "score": 0.1653818465779322
+    },
+    "RECLTD": {
+      "ticker": "RECLTD",
+      "cmp": 361.05,
+      "dma200": 351.42,
+      "ret6m": -0.002996180825925898,
+      "ret1m": -0.023793478884204466,
+      "score": 0.008900558616176335
+    },
+    "LUPIN": {
+      "ticker": "LUPIN",
+      "cmp": 2491.0,
+      "dma200": 2188.97,
+      "ret6m": 0.15205552736521644,
+      "ret1m": 0.06695935590520619,
+      "score": 0.11857584941261334
+    },
+    "AUROPHARMA": {
+      "ticker": "AUROPHARMA",
+      "cmp": 1551.2,
+      "dma200": 1292.77,
+      "ret6m": 0.3227594574569277,
+      "ret1m": 0.03565222366331877,
+      "score": 0.3049333456252683
+    },
+    "GLENMARK": {
+      "ticker": "GLENMARK",
+      "cmp": 2226.5,
+      "dma200": 2088.56,
+      "ret6m": 0.11286052598535146,
+      "ret1m": 0.005827566757612868,
+      "score": 0.10994674260654502
+    },
+    "BIOCON": {
+      "ticker": "BIOCON",
+      "cmp": 437.6,
+      "dma200": 387.66,
+      "ret6m": 0.16506675868503962,
+      "ret1m": 0.04042584730959087,
+      "score": 0.14485383503024418
+    },
+    "ALKEM": {
+      "ticker": "ALKEM",
+      "cmp": 5649.0,
+      "dma200": 5511.49,
+      "ret6m": -0.024322875140775135,
+      "ret1m": 0.05127012189448221,
+      "score": -0.04995793608801624
+    },
+    "LAURUSLABS": {
+      "ticker": "LAURUSLABS",
+      "cmp": 1582.1,
+      "dma200": 1126.18,
+      "ret6m": 0.490237357132862,
+      "ret1m": 0.10181763958917256,
+      "score": 0.4393285373382757
+    },
+    "JBCHEPHARM": {
+      "ticker": "JBCHEPHARM",
+      "cmp": 2408.9,
+      "dma200": 1964.66,
+      "ret6m": 0.2847886044192329,
+      "ret1m": 0.09570157031783033,
+      "score": 0.23693781926031776
+    },
+    "ABBOTINDIA": {
+      "ticker": "ABBOTINDIA",
+      "cmp": 28405.0,
+      "dma200": 27528.03,
+      "ret6m": 0.023419203747072626,
+      "ret1m": 0.08353995803929037,
+      "score": -0.01835077527257256
+    },
+    "SIEMENS": {
+      "ticker": "SIEMENS",
+      "cmp": 3643.7,
+      "dma200": 3329.49,
+      "ret6m": 0.2340648346060188,
+      "ret1m": -0.03293701790116177,
+      "score": 0.2505333435565997
+    },
+    "CUMMINSIND": {
+      "ticker": "CUMMINSIND",
+      "cmp": 5521.5,
+      "dma200": 4717.8,
+      "ret6m": 0.37681254795255414,
+      "ret1m": -0.05075930226808956,
+      "score": 0.4021921990865989
+    },
+    "THERMAX": {
+      "ticker": "THERMAX",
+      "cmp": 4818.0,
+      "dma200": 3575.1,
+      "ret6m": 0.6467568294896267,
+      "ret1m": -0.005391226005213912,
+      "score": 0.6494524424922337
+    },
+    "HAL": {
+      "ticker": "HAL",
+      "cmp": 4466.7,
+      "dma200": 4353.6,
+      "ret6m": 0.016960077338664226,
+      "ret1m": 0.013293731167177247,
+      "score": 0.010313211755075602
+    },
+    "BEL": {
+      "ticker": "BEL",
+      "cmp": 407.15,
+      "dma200": 419.98,
+      "ret6m": -0.009488102898378648,
+      "ret1m": -0.05643106860606173
+    },
+    "CGPOWER": {
+      "ticker": "CGPOWER",
+      "cmp": 903.8,
+      "dma200": 754.15,
+      "ret6m": 0.5352453512975062,
+      "ret1m": -0.061035791122607486,
+      "score": 0.5657632468588099
+    },
+    "DIXON": {
+      "ticker": "DIXON",
+      "cmp": 14238.0,
+      "dma200": 12438.74,
+      "ret6m": 0.291545718432511,
+      "ret1m": 0.1541828793774318,
+      "score": 0.21445427874379508
+    },
+    "PIIND": {
+      "ticker": "PIIND",
+      "cmp": 2688.2,
+      "dma200": 3117.9,
+      "ret6m": -0.17604053172256084,
+      "ret1m": -0.041161414775540583
+    },
+    "DEEPAKNTR": {
+      "ticker": "DEEPAKNTR",
+      "cmp": 1713.3,
+      "dma200": 1639.14,
+      "ret6m": 0.09546038927629485,
+      "ret1m": 0.04189979529987742,
+      "score": 0.07451049162635615
+    },
+    "NAVINFLUOR": {
+      "ticker": "NAVINFLUOR",
+      "cmp": 7840.0,
+      "dma200": 6312.83,
+      "ret6m": 0.28416062309021295,
+      "ret1m": 0.03539355520338083,
+      "score": 0.26646384548852253
+    },
+    "SRF": {
+      "ticker": "SRF",
+      "cmp": 2896.7,
+      "dma200": 2782.78,
+      "ret6m": -0.020406055395118305,
+      "ret1m": 0.06468923554917994,
+      "score": -0.05275067316970827
+    },
+    "ATUL": {
+      "ticker": "ATUL",
+      "cmp": 6216.5,
+      "dma200": 6270.49,
+      "ret6m": 0.04067192754772653,
+      "ret1m": -0.036230588377076156
+    },
+    "AARTIIND": {
+      "ticker": "AARTIIND",
+      "cmp": 497.15,
+      "dma200": 422.29,
+      "ret6m": 0.40200221471895636,
+      "ret1m": 0.02610937852731543,
+      "score": 0.38894752545529865
+    },
+    "VINATIORGA": {
+      "ticker": "VINATIORGA",
+      "cmp": 1328.3,
+      "dma200": 1471.27,
+      "ret6m": -0.15647419189946743,
+      "ret1m": -0.004198197378695867
+    },
+    "COROMANDEL": {
+      "ticker": "COROMANDEL",
+      "cmp": 2023.2,
+      "dma200": 2119.23,
+      "ret6m": -0.12424509052573018,
+      "ret1m": 0.004947351698897595
+    },
+    "SOLARINDS": {
+      "ticker": "SOLARINDS",
+      "cmp": 18906.0,
+      "dma200": 14711.69,
+      "ret6m": 0.47300350603817676,
+      "ret1m": 0.04730777753157556,
+      "score": 0.449349617272389
+    },
+    "PAGEIND": {
+      "ticker": "PAGEIND",
+      "cmp": 40085.0,
+      "dma200": 36890.19,
+      "ret6m": 0.1768211050175128,
+      "ret1m": 0.0027517198248905306,
+      "score": 0.17544524510506754
+    },
+    "HAVELLS": {
+      "ticker": "HAVELLS",
+      "cmp": 1216.5,
+      "dma200": 1325.35,
+      "ret6m": -0.14010019656197747,
+      "ret1m": 0.034174912440005256
+    },
+    "VOLTAS": {
+      "ticker": "VOLTAS",
+      "cmp": 1358.4,
+      "dma200": 1369.6,
+      "ret6m": -0.03452790699550867,
+      "ret1m": 0.01116569876983764
+    },
+    "CROMPTON": {
+      "ticker": "CROMPTON",
+      "cmp": 259.25,
+      "dma200": 263.87,
+      "ret6m": 0.03204619088198646,
+      "ret1m": -0.05812897366030878
+    },
+    "JUBLFOOD": {
+      "ticker": "JUBLFOOD",
+      "cmp": 423.4,
+      "dma200": 507.06,
+      "ret6m": -0.19552080308460495,
+      "ret1m": 0.013374985464751132
+    },
+    "VBL": {
+      "ticker": "VBL",
+      "cmp": 470.6,
+      "dma200": 473.38,
+      "ret6m": -0.049115815064543766,
+      "ret1m": -0.08256166311664459
+    },
+    "TRENT": {
+      "ticker": "TRENT",
+      "cmp": 2920.5,
+      "dma200": 3269.01,
+      "ret6m": 0.12501555289446542,
+      "ret1m": -0.08899496053486433
+    },
+    "FEDERALBNK": {
+      "ticker": "FEDERALBNK",
+      "cmp": 352.65,
+      "dma200": 276.17,
+      "ret6m": 0.2608150822512523,
+      "ret1m": 0.09044527072366759,
+      "score": 0.21559244688941848
+    },
+    "AUBANK": {
+      "ticker": "AUBANK",
+      "cmp": 996.7,
+      "dma200": 961.47,
+      "ret6m": -0.02375238719825057,
+      "ret1m": -0.046265761793237936,
+      "score": -0.0006195063016316005
+    },
+    "IDFCFIRSTB": {
+      "ticker": "IDFCFIRSTB",
+      "cmp": 82.05,
+      "dma200": 75.9,
+      "ret6m": -0.012872950667319638,
+      "ret1m": 0.016854635880561908,
+      "score": -0.021300268607600592
+    },
+    "BANKBARODA": {
+      "ticker": "BANKBARODA",
+      "cmp": 250.55,
+      "dma200": 272.52,
+      "ret6m": -0.1578909606150477,
+      "ret1m": -0.12410412954432415
+    },
+    "GODREJPROP": {
+      "ticker": "GODREJPROP",
+      "cmp": 2136.1,
+      "dma200": 1887.04,
+      "ret6m": 0.13081000405307042,
+      "ret1m": 0.189431521029787,
+      "score": 0.03609424353817692
+    },
+    "OBEROIRLTY": {
+      "ticker": "OBEROIRLTY",
+      "cmp": 1879.0,
+      "dma200": 1642.82,
+      "ret6m": 0.14284746969771445,
+      "ret1m": 0.11612711612711624,
+      "score": 0.08478391163415633
+    },
+    "PRESTIGE": {
+      "ticker": "PRESTIGE",
+      "cmp": 1673.4,
+      "dma200": 1511.69,
+      "ret6m": 0.09860824452274364,
+      "ret1m": 0.11761168092111118,
+      "score": 0.039802404062188046
+    },
+    "IEX": {
+      "ticker": "IEX",
+      "cmp": 123.94,
+      "dma200": 128.36,
+      "ret6m": -0.069969611684502,
+      "ret1m": -0.013844667883071926
+    },
+    "CDSL": {
+      "ticker": "CDSL",
+      "cmp": 1369.5,
+      "dma200": 1369.78,
+      "ret6m": -0.03646920842875079,
+      "ret1m": 0.008532611436487869
+    },
+    "MCX": {
+      "ticker": "MCX",
+      "cmp": 2818.4,
+      "dma200": 2457.47,
+      "ret6m": 0.16031284575699867,
+      "ret1m": -0.018115942645323013,
+      "score": 0.16937081707966017
+    },
+    "INDIAMART": {
+      "ticker": "INDIAMART",
+      "cmp": 1957.0,
+      "dma200": 2112.31,
+      "ret6m": -0.1203519526281771,
+      "ret1m": -0.0633674301387841
+    },
+    "NAUKRI": {
+      "ticker": "NAUKRI",
+      "cmp": 1216.0,
+      "dma200": 1159.01,
+      "ret6m": -0.07494116622280933,
+      "ret1m": 0.23508203247847748,
+      "score": -0.19248218246204807
+    },
+    "GAIL": {
+      "ticker": "GAIL",
+      "cmp": 175.57,
+      "dma200": 165.17,
+      "ret6m": 0.09909266383265214,
+      "ret1m": -0.009757448943946367,
+      "score": 0.10397138830462532
+    },
+    "IGL": {
+      "ticker": "IGL",
+      "cmp": 155.0,
+      "dma200": 175.15,
+      "ret6m": -0.12146623864068595,
+      "ret1m": -0.08683872402583193
+    },
+    "TATAPOWER": {
+      "ticker": "TATAPOWER",
+      "cmp": 384.35,
+      "dma200": 389.91,
+      "ret6m": 0.06478974335995513,
+      "ret1m": -0.04734169172292502
+    },
+    "HINDZINC": {
+      "ticker": "HINDZINC",
+      "cmp": 526.0,
+      "dma200": 558.53,
+      "ret6m": -0.16015604481683854,
+      "ret1m": -0.06663115714016032
+    },
+    "JINDALSTEL": {
+      "ticker": "JINDALSTEL",
+      "cmp": 1037.5,
+      "dma200": 1117.38,
+      "ret6m": -0.005177892691196728,
+      "ret1m": -0.08807238768768966
+    },
+    "NMDC": {
+      "ticker": "NMDC",
+      "cmp": 83.21,
+      "dma200": 80.99,
+      "ret6m": 0.03625204870331933,
+      "ret1m": -0.05892331138163831,
+      "score": 0.06571370439413848
+    }
+  },
   "note": "This file is auto-updated by GitHub Actions daily at 9:45 AM IST"
 }
