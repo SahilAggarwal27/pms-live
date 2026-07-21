@@ -1,0 +1,32 @@
+name: Honest+ Backtest (V2-Light)
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 5 * * 0'  # Sundays 10:30 AM IST
+  push:
+    paths:
+      - 'honest_plus.py'
+      - '.github/workflows/honest-plus.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install "yfinance>=0.2.40" pandas numpy curl_cffi
+      - run: python honest_plus.py
+      - name: Commit results
+        run: |
+          git config user.name "PMS Honest+ Bot"
+          git config user.email "bot@github.com"
+          git add backtest_honest_plus.json
+          git diff --staged --quiet || git commit -m "Honest+ $(date -u +%Y-%m-%d)"
+          git push
