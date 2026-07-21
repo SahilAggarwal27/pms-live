@@ -1,0 +1,28 @@
+name: Daily PMS Algo
+
+on:
+  schedule:
+    - cron: '15 4 * * 1-5'  # 9:45 AM IST every weekday
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run-algo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install yfinance pandas numpy
+      - run: python algo.py
+      - name: Commit data.json
+        run: |
+          git config user.name "PMS Algo Bot"
+          git config user.email "bot@github.com"
+          git add data.json
+          git diff --staged --quiet || git commit -m "Auto-execute $(date -u +%Y-%m-%d)"
+          git push
