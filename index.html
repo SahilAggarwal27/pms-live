@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"/><title>PMS Algo - Editable Costs</title>
+<head><meta charset="UTF-8"/><title>PMS Algo - Historical Cost Regimes</title>
 <style>
-:root{--bg:#0a0e1a;--bg2:#131929;--bg3:#1a2233;--text:#e2e8f0;--muted:#94a3b8;--border:#2a3447;--green:#10b981;--red:#ef4444;--yellow:#f59e0b;--accent:#3b82f6;--purple:#8b5cf6;--teal:#0d9488;--amber:#f59e0b}
+:root{--bg:#0a0e1a;--bg2:#131929;--bg3:#1a2233;--text:#e2e8f0;--muted:#94a3b8;--border:#2a3447;--green:#10b981;--red:#ef4444;--yellow:#f59e0b;--accent:#3b82f6;--purple:#8b5cf6;--teal:#0d9488;--amber:#f59e0b;--pink:#ec4899}
 *{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);margin:0;padding:16px;line-height:1.5;font-size:13px}
 .container{max-width:1500px;margin:0 auto}h1{font-size:22px;margin:0 0 4px}h2{font-size:13px;margin:20px 0 8px;color:var(--accent);text-transform:uppercase;letter-spacing:1px}
 .exec-banner{background:linear-gradient(135deg,#065f46,#059669);border:2px solid var(--green);border-radius:12px;padding:14px 18px;margin-bottom:14px;font-size:14px;font-weight:600}
@@ -25,6 +25,20 @@
 .bt-val{font-size:15px;font-weight:800;margin-top:2px}
 .bt-val.hero{font-size:22px}
 .warn-note{background:rgba(0,0,0,0.3);border-radius:6px;padding:6px 10px;margin-top:8px;font-size:10px;color:#fde68a;font-weight:500}
+.regime-panel{background:linear-gradient(135deg,#312e81,#831843);border:2px solid var(--pink);border-radius:10px;padding:16px;margin-bottom:14px}
+.regime-title{font-size:11px;color:#fbcfe8;letter-spacing:2px;font-weight:700;margin-bottom:10px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.regime-current{background:rgba(0,0,0,0.4);border-radius:8px;padding:10px 12px;margin-bottom:10px;font-size:12px}
+.regime-current .lbl{font-size:9px;color:#fbcfe8;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.regime-current .event{font-size:14px;font-weight:700;color:white}
+.regime-current .rates{font-size:11px;color:#fbcfe8;margin-top:4px}
+.regime-timeline{display:flex;overflow-x:auto;gap:6px;padding:6px 0}
+.regime-node{flex:0 0 auto;background:rgba(0,0,0,0.35);border-radius:6px;padding:8px 10px;min-width:170px;font-size:10px;border-left:3px solid var(--pink)}
+.regime-node.current{border-left-color:var(--green);background:rgba(16,185,129,0.15)}
+.regime-node.future{border-left-color:var(--yellow);opacity:0.6}
+.regime-node .date{font-size:10px;color:#fbcfe8;font-weight:700}
+.regime-node .event{font-size:11px;font-weight:700;color:white;margin-top:2px;line-height:1.3}
+.regime-node .rates{font-size:9px;color:#fbcfe8;margin-top:4px;line-height:1.4}
+.regime-actions{margin-top:10px;display:flex;gap:6px;flex-wrap:wrap}
 .cost-panel{background:linear-gradient(135deg,#1e293b,#0f172a);border:2px solid var(--amber);border-radius:10px;padding:16px;margin-bottom:14px}
 .cost-title{font-size:11px;color:var(--amber);letter-spacing:2px;font-weight:700;margin-bottom:10px}
 .cost-inputs{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:12px}
@@ -52,7 +66,7 @@
 .signal-item b{font-size:12px}.buy-item{border-left:3px solid var(--green)}.sell-item{border-left:3px solid var(--red)}
 .green{color:var(--green)}.red{color:var(--red)}.muted{color:var(--muted)}.yellow{color:var(--yellow)}.purple{color:var(--purple)}.teal{color:var(--teal)}.amber{color:var(--amber)}
 .btn{background:var(--accent);color:white;border:none;padding:8px 14px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600;text-decoration:none;display:inline-block}
-.btn-small{padding:5px 10px;font-size:11px}.btn-red{background:var(--red)}.btn-gray{background:var(--bg3);border:1px solid var(--border);color:var(--text)}.btn-amber{background:var(--amber)}
+.btn-small{padding:5px 10px;font-size:11px}.btn-red{background:var(--red)}.btn-gray{background:var(--bg3);border:1px solid var(--border);color:var(--text)}.btn-amber{background:var(--amber)}.btn-pink{background:var(--pink)}
 .portfolio-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:14px}
 table{width:100%;border-collapse:collapse;font-size:11px}
 th,td{padding:6px 8px;text-align:right;border-bottom:1px solid var(--border)}
@@ -88,7 +102,7 @@ tr:hover{background:rgba(255,255,255,0.02)}
 <body><div class="container">
 
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
-<h1>🤖 PMS Algo — Editable Costs · Raw · Realistic · Live</h1>
+<h1>🤖 PMS Algo — Historical Cost Regimes · Backtest · Live</h1>
 <span class="server-badge live" id="serverBadge">☁️ SERVER ALGO</span>
 </div>
 <div style="color:var(--muted);font-size:12px;margin-bottom:14px" id="todayDate">Loading...</div>
@@ -98,56 +112,51 @@ tr:hover{background:rgba(255,255,255,0.02)}
   <div class="msg" id="execMsg">Loading state...</div>
 </div>
 
-<!-- COST CALCULATOR PANEL -->
+<!-- HISTORICAL COST REGIME PANEL -->
+<div class="regime-panel">
+  <div class="regime-title">
+    <span>📜 HISTORICAL COST REGIMES — STT, Stamp, GST, Brokerage changes across 25 years</span>
+    <span id="regimeCount" style="opacity:0.7">—</span>
+  </div>
+  <div class="regime-current" id="regimeCurrent">
+    <div class="lbl">CURRENTLY ACTIVE REGIME (today)</div>
+    <div class="event" id="regimeCurrentEvent">Loading...</div>
+    <div class="rates" id="regimeCurrentRates">—</div>
+  </div>
+  <div class="regime-timeline" id="regimeTimeline"></div>
+  <div class="regime-actions">
+    <a class="btn btn-small btn-pink" href="https://github.com/SahilAggarwal27/pms-live/edit/main/cost_history.json" target="_blank">✏️ Edit cost_history.json (add future changes)</a>
+    <a class="btn btn-small btn-gray" href="https://github.com/SahilAggarwal27/pms-live/actions/workflows/realistic-backtest.yml" target="_blank">🔄 Re-run Backtest with new costs</a>
+    <a class="btn btn-small btn-gray" href="https://github.com/SahilAggarwal27/pms-live/blob/main/cost_history.json" target="_blank">📄 View full regime source</a>
+  </div>
+</div>
+
+<!-- COST CALCULATOR -->
 <div class="cost-panel">
-  <div class="cost-title">⚙️ EDITABLE COST INPUTS (change any value → CAGR updates live)</div>
+  <div class="cost-title">⚙️ WHAT-IF COST CALCULATOR (change values → CAGR updates live)</div>
   <div class="cost-inputs">
-    <div class="cost-input-cell">
-      <label>Brokerage (each side)</label>
-      <input type="number" step="0.05" min="0" max="5" id="inBrokerage" value="0.30" oninput="recalcCosts()"/>
-      <div class="hint">%. Zerodha ~0.03, Full-service ~0.30</div>
-    </div>
-    <div class="cost-input-cell">
-      <label>Slippage (each side)</label>
-      <input type="number" step="0.05" min="0" max="5" id="inSlippage" value="0.30" oninput="recalcCosts()"/>
-      <div class="hint">%. Impact on small caps</div>
-    </div>
-    <div class="cost-input-cell">
-      <label>STT (on sell only)</label>
-      <input type="number" step="0.01" min="0" max="1" id="inSTT" value="0.10" oninput="recalcCosts()"/>
-      <div class="hint">%. Statutory 0.1% sell</div>
-    </div>
-    <div class="cost-input-cell">
-      <label>Stamp Duty (buy)</label>
-      <input type="number" step="0.005" min="0" max="1" id="inStamp" value="0.015" oninput="recalcCosts()"/>
-      <div class="hint">%. 0.015% buy side</div>
-    </div>
-    <div class="cost-input-cell">
-      <label>GST (on brokerage)</label>
-      <input type="number" step="1" min="0" max="30" id="inGST" value="18" oninput="recalcCosts()"/>
-      <div class="hint">%. 18% GST rate</div>
-    </div>
-    <div class="cost-input-cell">
-      <label>Exchange + SEBI (each side)</label>
-      <input type="number" step="0.001" min="0" max="0.5" id="inExch" value="0.004" oninput="recalcCosts()"/>
-      <div class="hint">%. NSE txn charges</div>
-    </div>
+    <div class="cost-input-cell"><label>Brokerage (each side)</label><input type="number" step="0.05" min="0" max="5" id="inBrokerage" value="0.30" oninput="recalcCosts()"/><div class="hint">%. Zerodha ~0.03, Full-service ~0.30</div></div>
+    <div class="cost-input-cell"><label>Slippage (each side)</label><input type="number" step="0.05" min="0" max="5" id="inSlippage" value="0.30" oninput="recalcCosts()"/><div class="hint">%. Impact on small caps</div></div>
+    <div class="cost-input-cell"><label>STT (each side)</label><input type="number" step="0.01" min="0" max="1" id="inSTT" value="0.10" oninput="recalcCosts()"/><div class="hint">%. 0.1% delivery both sides</div></div>
+    <div class="cost-input-cell"><label>Stamp Duty (buy)</label><input type="number" step="0.005" min="0" max="1" id="inStamp" value="0.015" oninput="recalcCosts()"/><div class="hint">%. 0.015% buy since Jul 2020</div></div>
+    <div class="cost-input-cell"><label>GST (on brokerage)</label><input type="number" step="1" min="0" max="30" id="inGST" value="18" oninput="recalcCosts()"/><div class="hint">%. 18% since Jul 2017</div></div>
+    <div class="cost-input-cell"><label>Exchange + SEBI</label><input type="number" step="0.001" min="0" max="0.5" id="inExch" value="0.004" oninput="recalcCosts()"/><div class="hint">%. NSE txn charges</div></div>
   </div>
   <div class="cost-summary">
-    <div class="cost-summary-cell"><div class="lbl">Total Per-Side Cost</div><div class="val amber" id="totalPerSide">—</div></div>
+    <div class="cost-summary-cell"><div class="lbl">Per-Side Cost</div><div class="val amber" id="totalPerSide">—</div></div>
     <div class="cost-summary-cell"><div class="lbl">Round-Trip Cost</div><div class="val amber" id="totalRoundTrip">—</div></div>
     <div class="cost-summary-cell"><div class="lbl">Annual Turnover</div><div class="val" id="annualTurnover">—</div></div>
     <div class="cost-summary-cell"><div class="lbl">Annual Cost Drag</div><div class="val red" id="annualDrag">—</div></div>
   </div>
   <div class="cost-btn">
-    <button class="btn btn-small btn-amber" onclick="resetCosts()">↺ Reset to Defaults</button>
-    <button class="btn btn-small btn-gray" onclick="presetZerodha()">📊 Preset: Zerodha (0.03%)</button>
-    <button class="btn btn-small btn-gray" onclick="presetFullservice()">📊 Preset: Full-Service (0.30%)</button>
-    <button class="btn btn-small btn-gray" onclick="presetPMS()">📊 Preset: PMS Bulk (0.10%)</button>
+    <button class="btn btn-small btn-amber" onclick="resetCosts()">↺ Reset (Current 2026)</button>
+    <button class="btn btn-small btn-gray" onclick="usePeriodCosts()">📜 Use Today's Regime</button>
+    <button class="btn btn-small btn-gray" onclick="presetZerodha()">📊 Zerodha (0.03%)</button>
+    <button class="btn btn-small btn-gray" onclick="presetFullservice()">📊 Full-Service (0.30%)</button>
   </div>
 </div>
 
-<!-- 3 HEROS: RAW | REALISTIC | YOUR CUSTOM -->
+<!-- 3 HEROS -->
 <div class="hero-row">
   <div class="backtest-hero raw" id="rawHero" style="display:none">
     <div class="bt-title"><span>🎯 RAW <span class="bt-tag">SURVIVORSHIP</span></span><span id="rawPeriod" style="opacity:0.7">—</span></div>
@@ -159,11 +168,11 @@ tr:hover{background:rgba(255,255,255,0.02)}
       <div class="bt-cell"><div class="bt-lbl">Trades</div><div class="bt-val" id="rawTrades">—</div></div>
       <div class="bt-cell"><div class="bt-lbl">₹1Cr →</div><div class="bt-val" id="rawFinal">—</div></div>
     </div>
-    <div class="warn-note">⚠️ No costs. Survivor bias. Not defensible.</div>
+    <div class="warn-note">⚠️ Zero costs. Survivor bias.</div>
   </div>
 
   <div class="backtest-hero realistic" id="realHero" style="display:none">
-    <div class="bt-title"><span>✅ REALISTIC (1.5%) <span class="bt-tag">BASELINE</span></span><span id="realPeriod" style="opacity:0.7">—</span></div>
+    <div class="bt-title"><span>✅ REALISTIC <span class="bt-tag">HISTORICAL COSTS</span></span><span id="realPeriod" style="opacity:0.7">—</span></div>
     <div class="bt-grid">
       <div class="bt-cell"><div class="bt-lbl">CAGR</div><div class="bt-val hero" id="realCagr">—</div></div>
       <div class="bt-cell"><div class="bt-lbl">Alpha</div><div class="bt-val" id="realAlpha">—</div></div>
@@ -172,11 +181,11 @@ tr:hover{background:rgba(255,255,255,0.02)}
       <div class="bt-cell"><div class="bt-lbl">Trades</div><div class="bt-val" id="realTrades">—</div></div>
       <div class="bt-cell"><div class="bt-lbl">₹1Cr →</div><div class="bt-val" id="realFinal">—</div></div>
     </div>
-    <div class="warn-note" id="realNote">✓ Baseline: 0.75% per side</div>
+    <div class="warn-note" id="realNote">✓ Period-specific STT/GST/stamp/brokerage</div>
   </div>
 
   <div class="backtest-hero custom" id="customHero">
-    <div class="bt-title"><span>🎯 YOUR CUSTOM COSTS <span class="bt-tag">LIVE-ADJUSTED</span></span><span style="opacity:0.7" id="customPeriod">—</span></div>
+    <div class="bt-title"><span>🎯 YOUR CUSTOM <span class="bt-tag">WHAT-IF</span></span><span id="customPeriod" style="opacity:0.7">—</span></div>
     <div class="bt-grid">
       <div class="bt-cell"><div class="bt-lbl">CAGR (Adj)</div><div class="bt-val hero" id="customCagr">—</div></div>
       <div class="bt-cell"><div class="bt-lbl">vs Realistic</div><div class="bt-val" id="customDelta">—</div></div>
@@ -185,7 +194,7 @@ tr:hover{background:rgba(255,255,255,0.02)}
       <div class="bt-cell"><div class="bt-lbl">Cost/Year</div><div class="bt-val" id="customCostYr">—</div></div>
       <div class="bt-cell"><div class="bt-lbl">₹1Cr →</div><div class="bt-val" id="customFinal">—</div></div>
     </div>
-    <div class="warn-note">✓ Live-computed from your cost inputs above</div>
+    <div class="warn-note">✓ From cost inputs above</div>
   </div>
 </div>
 
@@ -197,7 +206,7 @@ tr:hover{background:rgba(255,255,255,0.02)}
   <div class="pf-cell"><div class="pf-lbl">Market Value</div><div class="pf-val" id="pfMv">₹0</div></div>
   <div class="pf-cell"><div class="pf-lbl">Booked P&L</div><div class="pf-val" id="pfBooked">₹0</div></div>
   <div class="pf-cell"><div class="pf-lbl">Unrealized</div><div class="pf-val" id="pfUnreal">₹0</div></div>
-  <div class="pf-cell"><div class="pf-lbl">Total Return</div><div class="pf-val" id="pfRet">0.00%</div></div>
+  <div class="pf-cell"><div class="pf-lbl">Return</div><div class="pf-val" id="pfRet">0.00%</div></div>
   <div class="pf-cell"><div class="pf-lbl">CAGR</div><div class="pf-val" id="pfCagr">—</div></div>
   <div class="pf-cell"><div class="pf-lbl">Win Rate</div><div class="pf-val" id="pfWin">—</div></div>
   <div class="pf-cell"><div class="pf-lbl">Trades</div><div class="pf-val" id="pfTrades">0</div></div>
@@ -236,15 +245,17 @@ tr:hover{background:rgba(255,255,255,0.02)}
 <div id="yearHistory"><div class="empty">Run backtest workflows to populate</div></div>
 
 </div>
-<div class="version">v3.3 · Editable Costs · Live · GitHub</div>
+<div class="version">v3.4 · Historical Regimes · GitHub</div>
 
 <script>
 const CORPUS=10000000;
-const BASELINE_COST_PER_SIDE=0.75; // % - what realistic backtest was run with
+const BASELINE_COST_PER_SIDE=0.75;
+const SLIPPAGE_BASELINE=0.30;
 
 let liveState={holdings:{},monthlyJournal:[],completedTrades:[],navHistory:[],startDate:null,lastExecuteDate:null,lastRun:null,todayExecutedBuys:[],todayExecutedSells:[],prices:{}};
 let rawBT={monthlyJournal:[],completedTrades:[],summary:null};
 let realBT={monthlyJournal:[],completedTrades:[],summary:null};
+let costHistory={regimes:[]};
 let historyView='realistic';
 
 function $(id){return document.getElementById(id)}
@@ -253,9 +264,46 @@ async function loadServerData(){
   try{const r=await fetch("data.json?t="+Date.now(),{cache:"no-store"});if(r.ok){Object.assign(liveState,await r.json())}}catch(e){}
   try{const r=await fetch("backtest_data.json?t="+Date.now(),{cache:"no-store"});if(r.ok){rawBT=await r.json()}}catch(e){}
   try{const r=await fetch("backtest_realistic.json?t="+Date.now(),{cache:"no-store"});if(r.ok){realBT=await r.json()}}catch(e){}
+  try{const r=await fetch("cost_history.json?t="+Date.now(),{cache:"no-store"});if(r.ok){costHistory=await r.json()}}catch(e){}
 }
 
-// ========== COST CALCULATOR ==========
+function currentRegime(){
+  const today=new Date().toISOString().slice(0,10);
+  const regs=(costHistory.regimes||[]).slice().sort((a,b)=>a.startDate.localeCompare(b.startDate));
+  let active=regs[0];
+  for(const r of regs){if(r.startDate<=today)active=r;else break}
+  return active;
+}
+
+function renderRegimePanel(){
+  const regs=(costHistory.regimes||[]).slice().sort((a,b)=>a.startDate.localeCompare(b.startDate));
+  $("regimeCount").textContent=regs.length+" regime changes (2000-2026)";
+  const cur=currentRegime();
+  if(cur){
+    $("regimeCurrentEvent").textContent=cur.event+" · Effective "+cur.startDate;
+    $("regimeCurrentRates").innerHTML="<b>Brokerage</b> "+cur.brokeragePerSide+"% each side · <b>STT</b> "+cur.sttBuyDelivery+"%/"+cur.sttSellDelivery+"% (buy/sell) · <b>Stamp</b> "+cur.stampBuy+"% buy · <b>GST</b> "+cur.gstOnBrokerage+"% on brokerage · <b>Exch+SEBI</b> "+cur.exchangeSebi+"%";
+  }
+  const today=new Date().toISOString().slice(0,10);
+  $("regimeTimeline").innerHTML=regs.map(r=>{
+    const isCurrent=cur&&r.startDate===cur.startDate;
+    const isFuture=r.startDate>today;
+    const cls=isCurrent?"current":(isFuture?"future":"");
+    return "<div class='regime-node "+cls+"'><div class='date'>"+r.startDate+(isCurrent?" ← NOW":"")+"</div><div class='event'>"+r.event+"</div><div class='rates'>Brok "+r.brokeragePerSide+"% · STT "+r.sttSellDelivery+"% · Stamp "+r.stampBuy+"% · GST "+r.gstOnBrokerage+"%</div></div>"
+  }).join('');
+}
+
+function usePeriodCosts(){
+  const cur=currentRegime();
+  if(!cur)return;
+  $("inBrokerage").value=cur.brokeragePerSide;
+  $("inSlippage").value=SLIPPAGE_BASELINE;
+  $("inSTT").value=cur.sttSellDelivery;
+  $("inStamp").value=cur.stampBuy;
+  $("inGST").value=cur.gstOnBrokerage;
+  $("inExch").value=cur.exchangeSebi;
+  recalcCosts();
+}
+
 function loadCostPrefs(){
   try{const p=JSON.parse(localStorage.getItem('pms_costs_v1')||'{}');
     if(p.brokerage!==undefined)$("inBrokerage").value=p.brokerage;
@@ -266,43 +314,25 @@ function loadCostPrefs(){
     if(p.exch!==undefined)$("inExch").value=p.exch;
   }catch(e){}
 }
-function saveCostPrefs(){
-  localStorage.setItem('pms_costs_v1',JSON.stringify({
-    brokerage:+$("inBrokerage").value,slippage:+$("inSlippage").value,
-    stt:+$("inSTT").value,stamp:+$("inStamp").value,
-    gst:+$("inGST").value,exch:+$("inExch").value
-  }));
-}
-function resetCosts(){$("inBrokerage").value=0.30;$("inSlippage").value=0.30;$("inSTT").value=0.10;$("inStamp").value=0.015;$("inGST").value=18;$("inExch").value=0.004;recalcCosts()}
+function saveCostPrefs(){localStorage.setItem('pms_costs_v1',JSON.stringify({brokerage:+$("inBrokerage").value,slippage:+$("inSlippage").value,stt:+$("inSTT").value,stamp:+$("inStamp").value,gst:+$("inGST").value,exch:+$("inExch").value}))}
+function resetCosts(){usePeriodCosts()}
 function presetZerodha(){$("inBrokerage").value=0.03;$("inSlippage").value=0.20;$("inSTT").value=0.10;$("inStamp").value=0.015;$("inGST").value=18;$("inExch").value=0.004;recalcCosts()}
 function presetFullservice(){$("inBrokerage").value=0.30;$("inSlippage").value=0.30;$("inSTT").value=0.10;$("inStamp").value=0.015;$("inGST").value=18;$("inExch").value=0.004;recalcCosts()}
-function presetPMS(){$("inBrokerage").value=0.10;$("inSlippage").value=0.25;$("inSTT").value=0.10;$("inStamp").value=0.015;$("inGST").value=18;$("inExch").value=0.004;recalcCosts()}
 
 function computeCosts(){
-  const b=+$("inBrokerage").value||0;
-  const sl=+$("inSlippage").value||0;
-  const stt=+$("inSTT").value||0;
-  const stamp=+$("inStamp").value||0;
-  const gst=+$("inGST").value||0;
-  const exch=+$("inExch").value||0;
-  // per side buy: brokerage + slippage + stamp + exch + GST_on_brokerage
+  const b=+$("inBrokerage").value||0;const sl=+$("inSlippage").value||0;
+  const stt=+$("inSTT").value||0;const stamp=+$("inStamp").value||0;
+  const gst=+$("inGST").value||0;const exch=+$("inExch").value||0;
   const buySide=b*(1+gst/100)+sl+stamp+exch;
-  // per side sell: brokerage + slippage + stt + exch + GST_on_brokerage
   const sellSide=b*(1+gst/100)+sl+stt+exch;
   const roundTrip=buySide+sellSide;
   return {buySide,sellSide,roundTrip,avgPerSide:roundTrip/2};
 }
 
 function computeTurnover(){
-  // Annual turnover ratio from realistic backtest
   if(!realBT.summary)return 0;
-  const N=15; // portfolio size
-  const trades=realBT.summary.totalTrades;
-  const years=realBT.summary.years;
+  const N=15;const trades=realBT.summary.totalTrades;const years=realBT.summary.years;
   if(!years)return 0;
-  // Each completed trade = 1 buy + 1 sell = 1 round trip on 1 stock
-  // Annual round trips = trades / years
-  // Turnover ratio = annual_round_trips / N (how many times portfolio rotates)
   return (trades/years)/N;
 }
 
@@ -319,21 +349,13 @@ function recalcCosts(){
 }
 
 function renderCustomHero(){
-  if(!realBT.summary){
-    $("customCagr").textContent="Run backtest";
-    $("customDelta").textContent="—";
-    $("customDD").textContent="—";
-    $("customAlpha").textContent="—";
-    $("customCostYr").textContent="—";
-    $("customFinal").textContent="—";
-    return;
-  }
+  if(!realBT.summary){$("customCagr").textContent="Run backtest";return}
   const s=realBT.summary;
   const turnover=computeTurnover();
   const c=computeCosts();
-  const baselineDrag=turnover*(BASELINE_COST_PER_SIDE*2); // baseline was 1.5% RT
+  const baselineDrag=turnover*(BASELINE_COST_PER_SIDE*2);
   const newDrag=turnover*c.roundTrip;
-  const deltaDrag=newDrag-baselineDrag; // positive = MORE cost = LESS CAGR
+  const deltaDrag=newDrag-baselineDrag;
   const adjustedCAGR=s.cagr-deltaDrag;
   const cagrCls=adjustedCAGR>=0?"green":"red";
   $("customCagr").innerHTML="<span class='"+cagrCls+"'>"+(adjustedCAGR>=0?"+":"")+adjustedCAGR.toFixed(2)+"%</span>";
@@ -343,13 +365,11 @@ function renderCustomHero(){
   const alpha=adjustedCAGR-s.niftyCagr;
   $("customAlpha").innerHTML="<span class='"+(alpha>=0?"green":"red")+"'>"+(alpha>=0?"+":"")+alpha.toFixed(2)+"%</span>";
   $("customCostYr").innerHTML="<span class='red'>-"+newDrag.toFixed(2)+"%</span>";
-  // Recompute final NAV from adjusted CAGR
   const finalNav=CORPUS*Math.pow(1+adjustedCAGR/100,s.years);
   $("customFinal").textContent="₹"+(finalNav/10000000).toFixed(2)+"Cr";
   $("customPeriod").textContent=s.years+"yr";
 }
 
-// ========== BACKTEST HEROS ==========
 function setBanner(cls,title,msg){const b=$("execBanner");b.className="exec-banner "+(cls||"info");b.innerHTML='<div class="title">'+title+'</div><div class="msg">'+msg+'</div>'}
 function fmtPnL(v){const abs=Math.abs(v);const s=v>=0?"+":"-";return s+"₹"+(abs>=100000?(abs/100000).toFixed(2)+"L":Math.round(abs))}
 function getCash(){const inv=Object.values(liveState.holdings).reduce((a,p)=>a+p.shares*p.entryPrice,0);const b=liveState.completedTrades.reduce((a,t)=>a+t.pnlAbs,0);return CORPUS+b-inv}
@@ -398,13 +418,13 @@ function renderPerfStrip(){
 function renderTodayActions(){
   const buyDiv=$("buySignals");const sellDiv=$("sellSignals");
   const buys=liveState.todayExecutedBuys||[];const sells=liveState.todayExecutedSells||[];
-  if(buys.length===0){buyDiv.innerHTML='<div class="empty">No BUYs in last run</div>'}
+  if(buys.length===0){buyDiv.innerHTML='<div class="empty">No BUYs</div>'}
   else{buyDiv.innerHTML=buys.map(t=>{const pos=liveState.holdings[t];const cmp=liveState.prices[t]?liveState.prices[t].cmp:(pos?pos.entryPrice:0);const entry=pos?pos.entryPrice:0;const pnl=pos&&entry?((cmp-entry)/entry)*100:0;return "<div class='signal-item buy-item'><b>"+t+"</b><span>₹"+entry.toFixed(2)+" → ₹"+cmp.toFixed(2)+" <span class='"+(pnl>=0?'green':'red')+"' style='font-size:10px'>("+(pnl>=0?'+':'')+pnl.toFixed(2)+"%)</span></span></div>"}).join('')}
   $("buyCount").textContent=buys.length+" bought";
-  if(sells.length===0){sellDiv.innerHTML='<div class="empty">No SELLs in last run</div>'}
+  if(sells.length===0){sellDiv.innerHTML='<div class="empty">No SELLs</div>'}
   else{sellDiv.innerHTML=sells.map(s=>"<div class='signal-item sell-item'><b>"+s+"</b></div>").join('')}
   $("sellCount").textContent=sells.length+" sold";
-  $("signalsSummary").textContent=liveState.lastExecuteDate?"Last run: "+liveState.lastExecuteDate:"Never executed yet";
+  $("signalsSummary").textContent=liveState.lastExecuteDate?"Last: "+liveState.lastExecuteDate:"";
 }
 
 function renderPortfolio(){
@@ -413,10 +433,8 @@ function renderPortfolio(){
   $("pfEmpty").style.display="none";$("pfTable").style.display="table";
   const rows=entries.map(([t,p])=>{
     const cmp=liveState.prices[t]?liveState.prices[t].cmp:p.entryPrice;
-    const inv=p.shares*p.entryPrice;const mv=p.shares*cmp;
-    const pnl=mv-inv;const pnlPct=(pnl/inv)*100;
-    const days=Math.floor((new Date()-new Date(p.entryDate))/86400000);
-    const cls=pnl>=0?"green":"red";
+    const inv=p.shares*p.entryPrice;const mv=p.shares*cmp;const pnl=mv-inv;const pnlPct=(pnl/inv)*100;
+    const days=Math.floor((new Date()-new Date(p.entryDate))/86400000);const cls=pnl>=0?"green":"red";
     return "<tr><td><b>"+t+"</b></td><td>"+p.entryDate+"</td><td>₹"+p.entryPrice.toFixed(2)+"</td><td>₹"+cmp.toFixed(2)+"</td><td>"+p.shares+"</td><td>₹"+(inv/100000).toFixed(2)+"L</td><td>₹"+(mv/100000).toFixed(2)+"L</td><td class='"+cls+"'>"+fmtPnL(pnl)+"</td><td class='"+cls+"'>"+(pnlPct>=0?"+":"")+pnlPct.toFixed(2)+"%</td><td>"+days+"</td></tr>";
   }).join('');
   $("pfTbody").innerHTML=rows;
@@ -430,46 +448,41 @@ function renderYearHistory(){
   if(historyView==='realistic'){months=(realBT.monthlyJournal||[]).map(m=>({...m,source:'real'}));tagCls='real-tag';tagText='REALISTIC'}
   else if(historyView==='raw'){months=(rawBT.monthlyJournal||[]).map(m=>({...m,source:'raw'}));tagCls='bt-tag2';tagText='RAW'}
   else if(historyView==='live'){months=(liveState.monthlyJournal||[]).map(m=>({...m,source:'live'}));tagCls='live-tag';tagText='LIVE'}
-  
-  if(months.length===0){div.innerHTML='<div class="empty">No data for this view.</div>';return}
-  
+  if(months.length===0){div.innerHTML='<div class="empty">No data.</div>';return}
   const byYear={};months.forEach(m=>{const y=m.month.slice(0,4);if(!byYear[y])byYear[y]=[];byYear[y].push(m)});
   const years=Object.keys(byYear).sort().reverse();
-  
   div.innerHTML=years.map(y=>{
     const ms=byYear[y].sort((a,b)=>a.month.localeCompare(b.month));
-    const startNav=ms[0].nav;const endNav=ms[ms.length-1].nav;
-    const yrRet=((endNav/startNav)-1)*100;
-    const tb=ms.reduce((a,m)=>a+(m.bought||[]).length,0);
-    const ts=ms.reduce((a,m)=>a+(m.sold||[]).length,0);
-    const tw=ms.reduce((a,m)=>a+(m.winsThisMonth||0),0);
-    const tl=ms.reduce((a,m)=>a+(m.lossesThisMonth||0),0);
-    return "<div class='year-card'><div class='year-header' onclick='toggleYear(\""+y+"\")'><div><div class='year-title'>"+y+" <span class='"+tagCls+"'>"+tagText+"</span></div><div class='year-stats'><span>"+ms.length+" months</span><span class='"+(yrRet>=0?'green':'red')+"' style='font-weight:700'>"+(yrRet>=0?'+':'')+yrRet.toFixed(1)+"%</span><span>End NAV ₹"+(endNav/10000000).toFixed(3)+"Cr</span><span>"+tb+"B · "+ts+"S</span><span>W/L "+tw+"/"+tl+"</span></div></div><div class='expand-icon'>▶</div></div><div class='year-body' id='yb_"+y+"'>"+ms.slice().reverse().map(m=>{const mc=m.monthReturn>=0?'var(--green)':'var(--red)';return "<div class='month-item'><div class='month-header'><div><b>"+m.month+"</b> · ₹"+m.navCr.toFixed(3)+"Cr · <span style='color:"+mc+"'>"+(m.monthReturn>=0?'+':'')+m.monthReturn+"% MoM</span> · Total "+(m.totalReturn>=0?'+':'')+m.totalReturn+"%</div><div style='font-size:11px'>Holdings "+m.holdingsCount+" · Cash ₹"+(m.cash/100000).toFixed(1)+"L</div></div>"+((m.bought||[]).length?"<div style='margin-top:3px'><b class='green'>BOUGHT ("+m.bought.length+"):</b> "+m.bought.map(t=>"<span class='tag tag-buy'>"+t+"</span>").join('')+"</div>":'')+((m.sold||[]).length?"<div style='margin-top:3px'><b class='red'>SOLD ("+m.sold.length+"):</b> "+m.sold.map(t=>"<span class='tag tag-sell'>"+t+"</span>").join('')+" <span class='muted' style='font-size:10px'>· W "+(m.winsThisMonth||0)+" L "+(m.lossesThisMonth||0)+"</span></div>":'')+((m.held||[]).length?"<div style='margin-top:3px'><b class='muted'>HELD ("+m.held.length+"):</b> "+m.held.slice(0,15).map(t=>"<span class='tag tag-hold'>"+t+"</span>").join('')+(m.held.length>15?" <span class='muted'>+"+(m.held.length-15)+"</span>":'')+"</div>":'')+"</div>"}).join('')+"</div></div>"
+    const startNav=ms[0].nav;const endNav=ms[ms.length-1].nav;const yrRet=((endNav/startNav)-1)*100;
+    const tb=ms.reduce((a,m)=>a+(m.bought||[]).length,0);const ts=ms.reduce((a,m)=>a+(m.sold||[]).length,0);
+    const tw=ms.reduce((a,m)=>a+(m.winsThisMonth||0),0);const tl=ms.reduce((a,m)=>a+(m.lossesThisMonth||0),0);
+    const regInfo=ms[0].regimeEvent?" · <span class='muted'>"+ms[0].regimeEvent+"</span>":'';
+    return "<div class='year-card'><div class='year-header' onclick='toggleYear(\""+y+"\")'><div><div class='year-title'>"+y+" <span class='"+tagCls+"'>"+tagText+"</span></div><div class='year-stats'><span>"+ms.length+" months</span><span class='"+(yrRet>=0?'green':'red')+"' style='font-weight:700'>"+(yrRet>=0?'+':'')+yrRet.toFixed(1)+"%</span><span>End ₹"+(endNav/10000000).toFixed(3)+"Cr</span><span>"+tb+"B·"+ts+"S</span><span>W/L "+tw+"/"+tl+"</span></div></div><div class='expand-icon'>▶</div></div><div class='year-body' id='yb_"+y+"'>"+ms.slice().reverse().map(m=>{const mc=m.monthReturn>=0?'var(--green)':'var(--red)';const regBadge=m.regimeCostBuy!==undefined?" <span class='muted' style='font-size:10px'>· Costs "+m.regimeCostBuy+"%/"+m.regimeCostSell+"%</span>":'';return "<div class='month-item'><div class='month-header'><div><b>"+m.month+"</b> · ₹"+m.navCr.toFixed(3)+"Cr · <span style='color:"+mc+"'>"+(m.monthReturn>=0?'+':'')+m.monthReturn+"% MoM</span> · Total "+(m.totalReturn>=0?'+':'')+m.totalReturn+"%"+regBadge+"</div><div style='font-size:11px'>Holdings "+m.holdingsCount+" · Cash ₹"+(m.cash/100000).toFixed(1)+"L</div></div>"+((m.bought||[]).length?"<div style='margin-top:3px'><b class='green'>BOUGHT ("+m.bought.length+"):</b> "+m.bought.map(t=>"<span class='tag tag-buy'>"+t+"</span>").join('')+"</div>":'')+((m.sold||[]).length?"<div style='margin-top:3px'><b class='red'>SOLD ("+m.sold.length+"):</b> "+m.sold.map(t=>"<span class='tag tag-sell'>"+t+"</span>").join('')+" <span class='muted' style='font-size:10px'>· W "+(m.winsThisMonth||0)+" L "+(m.lossesThisMonth||0)+"</span></div>":'')+((m.held||[]).length?"<div style='margin-top:3px'><b class='muted'>HELD ("+m.held.length+"):</b> "+m.held.slice(0,15).map(t=>"<span class='tag tag-hold'>"+t+"</span>").join('')+(m.held.length>15?" <span class='muted'>+"+(m.held.length-15)+"</span>":'')+"</div>":'')+"</div>"}).join('')+"</div></div>"
   }).join('');
 }
 
 function toggleYear(y){const body=$('yb_'+y);const hdr=body.previousElementSibling;body.classList.toggle('open');hdr.classList.toggle('open')}
-function renderAll(){renderHero(rawBT,"raw");renderHero(realBT,"real","realNote");recalcCosts();renderPerfStrip();renderTodayActions();renderPortfolio();renderYearHistory()}
-
-async function reloadData(){setBanner("pending","🔄 RELOADING","Fetching...");await loadServerData();renderAll();showStatus()}
+function renderAll(){renderRegimePanel();renderHero(rawBT,"raw");renderHero(realBT,"real","realNote");recalcCosts();renderPerfStrip();renderTodayActions();renderPortfolio();renderYearHistory()}
+async function reloadData(){setBanner("pending","🔄 RELOADING","");await loadServerData();renderAll();showStatus()}
 
 function showStatus(){
   const hasRaw=!!rawBT.summary;const hasReal=!!realBT.summary;const hasLive=liveState.lastExecuteDate;
   const parts=[];
   if(hasReal)parts.push("✅ Realistic: "+realBT.summary.cagr+"% CAGR");
   if(hasRaw)parts.push("⚠️ Raw: "+rawBT.summary.cagr+"%");
-  if(hasLive)parts.push("🟢 Live: NAV ₹"+(getNav()/10000000).toFixed(3)+"Cr");
-  if(parts.length===0){setBanner("info","⏳ WAITING","Trigger backtest workflows via GitHub Actions.");return}
+  if(hasLive)parts.push("🟢 Live: ₹"+(getNav()/10000000).toFixed(3)+"Cr");
+  if(costHistory.regimes){parts.push("📜 "+costHistory.regimes.length+" cost regimes loaded")}
+  if(parts.length===0){setBanner("info","⏳ WAITING","Trigger workflows via GitHub Actions.");return}
   setBanner("success","✅ DATA LOADED",parts.join(" · "));
 }
 
-function exportTradesCSV(){const src=historyView==='realistic'?realBT:(historyView==='raw'?rawBT:{completedTrades:liveState.completedTrades});const trades=src.completedTrades||[];if(trades.length===0){alert("No trades");return}const h=["Ticker","EntryDate","ExitDate","EntryPrice","ExitPrice","Shares","Days","PnL_Abs","PnL_Pct","Outcome"];const rows=trades.map(t=>[t.ticker,t.entryDate,t.exitDate,t.entryPrice,t.exitPrice,t.shares,t.holdDays,t.pnlAbs,t.pnlPct,t.outcome].join(","));downloadCSV(historyView+"_trades_"+new Date().toISOString().slice(0,10)+".csv",[h.join(","),...rows].join("\n"))}
-function exportJournalCSV(){const src=historyView==='realistic'?realBT:(historyView==='raw'?rawBT:{monthlyJournal:liveState.monthlyJournal});const j=src.monthlyJournal||[];if(j.length===0){alert("No history");return}const h=["Month","NAV_Cr","MoM_%","Total_%","Cash","Holdings","Bought","Sold","Wins","Losses"];const rows=j.map(m=>[m.month,m.navCr,m.monthReturn,m.totalReturn,Math.round(m.cash/1000)+"K",m.holdingsCount,'"'+(m.bought||[]).join(";")+'"','"'+(m.sold||[]).join(";")+'"',m.winsThisMonth||0,m.lossesThisMonth||0].join(","));downloadCSV(historyView+"_journal_"+new Date().toISOString().slice(0,10)+".csv",[h.join(","),...rows].join("\n"))}
+function exportTradesCSV(){const src=historyView==='realistic'?realBT:(historyView==='raw'?rawBT:{completedTrades:liveState.completedTrades});const trades=src.completedTrades||[];if(trades.length===0){alert("No trades");return}const h=["Ticker","EntryDate","ExitDate","EntryPrice","ExitPrice","Shares","Days","PnL_Abs","PnL_Pct","Outcome"];const rows=trades.map(t=>[t.ticker,t.entryDate,t.exitDate,t.entryPrice,t.exitPrice,t.shares,t.holdDays,t.pnlAbs,t.pnlPct,t.outcome].join(","));downloadCSV(historyView+"_trades.csv",[h.join(","),...rows].join("\n"))}
+function exportJournalCSV(){const src=historyView==='realistic'?realBT:(historyView==='raw'?rawBT:{monthlyJournal:liveState.monthlyJournal});const j=src.monthlyJournal||[];if(j.length===0){alert("No history");return}const h=["Month","NAV_Cr","MoM_%","Total_%","CostBuy","CostSell","Regime","Bought","Sold"];const rows=j.map(m=>[m.month,m.navCr,m.monthReturn,m.totalReturn,m.regimeCostBuy||'',m.regimeCostSell||'',m.regimeEvent||'','"'+(m.bought||[]).join(";")+'"','"'+(m.sold||[]).join(";")+'"'].join(","));downloadCSV(historyView+"_journal.csv",[h.join(","),...rows].join("\n"))}
 function downloadCSV(name,content){const b=new Blob([content],{type:"text/csv"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=name;a.click()}
 
 document.addEventListener("DOMContentLoaded",async()=>{
   const today=new Date();const dateStr=today.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
-  $("todayDate").textContent=dateStr+" · Editable Costs · Live-Adjusted CAGR";
+  $("todayDate").textContent=dateStr+" · Historical Cost Regimes · Editable Future Automation";
   $("todayDateBig").textContent=today.toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'});
   loadCostPrefs();
   await loadServerData();
