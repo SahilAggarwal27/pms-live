@@ -1,0 +1,35 @@
+name: Realistic Backtest
+
+on:
+  workflow_dispatch:
+  
+  schedule:
+    - cron: '0 4 * * 0'  # Every Sunday 9:30 AM IST
+  
+  push:
+    paths:
+      - 'cost_history.json'
+      - 'realistic_backtest.py'
+      - '.github/workflows/realistic-backtest.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install "yfinance>=0.2.40" pandas numpy curl_cffi
+      - run: python realistic_backtest.py
+      - name: Commit results
+        run: |
+          git config user.name "PMS Realistic Bot"
+          git config user.email "bot@github.com"
+          git add backtest_realistic.json
+          git diff --staged --quiet || git commit -m "Realistic $(date -u +%Y-%m-%d)"
+          git push
