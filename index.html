@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"/><title>PMS Algo - Server-Automated</title>
+<head><meta charset="UTF-8"/><title>PMS Algo - 25-Year Backtest + Live</title>
 <style>
-:root{--bg:#0a0e1a;--bg2:#131929;--bg3:#1a2233;--text:#e2e8f0;--muted:#94a3b8;--border:#2a3447;--green:#10b981;--red:#ef4444;--yellow:#f59e0b;--accent:#3b82f6}
+:root{--bg:#0a0e1a;--bg2:#131929;--bg3:#1a2233;--text:#e2e8f0;--muted:#94a3b8;--border:#2a3447;--green:#10b981;--red:#ef4444;--yellow:#f59e0b;--accent:#3b82f6;--purple:#8b5cf6}
 *{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);margin:0;padding:16px;line-height:1.5;font-size:13px}
 .container{max-width:1500px;margin:0 auto}h1{font-size:22px;margin:0 0 4px}h2{font-size:13px;margin:20px 0 8px;color:var(--accent);text-transform:uppercase;letter-spacing:1px}
-.exec-banner{background:linear-gradient(135deg,#065f46,#059669);border:2px solid var(--green);border-radius:12px;padding:16px 20px;margin-bottom:14px;font-size:14px;font-weight:600}
+.exec-banner{background:linear-gradient(135deg,#065f46,#059669);border:2px solid var(--green);border-radius:12px;padding:14px 18px;margin-bottom:14px;font-size:14px;font-weight:600}
 .exec-banner.pending{background:linear-gradient(135deg,#78350f,#f59e0b);border-color:var(--yellow)}
 .exec-banner.error{background:linear-gradient(135deg,#7f1d1d,#dc2626);border-color:var(--red)}
 .exec-banner.info{background:linear-gradient(135deg,#1e3a8a,#1e40af);border-color:var(--accent)}
 .exec-banner .title{font-size:11px;letter-spacing:2px;opacity:0.85;margin-bottom:4px}
-.exec-banner .msg{font-size:15px}
+.exec-banner .msg{font-size:14px}
+.backtest-hero{background:linear-gradient(135deg,#312e81,#5b21b6);border:2px solid var(--purple);border-radius:12px;padding:18px;margin-bottom:14px}
+.bt-title{font-size:11px;color:#c4b5fd;letter-spacing:2px;font-weight:700;margin-bottom:10px;display:flex;justify-content:space-between}
+.bt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}
+.bt-cell{background:rgba(0,0,0,0.35);border-radius:6px;padding:10px 12px}
+.bt-lbl{font-size:9px;color:#c4b5fd;text-transform:uppercase;letter-spacing:1px}
+.bt-val{font-size:18px;font-weight:800;margin-top:2px}
+.bt-val.hero{font-size:24px}
 .perf-strip{background:linear-gradient(135deg,#1e293b,#0f172a);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));gap:8px}
 .pf-cell{background:var(--bg3);border-radius:6px;padding:8px 10px}
 .pf-lbl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
@@ -23,47 +30,68 @@
 .signal-heading{font-size:12px;font-weight:700;margin-bottom:8px;display:flex;justify-content:space-between}
 .signal-item{background:rgba(255,255,255,0.03);border-radius:6px;padding:6px 10px;margin-bottom:4px;display:flex;justify-content:space-between;align-items:center;font-size:12px;gap:8px}
 .signal-item b{font-size:12px}.buy-item{border-left:3px solid var(--green)}.sell-item{border-left:3px solid var(--red)}
-.green{color:var(--green)}.red{color:var(--red)}.muted{color:var(--muted)}.yellow{color:var(--yellow)}
-.btn{background:var(--accent);color:white;border:none;padding:8px 14px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600}
-.btn-small{padding:5px 10px;font-size:11px}.btn-red{background:var(--red)}.btn-gray{background:var(--bg3);border:1px solid var(--border);color:var(--text)}
+.green{color:var(--green)}.red{color:var(--red)}.muted{color:var(--muted)}.yellow{color:var(--yellow)}.purple{color:var(--purple)}
+.btn{background:var(--accent);color:white;border:none;padding:8px 14px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600;text-decoration:none;display:inline-block}
+.btn-small{padding:5px 10px;font-size:11px}.btn-red{background:var(--red)}.btn-gray{background:var(--bg3);border:1px solid var(--border);color:var(--text)}.btn-purple{background:var(--purple)}
 .portfolio-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:14px}
 table{width:100%;border-collapse:collapse;font-size:11px}
 th,td{padding:6px 8px;text-align:right;border-bottom:1px solid var(--border)}
 th:first-child,td:first-child{text-align:left}
 th{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;background:var(--bg3);position:sticky;top:0}
 tr:hover{background:rgba(255,255,255,0.02)}
-.year-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;margin-bottom:8px;overflow:hidden}
-.year-header{padding:12px 18px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none}
-.year-header:hover{background:var(--bg3)}.year-title{font-size:18px;font-weight:700}
-.year-stats{font-size:11px;color:var(--muted);display:flex;gap:14px;flex-wrap:wrap}
-.year-body{padding:0 18px 18px;display:none}.year-body.open{display:block}
-.month-item{background:var(--bg3);border-radius:6px;padding:10px 12px;margin-bottom:5px}
+.year-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;margin-bottom:6px;overflow:hidden}
+.year-header{padding:11px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none}
+.year-header:hover{background:var(--bg3)}.year-title{font-size:17px;font-weight:700}
+.year-title .live-tag{font-size:9px;background:var(--green);color:white;padding:2px 6px;border-radius:8px;margin-left:6px;font-weight:700}
+.year-title .bt-tag{font-size:9px;background:var(--purple);color:white;padding:2px 6px;border-radius:8px;margin-left:6px;font-weight:700}
+.year-stats{font-size:11px;color:var(--muted);display:flex;gap:12px;flex-wrap:wrap}
+.year-body{padding:0 16px 14px;display:none}.year-body.open{display:block}
+.month-item{background:var(--bg3);border-radius:6px;padding:9px 12px;margin-bottom:5px}
 .month-header{font-size:12px;font-weight:700;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:5px}
 .tag{display:inline-block;padding:2px 7px;border-radius:10px;font-size:10px;margin:2px 3px 2px 0}
 .tag-buy{background:rgba(16,185,129,0.15);color:var(--green);border:1px solid var(--green)}
 .tag-sell{background:rgba(239,68,68,0.15);color:var(--red);border:1px solid var(--red)}
 .tag-hold{background:rgba(148,163,184,0.15);color:var(--muted);border:1px solid var(--muted)}
-.expand-icon{font-size:18px;font-weight:700;transition:transform 0.2s}
+.expand-icon{font-size:16px;font-weight:700;transition:transform 0.2s}
 .year-header.open .expand-icon{transform:rotate(90deg)}
 .empty{color:var(--muted);padding:14px;text-align:center;font-size:12px}
 .version{position:fixed;bottom:6px;right:12px;font-size:10px;color:var(--muted);opacity:0.5}
 .server-badge{background:var(--accent);color:white;padding:3px 10px;border-radius:12px;font-size:10px;font-weight:700;text-transform:uppercase}
 .server-badge.live{background:var(--green);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.7}}
+.tab-switcher{display:flex;gap:4px;margin-bottom:10px}
+.tab-btn{background:var(--bg3);border:1px solid var(--border);color:var(--muted);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:11px;font-weight:600}
+.tab-btn.active{background:var(--accent);color:white;border-color:var(--accent)}
 </style></head>
 <body><div class="container">
 
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
-<h1>🤖 PMS Algo — Server Automated</h1>
+<h1>🤖 PMS Algo — 25-Year Backtest + Live</h1>
 <span class="server-badge live" id="serverBadge">☁️ SERVER ALGO</span>
 </div>
-<div style="color:var(--muted);font-size:12px;margin-bottom:14px" id="todayDate">Loading server data...</div>
+<div style="color:var(--muted);font-size:12px;margin-bottom:14px" id="todayDate">Loading...</div>
 
 <div class="exec-banner info" id="execBanner">
   <div class="title">☁️ ALGO STATUS</div>
-  <div class="msg" id="execMsg">Loading latest state from GitHub server...</div>
+  <div class="msg" id="execMsg">Loading latest state...</div>
 </div>
 
+<div class="backtest-hero" id="backtestHero" style="display:none">
+  <div class="bt-title"><span>🎯 25-YEAR BACKTEST · <span id="btPeriod">—</span></span><span id="btRunDate" style="opacity:0.7">—</span></div>
+  <div class="bt-grid">
+    <div class="bt-cell"><div class="bt-lbl">CAGR</div><div class="bt-val hero" id="btCagr">—</div></div>
+    <div class="bt-cell"><div class="bt-lbl">Total Return</div><div class="bt-val" id="btTotal">—</div></div>
+    <div class="bt-cell"><div class="bt-lbl">Alpha vs Nifty</div><div class="bt-val" id="btAlpha">—</div></div>
+    <div class="bt-cell"><div class="bt-lbl">Nifty CAGR</div><div class="bt-val" id="btNifty">—</div></div>
+    <div class="bt-cell"><div class="bt-lbl">Max Drawdown</div><div class="bt-val" id="btDD">—</div></div>
+    <div class="bt-cell"><div class="bt-lbl">Win Rate</div><div class="bt-val" id="btWin">—</div></div>
+    <div class="bt-cell"><div class="bt-lbl">Total Trades</div><div class="bt-val" id="btTrades">—</div></div>
+    <div class="bt-cell"><div class="bt-lbl">Avg Win / Loss</div><div class="bt-val" id="btAvg">—</div></div>
+    <div class="bt-cell"><div class="bt-lbl">₹1 Cr became</div><div class="bt-val" id="btFinal">—</div></div>
+  </div>
+</div>
+
+<h2>📈 Live Performance (paper trades from today)</h2>
 <div class="perf-strip">
   <div class="pf-cell"><div class="pf-lbl">NAV (Total)</div><div class="pf-val big" id="pfNav">₹1.00 Cr</div></div>
   <div class="pf-cell"><div class="pf-lbl">Cash</div><div class="pf-val" id="pfCash">₹1.00 Cr</div></div>
@@ -74,12 +102,12 @@ tr:hover{background:rgba(255,255,255,0.02)}
   <div class="pf-cell"><div class="pf-lbl">Total Return</div><div class="pf-val" id="pfRet">0.00%</div></div>
   <div class="pf-cell"><div class="pf-lbl">CAGR</div><div class="pf-val" id="pfCagr">—</div></div>
   <div class="pf-cell"><div class="pf-lbl">Win Rate</div><div class="pf-val" id="pfWin">—</div></div>
-  <div class="pf-cell"><div class="pf-lbl">Trades (Closed)</div><div class="pf-val" id="pfTrades">0</div></div>
+  <div class="pf-cell"><div class="pf-lbl">Trades</div><div class="pf-val" id="pfTrades">0</div></div>
 </div>
 
-<h2>📊 Live Portfolio <span class="muted" style="font-size:10px;text-transform:none;letter-spacing:0">— server-executed positions with entry vs CMP</span></h2>
+<h2>📊 Live Portfolio</h2>
 <div class="portfolio-card" id="portfolioCard">
-  <div class="empty" id="pfEmpty">No positions yet. Server algo runs 9:45 AM IST every weekday.</div>
+  <div class="empty" id="pfEmpty">No live positions yet. Server algo runs 9:45 AM IST weekdays.</div>
   <div style="overflow-x:auto"><table id="pfTable" style="display:none">
     <thead><tr><th>Ticker</th><th>Entry Date</th><th>Entry ₹</th><th>Last Close ₹</th><th>Qty</th><th>Invested</th><th>Value</th><th>P&L ₹</th><th>P&L %</th><th>Days</th></tr></thead>
     <tbody id="pfTbody"></tbody>
@@ -95,62 +123,80 @@ tr:hover{background:rgba(255,255,255,0.02)}
 </div>
 
 <div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;align-items:center">
-  <button class="btn btn-small" onclick="reloadData()">🔄 Reload Latest Data</button>
-  <a class="btn btn-small btn-gray" href="https://github.com/SahilAggarwal27/pms-live/actions" target="_blank" style="text-decoration:none;color:inherit">⚙️ Trigger Server Algo Now (GitHub Actions)</a>
+  <button class="btn btn-small" onclick="reloadData()">🔄 Reload Data</button>
+  <a class="btn btn-small btn-gray" href="https://github.com/SahilAggarwal27/pms-live/actions" target="_blank">⚙️ Server Runs (Actions)</a>
   <button class="btn btn-small btn-gray" onclick="exportTradesCSV()">📥 Trades CSV</button>
   <button class="btn btn-small btn-gray" onclick="exportPositionsCSV()">📥 Positions CSV</button>
   <button class="btn btn-small btn-gray" onclick="exportJournalCSV()">📥 Journal CSV</button>
 </div>
 
-<h2>📅 History by Year (click year to expand)</h2>
-<div id="yearHistory"><div class="empty">History appears once server algo executes trades</div></div>
+<h2>📅 History by Year — Click any year to expand months, click any month to see trades</h2>
+<div class="tab-switcher">
+  <button class="tab-btn active" onclick="setHistoryView('all',this)">All Years (Backtest + Live)</button>
+  <button class="tab-btn" onclick="setHistoryView('bt',this)">Backtest Only (2000-2025)</button>
+  <button class="tab-btn" onclick="setHistoryView('live',this)">Live Only (2026+)</button>
+</div>
+<div id="yearHistory"><div class="empty">Load backtest_data.json (via Actions) for full history</div></div>
 
 </div>
-<div class="version">v3.0 · Server Automated · GitHub Actions Cron</div>
+<div class="version">v3.1 · Backtest + Live · GitHub</div>
 
 <script>
 const CORPUS=10000000;
-const DATA_URL="data.json?t="+Date.now(); // cache-bust
-let state={holdings:{},monthlyJournal:[],completedTrades:[],navHistory:[],startDate:null,lastExecuteDate:null,lastRun:null,todayExecutedBuys:[],todayExecutedSells:[],prices:{}};
+let liveState={holdings:{},monthlyJournal:[],completedTrades:[],navHistory:[],startDate:null,lastExecuteDate:null,lastRun:null,todayExecutedBuys:[],todayExecutedSells:[],prices:{}};
+let backtestState={monthlyJournal:[],completedTrades:[],summary:null};
+let historyView='all';
 
 function $(id){return document.getElementById(id)}
 
 async function loadServerData(){
   try{
     const r=await fetch("data.json?t="+Date.now(),{cache:"no-store"});
-    if(!r.ok)throw new Error("HTTP "+r.status);
-    const d=await r.json();
-    Object.assign(state,d);
-    return true;
-  }catch(e){
-    console.error("Failed to load data.json:",e);
-    return false;
-  }
+    if(r.ok){const d=await r.json();Object.assign(liveState,d)}
+  }catch(e){console.error("data.json:",e)}
+  try{
+    const r=await fetch("backtest_data.json?t="+Date.now(),{cache:"no-store"});
+    if(r.ok){const d=await r.json();backtestState=d}
+  }catch(e){console.error("backtest_data.json:",e)}
 }
 
-function setBanner(cls,title,msg){
-  const b=$("execBanner");b.className="exec-banner "+(cls||"info");
-  b.innerHTML='<div class="title">'+title+'</div><div class="msg">'+msg+'</div>';
-}
+function setBanner(cls,title,msg){const b=$("execBanner");b.className="exec-banner "+(cls||"info");b.innerHTML='<div class="title">'+title+'</div><div class="msg">'+msg+'</div>'}
 
-function getCash(){const invested=Object.values(state.holdings).reduce((a,p)=>a+p.shares*p.entryPrice,0);const booked=state.completedTrades.reduce((a,t)=>a+t.pnlAbs,0);return CORPUS+booked-invested}
-function getMarketValue(){return Object.entries(state.holdings).reduce((a,[t,p])=>{const cmp=state.prices[t]?state.prices[t].cmp:p.entryPrice;return a+p.shares*cmp},0)}
-function getNav(){return getCash()+getMarketValue()}
-function getBooked(){return state.completedTrades.reduce((a,t)=>a+t.pnlAbs,0)}
-function getUnrealized(){return Object.entries(state.holdings).reduce((a,[t,p])=>{const cmp=state.prices[t]?state.prices[t].cmp:p.entryPrice;return a+(cmp-p.entryPrice)*p.shares},0)}
-
+function getCash(){const invested=Object.values(liveState.holdings).reduce((a,p)=>a+p.shares*p.entryPrice,0);const booked=liveState.completedTrades.reduce((a,t)=>a+t.pnlAbs,0);return CORPUS+booked-invested}
+function getMV(){return Object.entries(liveState.holdings).reduce((a,[t,p])=>{const cmp=liveState.prices[t]?liveState.prices[t].cmp:p.entryPrice;return a+p.shares*cmp},0)}
+function getNav(){return getCash()+getMV()}
+function getBooked(){return liveState.completedTrades.reduce((a,t)=>a+t.pnlAbs,0)}
+function getUnreal(){return Object.entries(liveState.holdings).reduce((a,[t,p])=>{const cmp=liveState.prices[t]?liveState.prices[t].cmp:p.entryPrice;return a+(cmp-p.entryPrice)*p.shares},0)}
 function fmtPnL(v){const abs=Math.abs(v);const s=v>=0?"+":"-";return s+"₹"+(abs>=100000?(abs/100000).toFixed(2)+"L":Math.round(abs))}
+
+function renderBacktestHero(){
+  if(!backtestState.summary){$("backtestHero").style.display="none";return}
+  const s=backtestState.summary;
+  $("backtestHero").style.display="block";
+  $("btPeriod").textContent=(backtestState.monthlyJournal[0]?.month||"?")+" to "+(backtestState.monthlyJournal.slice(-1)[0]?.month||"?")+" · "+s.years+" years";
+  $("btRunDate").textContent=backtestState.runDate?"Run: "+new Date(backtestState.runDate).toLocaleDateString('en-IN'):"";
+  const cagrCls=s.cagr>=0?"green":"red";
+  $("btCagr").innerHTML="<span class='"+cagrCls+"'>"+(s.cagr>=0?"+":"")+s.cagr+"%</span>";
+  $("btTotal").textContent=(s.totalReturn>=0?"+":"")+s.totalReturn.toLocaleString()+"%";
+  $("btAlpha").innerHTML="<span class='"+(s.alpha>=0?"green":"red")+"'>"+(s.alpha>=0?"+":"")+s.alpha+"%</span>";
+  $("btNifty").textContent=(s.niftyCagr>=0?"+":"")+s.niftyCagr+"%";
+  $("btDD").innerHTML="<span class='red'>"+s.maxDrawdown+"%</span>";
+  $("btWin").textContent=s.winRate+"%";
+  $("btTrades").textContent=s.totalTrades.toLocaleString();
+  $("btAvg").innerHTML="<span class='green'>+"+s.avgWin+"%</span> / <span class='red'>"+s.avgLoss+"%</span>";
+  $("btFinal").textContent="₹"+s.finalNavCr+" Cr";
+}
 
 function renderPerfStrip(){
   const nav=getNav();const cash=getCash();
-  const inv=Object.values(state.holdings).reduce((a,p)=>a+p.shares*p.entryPrice,0);
-  const mv=getMarketValue();const booked=getBooked();const unreal=getUnrealized();
+  const inv=Object.values(liveState.holdings).reduce((a,p)=>a+p.shares*p.entryPrice,0);
+  const mv=getMV();const booked=getBooked();const unreal=getUnreal();
   const tr=((nav/CORPUS)-1)*100;
-  const sd=state.startDate?new Date(state.startDate):new Date();
+  const sd=liveState.startDate?new Date(liveState.startDate):new Date();
   const days=Math.max(1,Math.floor((new Date()-sd)/86400000));const yrs=days/365.25;
   const cagr=yrs>0.08?(Math.pow(nav/CORPUS,1/yrs)-1)*100:tr;
-  const wins=state.completedTrades.filter(t=>t.pnlPct>0).length;
-  const wr=state.completedTrades.length?(wins/state.completedTrades.length*100):0;
+  const wins=liveState.completedTrades.filter(t=>t.pnlPct>0).length;
+  const wr=liveState.completedTrades.length?(wins/liveState.completedTrades.length*100):0;
   $("pfNav").textContent="₹"+(nav/10000000).toFixed(3)+" Cr";
   $("pfCash").textContent="₹"+(cash/100000).toFixed(1)+" L";
   $("pfInv").textContent="₹"+(inv/100000).toFixed(1)+" L";
@@ -158,29 +204,29 @@ function renderPerfStrip(){
   $("pfBooked").textContent=fmtPnL(booked);$("pfBooked").className="pf-val "+(booked>=0?"green":"red");
   $("pfUnreal").textContent=fmtPnL(unreal);$("pfUnreal").className="pf-val "+(unreal>=0?"green":"red");
   $("pfRet").textContent=(tr>=0?"+":"")+tr.toFixed(2)+"%";$("pfRet").className="pf-val big "+(tr>=0?"green":"red");
-  $("pfCagr").textContent=state.startDate?(cagr>=0?"+":"")+cagr.toFixed(2)+"%":"—";$("pfCagr").className="pf-val "+(cagr>=0?"green":"red");
-  $("pfWin").textContent=state.completedTrades.length?wr.toFixed(0)+"%":"—";
-  $("pfTrades").textContent=state.completedTrades.length+" / "+(state.completedTrades.length+Object.keys(state.holdings).length);
+  $("pfCagr").textContent=liveState.startDate?(cagr>=0?"+":"")+cagr.toFixed(2)+"%":"—";$("pfCagr").className="pf-val "+(cagr>=0?"green":"red");
+  $("pfWin").textContent=liveState.completedTrades.length?wr.toFixed(0)+"%":"—";
+  $("pfTrades").textContent=liveState.completedTrades.length+" / "+(liveState.completedTrades.length+Object.keys(liveState.holdings).length);
 }
 
 function renderTodayActions(){
   const buyDiv=$("buySignals");const sellDiv=$("sellSignals");
-  const buys=state.todayExecutedBuys||[];const sells=state.todayExecutedSells||[];
+  const buys=liveState.todayExecutedBuys||[];const sells=liveState.todayExecutedSells||[];
   if(buys.length===0){buyDiv.innerHTML='<div class="empty">No BUYs in last run</div>'}
-  else{buyDiv.innerHTML=buys.map(t=>{const pos=state.holdings[t];const cmp=state.prices[t]?state.prices[t].cmp:(pos?pos.entryPrice:0);const entry=pos?pos.entryPrice:0;const pnl=pos&&entry?((cmp-entry)/entry)*100:0;return "<div class='signal-item buy-item'><b>"+t+"</b><span>₹"+entry.toFixed(2)+" → ₹"+cmp.toFixed(2)+" <span class='"+(pnl>=0?'green':'red')+"' style='font-size:10px'>("+(pnl>=0?'+':'')+pnl.toFixed(2)+"%)</span></span></div>"}).join('')}
+  else{buyDiv.innerHTML=buys.map(t=>{const pos=liveState.holdings[t];const cmp=liveState.prices[t]?liveState.prices[t].cmp:(pos?pos.entryPrice:0);const entry=pos?pos.entryPrice:0;const pnl=pos&&entry?((cmp-entry)/entry)*100:0;return "<div class='signal-item buy-item'><b>"+t+"</b><span>₹"+entry.toFixed(2)+" → ₹"+cmp.toFixed(2)+" <span class='"+(pnl>=0?'green':'red')+"' style='font-size:10px'>("+(pnl>=0?'+':'')+pnl.toFixed(2)+"%)</span></span></div>"}).join('')}
   $("buyCount").textContent=buys.length+" bought";
   if(sells.length===0){sellDiv.innerHTML='<div class="empty">No SELLs in last run</div>'}
   else{sellDiv.innerHTML=sells.map(s=>"<div class='signal-item sell-item'><b>"+s+"</b></div>").join('')}
   $("sellCount").textContent=sells.length+" sold";
-  $("signalsSummary").textContent=state.lastExecuteDate?"Last algo run: "+state.lastExecuteDate:"Never executed yet";
+  $("signalsSummary").textContent=liveState.lastExecuteDate?"Last run: "+liveState.lastExecuteDate:"Never executed yet";
 }
 
 function renderPortfolio(){
-  const entries=Object.entries(state.holdings);
+  const entries=Object.entries(liveState.holdings);
   if(entries.length===0){$("pfEmpty").style.display="block";$("pfTable").style.display="none";return}
   $("pfEmpty").style.display="none";$("pfTable").style.display="table";
   const rows=entries.map(([t,p])=>{
-    const cmp=state.prices[t]?state.prices[t].cmp:p.entryPrice;
+    const cmp=liveState.prices[t]?liveState.prices[t].cmp:p.entryPrice;
     const inv=p.shares*p.entryPrice;const mv=p.shares*cmp;
     const pnl=mv-inv;const pnlPct=(pnl/inv)*100;
     const days=Math.floor((new Date()-new Date(p.entryDate))/86400000);
@@ -190,55 +236,68 @@ function renderPortfolio(){
   $("pfTbody").innerHTML=rows;
 }
 
+function setHistoryView(v,btn){historyView=v;document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));btn.classList.add("active");renderYearHistory()}
+
 function renderYearHistory(){
   const div=$("yearHistory");
-  if(state.monthlyJournal.length===0){div.innerHTML='<div class="empty">History appears once server algo executes trades</div>';return}
-  const byYear={};state.monthlyJournal.forEach(m=>{const y=m.month.slice(0,4);if(!byYear[y])byYear[y]=[];byYear[y].push(m)});
+  // Merge journals with source tag
+  let allMonths=[];
+  if(historyView==='all'||historyView==='bt'){backtestState.monthlyJournal.forEach(m=>allMonths.push({...m,source:'bt'}))}
+  if(historyView==='all'||historyView==='live'){liveState.monthlyJournal.forEach(m=>allMonths.push({...m,source:'live'}))}
+  // Dedupe by month (live takes priority)
+  const uniq={};allMonths.forEach(m=>{if(!uniq[m.month]||m.source==='live')uniq[m.month]=m});
+  const merged=Object.values(uniq).sort((a,b)=>a.month.localeCompare(b.month));
+  if(merged.length===0){div.innerHTML='<div class="empty">No history yet. Run backtest via GitHub Actions to see 25 years.</div>';return}
+  
+  const byYear={};merged.forEach(m=>{const y=m.month.slice(0,4);if(!byYear[y])byYear[y]=[];byYear[y].push(m)});
   const years=Object.keys(byYear).sort().reverse();
+  
+  // Compute Nifty for comparison per year (from backtest summary if avail)
   div.innerHTML=years.map(y=>{
-    const months=byYear[y];const startNav=months[0].nav;const endNav=months[months.length-1].nav;
+    const months=byYear[y].sort((a,b)=>a.month.localeCompare(b.month));
+    const startNav=months[0].nav;const endNav=months[months.length-1].nav;
     const yrRet=((endNav/startNav)-1)*100;
-    const tb=months.reduce((a,m)=>a+m.bought.length,0);const ts=months.reduce((a,m)=>a+m.sold.length,0);
-    const tw=months.reduce((a,m)=>a+(m.winsThisMonth||0),0);const tl=months.reduce((a,m)=>a+(m.lossesThisMonth||0),0);
-    return "<div class='year-card'><div class='year-header' onclick='toggleYear(\""+y+"\")'><div><div class='year-title'>"+y+"</div><div class='year-stats'><span>"+months.length+" months</span><span class='"+(yrRet>=0?'green':'red')+"'>"+(yrRet>=0?'+':'')+yrRet.toFixed(1)+"% year</span><span>End NAV ₹"+(endNav/10000000).toFixed(3)+"Cr</span><span>"+tb+"B · "+ts+"S</span><span>W/L "+tw+"/"+tl+"</span></div></div><div class='expand-icon'>▶</div></div><div class='year-body' id='yb_"+y+"'>"+months.slice().reverse().map(m=>{const mc=m.monthReturn>=0?'var(--green)':'var(--red)';return "<div class='month-item'><div class='month-header'><div><b>"+m.month+"</b> · ₹"+m.navCr.toFixed(3)+"Cr · <span style='color:"+mc+"'>"+(m.monthReturn>=0?'+':'')+m.monthReturn+"% MoM</span> · Total "+(m.totalReturn>=0?'+':'')+m.totalReturn+"%</div><div style='font-size:11px'>Holdings "+m.holdingsCount+" · Cash ₹"+(m.cash/100000).toFixed(1)+"L</div></div>"+(m.bought.length?"<div style='margin-top:3px'><b class='green'>BOUGHT ("+m.bought.length+"):</b> "+m.bought.map(t=>"<span class='tag tag-buy'>"+t+"</span>").join('')+"</div>":'')+(m.sold.length?"<div style='margin-top:3px'><b class='red'>SOLD ("+m.sold.length+"):</b> "+m.sold.map(t=>"<span class='tag tag-sell'>"+t+"</span>").join('')+" <span class='muted' style='font-size:10px'>· W "+(m.winsThisMonth||0)+" L "+(m.lossesThisMonth||0)+"</span></div>":'')+(m.held.length?"<div style='margin-top:3px'><b class='muted'>HELD ("+m.held.length+"):</b> "+m.held.slice(0,10).map(t=>"<span class='tag tag-hold'>"+t+"</span>").join('')+(m.held.length>10?" <span class='muted'>+"+(m.held.length-10)+"</span>":'')+"</div>":'')+"</div>"}).join('')+"</div></div>"
+    const tb=months.reduce((a,m)=>a+(m.bought||[]).length,0);
+    const ts=months.reduce((a,m)=>a+(m.sold||[]).length,0);
+    const tw=months.reduce((a,m)=>a+(m.winsThisMonth||0),0);
+    const tl=months.reduce((a,m)=>a+(m.lossesThisMonth||0),0);
+    const hasLive=months.some(m=>m.source==='live');
+    const hasBT=months.some(m=>m.source==='bt');
+    const tag=hasLive?"<span class='live-tag'>LIVE</span>":(hasBT?"<span class='bt-tag'>BACKTEST</span>":"");
+    return "<div class='year-card'><div class='year-header' onclick='toggleYear(\""+y+"\")'><div><div class='year-title'>"+y+tag+"</div><div class='year-stats'><span>"+months.length+" months</span><span class='"+(yrRet>=0?'green':'red')+"' style='font-weight:700'>"+(yrRet>=0?'+':'')+yrRet.toFixed(1)+"%</span><span>End NAV ₹"+(endNav/10000000).toFixed(3)+"Cr</span><span>"+tb+"B · "+ts+"S</span><span>W/L "+tw+"/"+tl+"</span></div></div><div class='expand-icon'>▶</div></div><div class='year-body' id='yb_"+y+"'>"+months.slice().reverse().map(m=>{const mc=m.monthReturn>=0?'var(--green)':'var(--red)';return "<div class='month-item'><div class='month-header'><div><b>"+m.month+"</b> · ₹"+m.navCr.toFixed(3)+"Cr · <span style='color:"+mc+"'>"+(m.monthReturn>=0?'+':'')+m.monthReturn+"% MoM</span> · Total "+(m.totalReturn>=0?'+':'')+m.totalReturn+"%</div><div style='font-size:11px'>Holdings "+m.holdingsCount+" · Cash ₹"+(m.cash/100000).toFixed(1)+"L</div></div>"+((m.bought||[]).length?"<div style='margin-top:3px'><b class='green'>BOUGHT ("+m.bought.length+"):</b> "+m.bought.map(t=>"<span class='tag tag-buy'>"+t+"</span>").join('')+"</div>":'')+((m.sold||[]).length?"<div style='margin-top:3px'><b class='red'>SOLD ("+m.sold.length+"):</b> "+m.sold.map(t=>"<span class='tag tag-sell'>"+t+"</span>").join('')+" <span class='muted' style='font-size:10px'>· W "+(m.winsThisMonth||0)+" L "+(m.lossesThisMonth||0)+"</span></div>":'')+((m.held||[]).length?"<div style='margin-top:3px'><b class='muted'>HELD ("+m.held.length+"):</b> "+m.held.slice(0,15).map(t=>"<span class='tag tag-hold'>"+t+"</span>").join('')+(m.held.length>15?" <span class='muted'>+"+(m.held.length-15)+"</span>":'')+"</div>":'')+"</div>"}).join('')+"</div></div>"
   }).join('');
 }
 
 function toggleYear(y){const body=$('yb_'+y);const hdr=body.previousElementSibling;body.classList.toggle('open');hdr.classList.toggle('open')}
-function renderAll(){renderPerfStrip();renderTodayActions();renderPortfolio();renderYearHistory()}
+function renderAll(){renderBacktestHero();renderPerfStrip();renderTodayActions();renderPortfolio();renderYearHistory()}
 
 async function reloadData(){
   setBanner("pending","🔄 RELOADING","Fetching latest state from server...");
-  const ok=await loadServerData();
-  if(ok){
-    renderAll();showStatus();
-  }else{
-    setBanner("error","❌ LOAD FAILED","Could not reach data.json. Check if server algo has run at least once.");
-  }
+  await loadServerData();renderAll();showStatus();
 }
 
 function showStatus(){
-  const nav=getNav();const unreal=getUnrealized();const booked=getBooked();
-  if(!state.lastExecuteDate){
-    setBanner("info","⏳ WAITING FOR FIRST RUN","Server algo hasn't executed yet. Click '⚙️ Trigger Server Algo Now' above to run it manually via GitHub Actions, OR wait until 9:45 AM IST tomorrow (weekday auto-run).");
-    return;
+  const hasBT=backtestState.summary!==null&&backtestState.summary!==undefined;
+  const hasLive=liveState.lastExecuteDate;
+  if(!hasBT&&!hasLive){
+    setBanner("info","⏳ WAITING FOR FIRST RUN","No data yet. Trigger backtest (25-year) or daily-algo workflow via GitHub Actions. Once run, this dashboard fills with data.");return;
   }
-  const lastRun=state.lastRun?new Date(state.lastRun).toLocaleString('en-IN',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}):state.lastExecuteDate;
-  setBanner("success","✅ SERVER ALGO EXECUTED","Last run: "+lastRun+" · NAV ₹"+(nav/10000000).toFixed(3)+" Cr · Booked "+fmtPnL(booked)+" · Unrealized "+fmtPnL(unreal)+" · "+Object.keys(state.holdings).length+" holdings");
+  const parts=[];
+  if(hasBT){parts.push("📊 Backtest: "+backtestState.summary.years+"yr · CAGR "+backtestState.summary.cagr+"% · ₹1Cr → ₹"+backtestState.summary.finalNavCr+"Cr")}
+  if(hasLive){parts.push("🟢 Live: NAV ₹"+(getNav()/10000000).toFixed(3)+"Cr · Last "+liveState.lastExecuteDate)}
+  setBanner("success","✅ DATA LOADED",parts.join(" · "));
 }
 
-function exportTradesCSV(){if(state.completedTrades.length===0){alert("No closed trades yet");return}const h=["Ticker","EntryDate","ExitDate","EntryPrice","ExitPrice","Shares","Days","PnL_Abs","PnL_Pct","Outcome"];const rows=state.completedTrades.map(t=>[t.ticker,t.entryDate,t.exitDate,t.entryPrice,t.exitPrice,t.shares,t.holdDays,t.pnlAbs,t.pnlPct,t.outcome].join(","));downloadCSV("closed_trades_"+new Date().toISOString().slice(0,10)+".csv",[h.join(","),...rows].join("\n"))}
-function exportPositionsCSV(){const entries=Object.entries(state.holdings);if(entries.length===0){alert("No positions");return}const h=["Symbol","Exchange","Segment","Product","OrderType","TransactionType","Quantity","Price"];const rows=entries.map(([t,p])=>[t,"NSE","EQ","CNC","MARKET","BUY",p.shares,""].join(","));downloadCSV("positions_zerodha_"+new Date().toISOString().slice(0,10)+".csv",[h.join(","),...rows].join("\n"))}
-function exportJournalCSV(){if(state.monthlyJournal.length===0){alert("No history");return}const h=["Month","NAV_Cr","MoM_%","Total_%","Cash","Holdings","Bought","Sold","Wins","Losses"];const rows=state.monthlyJournal.map(m=>[m.month,m.navCr,m.monthReturn,m.totalReturn,Math.round(m.cash/1000)+"K",m.holdingsCount,'"'+m.bought.join(";")+'"','"'+m.sold.join(";")+'"',m.winsThisMonth||0,m.lossesThisMonth||0].join(","));downloadCSV("monthly_journal_"+new Date().toISOString().slice(0,10)+".csv",[h.join(","),...rows].join("\n"))}
+function exportTradesCSV(){const trades=[...backtestState.completedTrades,...liveState.completedTrades];if(trades.length===0){alert("No trades");return}const h=["Ticker","EntryDate","ExitDate","EntryPrice","ExitPrice","Shares","Days","PnL_Abs","PnL_Pct","Outcome"];const rows=trades.map(t=>[t.ticker,t.entryDate,t.exitDate,t.entryPrice,t.exitPrice,t.shares,t.holdDays,t.pnlAbs,t.pnlPct,t.outcome].join(","));downloadCSV("all_trades_"+new Date().toISOString().slice(0,10)+".csv",[h.join(","),...rows].join("\n"))}
+function exportPositionsCSV(){const entries=Object.entries(liveState.holdings);if(entries.length===0){alert("No live positions");return}const h=["Symbol","Exchange","Segment","Product","OrderType","TransactionType","Quantity","Price"];const rows=entries.map(([t,p])=>[t,"NSE","EQ","CNC","MARKET","BUY",p.shares,""].join(","));downloadCSV("positions_zerodha_"+new Date().toISOString().slice(0,10)+".csv",[h.join(","),...rows].join("\n"))}
+function exportJournalCSV(){const j=[...backtestState.monthlyJournal,...liveState.monthlyJournal];if(j.length===0){alert("No history");return}const h=["Month","Source","NAV_Cr","MoM_%","Total_%","Cash","Holdings","Bought","Sold","Wins","Losses"];const rows=j.map(m=>[m.month,m.source||'?',m.navCr,m.monthReturn,m.totalReturn,Math.round(m.cash/1000)+"K",m.holdingsCount,'"'+(m.bought||[]).join(";")+'"','"'+(m.sold||[]).join(";")+'"',m.winsThisMonth||0,m.lossesThisMonth||0].join(","));downloadCSV("full_journal_"+new Date().toISOString().slice(0,10)+".csv",[h.join(","),...rows].join("\n"))}
 function downloadCSV(name,content){const b=new Blob([content],{type:"text/csv"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=name;a.click()}
 
 document.addEventListener("DOMContentLoaded",async()=>{
   const today=new Date();const dateStr=today.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
-  $("todayDate").textContent=dateStr+" · Server-Automated · Runs 9:45 AM IST weekdays via GitHub Actions · Your laptop can be off";
+  $("todayDate").textContent=dateStr+" · Backtest 2000-2025 + Live from 2026 · Server runs 9:45 AM IST weekdays";
   $("todayDateBig").textContent=today.toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'});
-  await loadServerData();
-  renderAll();
-  showStatus();
+  await loadServerData();renderAll();showStatus();
 });
 </script>
 </body></html>
