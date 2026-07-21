@@ -1,0 +1,29 @@
+name: Telegram Notify
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows:
+      - "Daily PMS Algo"
+      - "Enrich Backtests with Nifty MoM"
+    types:
+      - completed
+  schedule:
+    - cron: '30 4 * * 1-5'
+    - cron: '30 10 * * 1-5'
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python telegram_notify.py
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
