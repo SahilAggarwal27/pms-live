@@ -1,0 +1,32 @@
+name: Super Enhanced Backtest (L1-L5+L6+L10)
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '45 5 * * 0'  # Sundays 11:15 AM IST
+  push:
+    paths:
+      - 'super_enhanced_backtest.py'
+      - '.github/workflows/super-enhanced-backtest.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install "yfinance>=0.2.40" pandas numpy curl_cffi
+      - run: python super_enhanced_backtest.py
+      - name: Commit results
+        run: |
+          git config user.name "PMS Super Bot"
+          git config user.email "bot@github.com"
+          git add backtest_super_enhanced.json
+          git diff --staged --quiet || git commit -m "Super Enhanced $(date -u +%Y-%m-%d)"
+          git push
