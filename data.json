@@ -1,0 +1,13 @@
+{
+  "holdings": {},
+  "monthlyJournal": [],
+  "completedTrades": [],
+  "navHistory": [],
+  "startDate": null,
+  "lastExecuteDate": null,
+  "lastRun": null,
+  "todayExecutedBuys": [],
+  "todayExecutedSells": [],
+  "prices": {},
+  "note": "This file is auto-updated by GitHub Actions daily at 9:45 AM IST"
+}
