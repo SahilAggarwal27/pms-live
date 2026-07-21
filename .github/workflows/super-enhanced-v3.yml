@@ -1,0 +1,32 @@
+name: Super Enhanced v3 Backtest (Flagship 12-Layer)
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * 0'  # Sundays 11:30 AM IST
+  push:
+    paths:
+      - 'super_enhanced_backtest_v3.py'
+      - '.github/workflows/super-enhanced-v3.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install "yfinance>=0.2.40" pandas numpy curl_cffi
+      - run: python super_enhanced_backtest_v3.py
+      - name: Commit results
+        run: |
+          git config user.name "PMS v3 Bot"
+          git config user.email "bot@github.com"
+          git add backtest_super_enhanced_v3.json
+          git diff --staged --quiet || git commit -m "v3 Backtest $(date -u +%Y-%m-%d)"
+          git push
