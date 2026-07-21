@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"/><title>PMS Algo - Fully Automated Paper Trading</title>
+<head><meta charset="UTF-8"/><title>PMS Algo - Server-Automated</title>
 <style>
 :root{--bg:#0a0e1a;--bg2:#131929;--bg3:#1a2233;--text:#e2e8f0;--muted:#94a3b8;--border:#2a3447;--green:#10b981;--red:#ef4444;--yellow:#f59e0b;--accent:#3b82f6}
 *{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);margin:0;padding:16px;line-height:1.5;font-size:13px}
@@ -8,6 +8,7 @@
 .exec-banner{background:linear-gradient(135deg,#065f46,#059669);border:2px solid var(--green);border-radius:12px;padding:16px 20px;margin-bottom:14px;font-size:14px;font-weight:600}
 .exec-banner.pending{background:linear-gradient(135deg,#78350f,#f59e0b);border-color:var(--yellow)}
 .exec-banner.error{background:linear-gradient(135deg,#7f1d1d,#dc2626);border-color:var(--red)}
+.exec-banner.info{background:linear-gradient(135deg,#1e3a8a,#1e40af);border-color:var(--accent)}
 .exec-banner .title{font-size:11px;letter-spacing:2px;opacity:0.85;margin-bottom:4px}
 .exec-banner .msg{font-size:15px}
 .perf-strip{background:linear-gradient(135deg,#1e293b,#0f172a);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));gap:8px}
@@ -25,10 +26,6 @@
 .green{color:var(--green)}.red{color:var(--red)}.muted{color:var(--muted)}.yellow{color:var(--yellow)}
 .btn{background:var(--accent);color:white;border:none;padding:8px 14px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600}
 .btn-small{padding:5px 10px;font-size:11px}.btn-red{background:var(--red)}.btn-gray{background:var(--bg3);border:1px solid var(--border);color:var(--text)}
-.status{background:var(--bg2);border-radius:6px;padding:8px 12px;margin-bottom:12px;font-size:12px;font-family:monospace;border-left:3px solid var(--accent)}
-.status.success{border-left-color:var(--green)}.status.error{border-left-color:var(--red)}
-.progress-bar{height:5px;background:var(--bg3);border-radius:3px;overflow:hidden;margin-top:6px}
-.progress-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--accent));width:0%;transition:width 0.3s}
 .portfolio-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:14px}
 table{width:100%;border-collapse:collapse;font-size:11px}
 th,td{padding:6px 8px;text-align:right;border-bottom:1px solid var(--border)}
@@ -49,23 +46,22 @@ tr:hover{background:rgba(255,255,255,0.02)}
 .expand-icon{font-size:18px;font-weight:700;transition:transform 0.2s}
 .year-header.open .expand-icon{transform:rotate(90deg)}
 .empty{color:var(--muted);padding:14px;text-align:center;font-size:12px}
-.toggle{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted)}
-.toggle input{cursor:pointer}
 .version{position:fixed;bottom:6px;right:12px;font-size:10px;color:var(--muted);opacity:0.5}
-.auto-badge{background:var(--green);color:white;padding:3px 10px;border-radius:12px;font-size:10px;font-weight:700;text-transform:uppercase;animation:pulse 2s infinite}
+.server-badge{background:var(--accent);color:white;padding:3px 10px;border-radius:12px;font-size:10px;font-weight:700;text-transform:uppercase}
+.server-badge.live{background:var(--green);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.7}}
 </style></head>
 <body><div class="container">
 
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
-<h1>🤖 PMS Algo — Fully Automated</h1>
-<span class="auto-badge" id="autoBadge">🟢 AUTO EXECUTE</span>
+<h1>🤖 PMS Algo — Server Automated</h1>
+<span class="server-badge live" id="serverBadge">☁️ SERVER ALGO</span>
 </div>
-<div style="color:var(--muted);font-size:12px;margin-bottom:14px" id="todayDate">Loading...</div>
+<div style="color:var(--muted);font-size:12px;margin-bottom:14px" id="todayDate">Loading server data...</div>
 
-<div class="exec-banner" id="execBanner">
-  <div class="title">⚡ ALGO STATUS</div>
-  <div class="msg" id="execMsg">Initializing algo — fetching prices, ranking stocks, auto-executing signals...</div>
+<div class="exec-banner info" id="execBanner">
+  <div class="title">☁️ ALGO STATUS</div>
+  <div class="msg" id="execMsg">Loading latest state from GitHub server...</div>
 </div>
 
 <div class="perf-strip">
@@ -81,186 +77,78 @@ tr:hover{background:rgba(255,255,255,0.02)}
   <div class="pf-cell"><div class="pf-lbl">Trades (Closed)</div><div class="pf-val" id="pfTrades">0</div></div>
 </div>
 
-<h2>📊 Live Portfolio <span class="muted" style="font-size:10px;text-transform:none;letter-spacing:0">— all positions with current MTM</span></h2>
+<h2>📊 Live Portfolio <span class="muted" style="font-size:10px;text-transform:none;letter-spacing:0">— server-executed positions with entry vs CMP</span></h2>
 <div class="portfolio-card" id="portfolioCard">
-  <div class="empty" id="pfEmpty">No positions yet. Algo executing on first load...</div>
+  <div class="empty" id="pfEmpty">No positions yet. Server algo runs 9:45 AM IST every weekday.</div>
   <div style="overflow-x:auto"><table id="pfTable" style="display:none">
-    <thead><tr><th>Ticker</th><th>Entry Date</th><th>Entry ₹</th><th>CMP ₹</th><th>Qty</th><th>Invested</th><th>Market Value</th><th>P&L ₹</th><th>P&L %</th><th>Days</th></tr></thead>
+    <thead><tr><th>Ticker</th><th>Entry Date</th><th>Entry ₹</th><th>Last Close ₹</th><th>Qty</th><th>Invested</th><th>Value</th><th>P&L ₹</th><th>P&L %</th><th>Days</th></tr></thead>
     <tbody id="pfTbody"></tbody>
   </table></div>
 </div>
 
 <div class="today-signals">
-  <div class="today-title"><span>📋 TODAY'S ALGO ACTIONS · <span id="todayDateBig"></span></span><span id="signalsSummary" class="muted"></span></div>
+  <div class="today-title"><span>📋 LAST ALGO RUN · <span id="todayDateBig"></span></span><span id="signalsSummary" class="muted"></span></div>
   <div class="signal-grid">
-    <div class="signal-col"><div class="signal-heading"><span class="green">🟢 BOUGHT TODAY</span><span id="buyCount" class="muted">—</span></div><div id="buySignals"><div class="empty">Waiting for auto-execute...</div></div></div>
-    <div class="signal-col"><div class="signal-heading"><span class="red">🔴 SOLD TODAY</span><span id="sellCount" class="muted">—</span></div><div id="sellSignals"><div class="empty">Nothing sold yet</div></div></div>
+    <div class="signal-col"><div class="signal-heading"><span class="green">🟢 BOUGHT</span><span id="buyCount" class="muted">—</span></div><div id="buySignals"><div class="empty">No trades yet</div></div></div>
+    <div class="signal-col"><div class="signal-heading"><span class="red">🔴 SOLD</span><span id="sellCount" class="muted">—</span></div><div id="sellSignals"><div class="empty">No trades yet</div></div></div>
   </div>
 </div>
 
-<div class="status" id="status">Ready.<div class="progress-bar"><div class="progress-fill" id="progFill"></div></div></div>
-
 <div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;align-items:center">
-  <button class="btn btn-small btn-gray" onclick="forceRerun()">🔁 Force Re-run Algo</button>
-  <button class="btn btn-small btn-gray" onclick="exportTradesCSV()">📥 Closed Trades CSV</button>
-  <button class="btn btn-small btn-gray" onclick="exportPositionsCSV()">📥 Positions CSV (Zerodha)</button>
+  <button class="btn btn-small" onclick="reloadData()">🔄 Reload Latest Data</button>
+  <a class="btn btn-small btn-gray" href="https://github.com/SahilAggarwal27/pms-live/actions" target="_blank" style="text-decoration:none;color:inherit">⚙️ Trigger Server Algo Now (GitHub Actions)</a>
+  <button class="btn btn-small btn-gray" onclick="exportTradesCSV()">📥 Trades CSV</button>
+  <button class="btn btn-small btn-gray" onclick="exportPositionsCSV()">📥 Positions CSV</button>
   <button class="btn btn-small btn-gray" onclick="exportJournalCSV()">📥 Journal CSV</button>
-  <label class="toggle" style="margin-left:auto"><input type="checkbox" id="autoExec" checked onchange="toggleAuto()"/> Auto-execute on open (uncheck for read-only mode)</label>
-  <button class="btn btn-small btn-red" onclick="resetAll()">↻ Reset</button>
 </div>
 
 <h2>📅 History by Year (click year to expand)</h2>
-<div id="yearHistory"><div class="empty">History appears after first execution</div></div>
+<div id="yearHistory"><div class="empty">History appears once server algo executes trades</div></div>
 
 </div>
-<div class="version">v2.1 · Fully Automated · Live from GitHub</div>
+<div class="version">v3.0 · Server Automated · GitHub Actions Cron</div>
 
 <script>
-const UNIVERSE=["PERSISTENT","COFORGE","MPHASIS","LTIM","KPITTECH","TATAELXSI","OFSS","BOSCHLTD","MRF","MOTHERSON","EXIDEIND","BALKRISIND","BHARATFORG","MUTHOOTFIN","CHOLAFIN","LICHSGFIN","MFSL","PFC","RECLTD","LUPIN","AUROPHARMA","GLENMARK","BIOCON","ALKEM","LAURUSLABS","JBCHEPHARM","ABBOTINDIA","SIEMENS","CUMMINSIND","THERMAX","HAL","BEL","CGPOWER","DIXON","PIIND","DEEPAKNTR","NAVINFLUOR","SRF","ATUL","AARTIIND","VINATIORGA","COROMANDEL","SOLARINDS","PAGEIND","HAVELLS","VOLTAS","CROMPTON","JUBLFOOD","VBL","TRENT","FEDERALBNK","AUBANK","IDFCFIRSTB","BANKBARODA","GODREJPROP","OBEROIRLTY","PRESTIGE","IEX","CDSL","MCX","INDIAMART","NAUKRI","GAIL","IGL","TATAPOWER","HINDZINC","JINDALSTEL","NMDC"];
-const PROXIES=[u=>"https://api.allorigins.win/raw?url="+encodeURIComponent(u),u=>"https://corsproxy.io/?"+encodeURIComponent(u),u=>"https://api.codetabs.com/v1/proxy?quest="+encodeURIComponent(u)];
-const CONFIG={TOP_N:15,CORPUS:10000000,BATCH_SIZE:10};
+const CORPUS=10000000;
+const DATA_URL="data.json?t="+Date.now(); // cache-bust
+let state={holdings:{},monthlyJournal:[],completedTrades:[],navHistory:[],startDate:null,lastExecuteDate:null,lastRun:null,todayExecutedBuys:[],todayExecutedSells:[],prices:{}};
 
-const state={holdings:{},monthlyJournal:[],completedTrades:[],navHistory:[],startDate:null,lastCycleDate:null,lastRefreshDate:null,lastExecuteDate:null,stocks:[],todayPicks:[],todayExits:[],todayExecutedBuys:[],todayExecutedSells:[],autoExec:true};
-let startTimeGlobal;
-
-function save(){try{localStorage.setItem('pms_algo_v2',JSON.stringify(state))}catch(e){console.error(e)}}
-function load(){try{const r=localStorage.getItem('pms_algo_v2');if(r){const d=JSON.parse(r);Object.assign(state,d);state.stocks=state.stocks||[];state.todayPicks=state.todayPicks||[];state.todayExits=state.todayExits||[];state.todayExecutedBuys=state.todayExecutedBuys||[];state.todayExecutedSells=state.todayExecutedSells||[]}}catch(e){}}
 function $(id){return document.getElementById(id)}
 
-async function fetchOne(t){const url="https://query1.finance.yahoo.com/v8/finance/chart/"+t+".NS?interval=1d&range=1y";for(const p of PROXIES){try{const r=await fetch(p(url),{signal:AbortSignal.timeout(8000)});if(!r.ok)continue;const d=await r.json();if(!d.chart||!d.chart.result||!d.chart.result[0])continue;const res=d.chart.result[0];const q=res.indicators.quote[0];const cs=(q.close||[]).filter(x=>x!==null);if(cs.length<150)continue;const cmp=res.meta.regularMarketPrice;const dma200=cs.slice(-Math.min(200,cs.length)).reduce((a,b)=>a+b,0)/Math.min(200,cs.length);const p6=cs.length>126?cs[cs.length-126]:cs[0];const p1=cs.length>22?cs[cs.length-22]:cmp;return{ticker:t,cmp,dma200,ret6m:(cmp/p6)-1,ret1m:(cmp/p1)-1}}catch(e){}}return null}
-
-async function fetchAll(){const sb=$("status");sb.className="status";const results=[];let done=0;const total=UNIVERSE.length;for(let i=0;i<total;i+=CONFIG.BATCH_SIZE){const batch=UNIVERSE.slice(i,i+CONFIG.BATCH_SIZE);sb.innerHTML="⚡ Fetching batch "+Math.floor(i/CONFIG.BATCH_SIZE+1)+"/"+Math.ceil(total/CONFIG.BATCH_SIZE)+" ("+done+"/"+total+")"+'<div class="progress-bar"><div class="progress-fill" style="width:'+((done/total)*100)+'%"></div></div>';const batchResults=await Promise.all(batch.map(t=>fetchOne(t)));batchResults.forEach(r=>{if(r)results.push(r);done++});if(i+CONFIG.BATCH_SIZE<total)await new Promise(x=>setTimeout(x,150))}state.stocks=results;sb.className="status success";sb.innerHTML="✓ Fetched "+results.length+"/"+total+" in "+Math.round((Date.now()-startTimeGlobal)/1000)+"s"+'<div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div>';return results.length}
-
-function rankStocks(){return state.stocks.filter(s=>s.cmp>s.dma200).map(s=>({...s,score:s.ret6m-s.ret1m*0.5})).sort((a,b)=>b.score-a.score).slice(0,CONFIG.TOP_N)}
-
-async function runAlgo(){
-  setBanner("pending","🤖 ALGO RUNNING","Fetching 68 stocks from Yahoo Finance... (~30s)");
-  startTimeGlobal=Date.now();
-  const n=await fetchAll();
-  if(n<20){setBanner("error","❌ FETCH FAILED","Only "+n+" stocks fetched. Retry or check connection.");return}
-  
-  setBanner("pending","🤖 ALGO RUNNING","Ranking stocks and computing signals...");
-  const picked=rankStocks();
-  const pickedTickers=picked.map(p=>p.ticker);
-  const today=new Date();
-  const dateStr=today.toISOString().slice(0,10);
-  const monthStr=today.toISOString().slice(0,7);
-  if(!state.startDate)state.startDate=dateStr;
-  
-  state.todayPicks=picked.filter(p=>!state.holdings[p.ticker]).map(p=>({ticker:p.ticker,cmp:p.cmp,ret6m:(p.ret6m*100).toFixed(1)}));
-  state.todayExits=Object.keys(state.holdings).filter(t=>!pickedTickers.includes(t)).map(t=>{const s=state.stocks.find(x=>x.ticker===t);const cmp=s?s.cmp:state.holdings[t].entryPrice;const pnl=((cmp-state.holdings[t].entryPrice)/state.holdings[t].entryPrice)*100;return{ticker:t,cmp,pnl:pnl.toFixed(2),shares:state.holdings[t].shares}});
-  state.lastRefreshDate=dateStr;
-  
-  // AUTO-EXECUTE SELLS FIRST (to free up cash)
-  const soldToday=[];
-  state.todayExits.forEach(e=>{
-    const pos=state.holdings[e.ticker];if(!pos)return;
-    const sp=e.cmp;
-    const pnl_abs=(sp-pos.entryPrice)*pos.shares;
-    const pnl_pct=((sp-pos.entryPrice)/pos.entryPrice)*100;
-    const hd=Math.floor((new Date()-new Date(pos.entryDate))/86400000);
-    state.completedTrades.push({ticker:e.ticker,entryDate:pos.entryDate,exitDate:dateStr,entryPrice:pos.entryPrice,exitPrice:sp,shares:pos.shares,holdDays:hd,pnlPct:+pnl_pct.toFixed(2),pnlAbs:+pnl_abs.toFixed(0),outcome:pnl_pct>0?'WIN':'LOSS'});
-    soldToday.push(e.ticker+" ("+(pnl_pct>=0?'+':'')+pnl_pct.toFixed(1)+"%)");
-    delete state.holdings[e.ticker];
-  });
-  
-  // AUTO-EXECUTE BUYS
-  let cash=getCash();
-  const currentNav=cash+getMarketValue();
-  const perStock=currentNav/CONFIG.TOP_N;
-  const boughtToday=[];
-  state.todayPicks.forEach(p=>{
-    if(state.holdings[p.ticker])return;
-    const sh=Math.floor(perStock/p.cmp);
-    if(sh<1||cash<sh*p.cmp)return;
-    cash-=sh*p.cmp;
-    state.holdings[p.ticker]={shares:sh,entryPrice:p.cmp,entryDate:dateStr};
-    boughtToday.push(p.ticker);
-  });
-  
-  // Log to monthly journal
-  if(boughtToday.length>0||soldToday.length>0){
-    logToMonth(monthStr,dateStr,boughtToday,soldToday);
+async function loadServerData(){
+  try{
+    const r=await fetch("data.json?t="+Date.now(),{cache:"no-store"});
+    if(!r.ok)throw new Error("HTTP "+r.status);
+    const d=await r.json();
+    Object.assign(state,d);
+    return true;
+  }catch(e){
+    console.error("Failed to load data.json:",e);
+    return false;
   }
-  
-  state.todayExecutedBuys=boughtToday.slice();
-  state.todayExecutedSells=soldToday.slice();
-  state.todayPicks=[];
-  state.todayExits=[];
-  state.lastCycleDate=dateStr;
-  state.lastExecuteDate=dateStr;
-  save();renderAll();
-  
-  const dur=Math.round((Date.now()-startTimeGlobal)/1000);
-  const nav=getNav();
-  const unreal=getUnrealized();
-  const timeStr=new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'});
-  setBanner("success","✅ ALGO EXECUTED @ "+timeStr,"Auto-bought "+boughtToday.length+" · Auto-sold "+soldToday.length+" · NAV ₹"+(nav/10000000).toFixed(3)+" Cr · Unrealized "+fmtPnL(unreal)+" · Completed in "+dur+"s");
-  $("status").className="status success";
-  $("status").innerHTML="✓ Algo done in "+dur+"s. Next run: tomorrow (auto).";
-}
-
-async function refreshQuotesOnly(){
-  // Just refresh CMPs for existing holdings (no re-execute)
-  startTimeGlobal=Date.now();
-  const heldTickers=Object.keys(state.holdings);
-  if(heldTickers.length===0)return;
-  setBanner("pending","🔄 REFRESHING PRICES","Updating live prices for "+heldTickers.length+" holdings...");
-  await fetchAll();
-  renderAll();
-  const nav=getNav();const unreal=getUnrealized();
-  const timeStr=new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'});
-  setBanner("success","📊 PORTFOLIO UPDATED @ "+timeStr,"NAV ₹"+(nav/10000000).toFixed(3)+" Cr · Unrealized "+fmtPnL(unreal)+" · Auto-execute skipped (already ran today)");
-}
-
-async function forceRerun(){
-  if(!confirm("Force re-run algo? This will re-fetch and re-execute today's signals."))return;
-  state.lastExecuteDate=null;save();
-  await runAlgo();
 }
 
 function setBanner(cls,title,msg){
-  const b=$("execBanner");b.className="exec-banner "+(cls||"");
+  const b=$("execBanner");b.className="exec-banner "+(cls||"info");
   b.innerHTML='<div class="title">'+title+'</div><div class="msg">'+msg+'</div>';
 }
 
-function logToMonth(monthStr,dateStr,boughtT,soldT){
-  const idx=state.monthlyJournal.findIndex(m=>m.month===monthStr);
-  const nav=getNav();
-  const cash=getCash();
-  const hcount=Object.keys(state.holdings).length;
-  const mr=state.navHistory.length>0?((nav/state.navHistory[state.navHistory.length-1].nav)-1)*100:0;
-  const tr=((nav/CONFIG.CORPUS)-1)*100;
-  if(idx>=0){
-    const m=state.monthlyJournal[idx];
-    m.bought=[...new Set([...m.bought,...boughtT])];
-    m.sold=[...m.sold,...soldT];
-    m.nav=Math.round(nav);m.navCr=+(nav/10000000).toFixed(3);
-    m.monthReturn=+mr.toFixed(2);m.totalReturn=+tr.toFixed(2);
-    m.cash=Math.round(cash);m.holdingsCount=hcount;
-    m.held=Object.keys(state.holdings).filter(t=>!m.bought.includes(t));
-  }else{
-    state.monthlyJournal.push({month:monthStr,date:dateStr,nav:Math.round(nav),navCr:+(nav/10000000).toFixed(3),monthReturn:+mr.toFixed(2),totalReturn:+tr.toFixed(2),cash:Math.round(cash),holdingsCount:hcount,bought:boughtT,sold:soldT,held:Object.keys(state.holdings).filter(t=>!boughtT.includes(t)),winsThisMonth:0,lossesThisMonth:0});
-  }
-  const m=state.monthlyJournal[state.monthlyJournal.findIndex(mm=>mm.month===monthStr)];
-  m.winsThisMonth=state.completedTrades.filter(t=>t.exitDate.startsWith(monthStr)&&t.pnlPct>0).length;
-  m.lossesThisMonth=state.completedTrades.filter(t=>t.exitDate.startsWith(monthStr)&&t.pnlPct<=0).length;
-  state.navHistory.push({date:dateStr,nav});
-}
-
-function getCash(){const invested=Object.values(state.holdings).reduce((a,p)=>a+p.shares*p.entryPrice,0);const booked=state.completedTrades.reduce((a,t)=>a+t.pnlAbs,0);return CONFIG.CORPUS+booked-invested}
-function getMarketValue(){return Object.entries(state.holdings).reduce((a,[t,p])=>{const s=state.stocks.find(x=>x.ticker===t);return a+p.shares*(s?s.cmp:p.entryPrice)},0)}
+function getCash(){const invested=Object.values(state.holdings).reduce((a,p)=>a+p.shares*p.entryPrice,0);const booked=state.completedTrades.reduce((a,t)=>a+t.pnlAbs,0);return CORPUS+booked-invested}
+function getMarketValue(){return Object.entries(state.holdings).reduce((a,[t,p])=>{const cmp=state.prices[t]?state.prices[t].cmp:p.entryPrice;return a+p.shares*cmp},0)}
 function getNav(){return getCash()+getMarketValue()}
 function getBooked(){return state.completedTrades.reduce((a,t)=>a+t.pnlAbs,0)}
-function getUnrealized(){return Object.entries(state.holdings).reduce((a,[t,p])=>{const s=state.stocks.find(x=>x.ticker===t);const cmp=s?s.cmp:p.entryPrice;return a+(cmp-p.entryPrice)*p.shares},0)}
+function getUnrealized(){return Object.entries(state.holdings).reduce((a,[t,p])=>{const cmp=state.prices[t]?state.prices[t].cmp:p.entryPrice;return a+(cmp-p.entryPrice)*p.shares},0)}
+
+function fmtPnL(v){const abs=Math.abs(v);const s=v>=0?"+":"-";return s+"₹"+(abs>=100000?(abs/100000).toFixed(2)+"L":Math.round(abs))}
 
 function renderPerfStrip(){
-  const nav=getNav();const cash=getCash();const inv=Object.values(state.holdings).reduce((a,p)=>a+p.shares*p.entryPrice,0);const mv=getMarketValue();
-  const booked=getBooked();const unreal=getUnrealized();
-  const tr=((nav/CONFIG.CORPUS)-1)*100;
+  const nav=getNav();const cash=getCash();
+  const inv=Object.values(state.holdings).reduce((a,p)=>a+p.shares*p.entryPrice,0);
+  const mv=getMarketValue();const booked=getBooked();const unreal=getUnrealized();
+  const tr=((nav/CORPUS)-1)*100;
   const sd=state.startDate?new Date(state.startDate):new Date();
   const days=Math.max(1,Math.floor((new Date()-sd)/86400000));const yrs=days/365.25;
-  const cagr=yrs>0.08?(Math.pow(nav/CONFIG.CORPUS,1/yrs)-1)*100:tr;
+  const cagr=yrs>0.08?(Math.pow(nav/CORPUS,1/yrs)-1)*100:tr;
   const wins=state.completedTrades.filter(t=>t.pnlPct>0).length;
   const wr=state.completedTrades.length?(wins/state.completedTrades.length*100):0;
   $("pfNav").textContent="₹"+(nav/10000000).toFixed(3)+" Cr";
@@ -275,17 +163,16 @@ function renderPerfStrip(){
   $("pfTrades").textContent=state.completedTrades.length+" / "+(state.completedTrades.length+Object.keys(state.holdings).length);
 }
 
-function fmtPnL(v){const abs=Math.abs(v);const s=v>=0?"+":"-";return s+"₹"+(abs>=100000?(abs/100000).toFixed(2)+"L":Math.round(abs))}
-
 function renderTodayActions(){
   const buyDiv=$("buySignals");const sellDiv=$("sellSignals");
-  if(state.todayExecutedBuys.length===0){buyDiv.innerHTML='<div class="empty">No BUYs today</div>'}
-  else{buyDiv.innerHTML=state.todayExecutedBuys.map(t=>{const pos=state.holdings[t];const s=state.stocks.find(x=>x.ticker===t);const cmp=s?s.cmp:(pos?pos.entryPrice:0);const entry=pos?pos.entryPrice:0;const pnl=pos?((cmp-entry)/entry)*100:0;return "<div class='signal-item buy-item'><b>"+t+"</b><span>Entry ₹"+entry.toFixed(2)+" · CMP ₹"+cmp.toFixed(2)+" <span class='"+(pnl>=0?'green':'red')+"' style='font-size:10px'>("+(pnl>=0?'+':'')+pnl.toFixed(2)+"%)</span></span></div>"}).join('')}
-  $("buyCount").textContent=state.todayExecutedBuys.length+" executed";
-  if(state.todayExecutedSells.length===0){sellDiv.innerHTML='<div class="empty">No SELLs today</div>'}
-  else{sellDiv.innerHTML=state.todayExecutedSells.map(s=>"<div class='signal-item sell-item'><b>"+s+"</b></div>").join('')}
-  $("sellCount").textContent=state.todayExecutedSells.length+" executed";
-  $("signalsSummary").textContent=state.lastExecuteDate?"Last run: "+state.lastExecuteDate:"";
+  const buys=state.todayExecutedBuys||[];const sells=state.todayExecutedSells||[];
+  if(buys.length===0){buyDiv.innerHTML='<div class="empty">No BUYs in last run</div>'}
+  else{buyDiv.innerHTML=buys.map(t=>{const pos=state.holdings[t];const cmp=state.prices[t]?state.prices[t].cmp:(pos?pos.entryPrice:0);const entry=pos?pos.entryPrice:0;const pnl=pos&&entry?((cmp-entry)/entry)*100:0;return "<div class='signal-item buy-item'><b>"+t+"</b><span>₹"+entry.toFixed(2)+" → ₹"+cmp.toFixed(2)+" <span class='"+(pnl>=0?'green':'red')+"' style='font-size:10px'>("+(pnl>=0?'+':'')+pnl.toFixed(2)+"%)</span></span></div>"}).join('')}
+  $("buyCount").textContent=buys.length+" bought";
+  if(sells.length===0){sellDiv.innerHTML='<div class="empty">No SELLs in last run</div>'}
+  else{sellDiv.innerHTML=sells.map(s=>"<div class='signal-item sell-item'><b>"+s+"</b></div>").join('')}
+  $("sellCount").textContent=sells.length+" sold";
+  $("signalsSummary").textContent=state.lastExecuteDate?"Last algo run: "+state.lastExecuteDate:"Never executed yet";
 }
 
 function renderPortfolio(){
@@ -293,64 +180,65 @@ function renderPortfolio(){
   if(entries.length===0){$("pfEmpty").style.display="block";$("pfTable").style.display="none";return}
   $("pfEmpty").style.display="none";$("pfTable").style.display="table";
   const rows=entries.map(([t,p])=>{
-    const s=state.stocks.find(x=>x.ticker===t);const cmp=s?s.cmp:p.entryPrice;
+    const cmp=state.prices[t]?state.prices[t].cmp:p.entryPrice;
     const inv=p.shares*p.entryPrice;const mv=p.shares*cmp;
     const pnl=mv-inv;const pnlPct=(pnl/inv)*100;
     const days=Math.floor((new Date()-new Date(p.entryDate))/86400000);
     const cls=pnl>=0?"green":"red";
     return "<tr><td><b>"+t+"</b></td><td>"+p.entryDate+"</td><td>₹"+p.entryPrice.toFixed(2)+"</td><td>₹"+cmp.toFixed(2)+"</td><td>"+p.shares+"</td><td>₹"+(inv/100000).toFixed(2)+"L</td><td>₹"+(mv/100000).toFixed(2)+"L</td><td class='"+cls+"'>"+fmtPnL(pnl)+"</td><td class='"+cls+"'>"+(pnlPct>=0?"+":"")+pnlPct.toFixed(2)+"%</td><td>"+days+"</td></tr>";
-  }).sort().join('');
+  }).join('');
   $("pfTbody").innerHTML=rows;
 }
 
 function renderYearHistory(){
   const div=$("yearHistory");
-  if(state.monthlyJournal.length===0){div.innerHTML='<div class="empty">History appears after first execution</div>';return}
+  if(state.monthlyJournal.length===0){div.innerHTML='<div class="empty">History appears once server algo executes trades</div>';return}
   const byYear={};state.monthlyJournal.forEach(m=>{const y=m.month.slice(0,4);if(!byYear[y])byYear[y]=[];byYear[y].push(m)});
   const years=Object.keys(byYear).sort().reverse();
   div.innerHTML=years.map(y=>{
     const months=byYear[y];const startNav=months[0].nav;const endNav=months[months.length-1].nav;
     const yrRet=((endNav/startNav)-1)*100;
     const tb=months.reduce((a,m)=>a+m.bought.length,0);const ts=months.reduce((a,m)=>a+m.sold.length,0);
-    const tw=months.reduce((a,m)=>a+m.winsThisMonth,0);const tl=months.reduce((a,m)=>a+m.lossesThisMonth,0);
-    return "<div class='year-card'><div class='year-header' onclick='toggleYear(\""+y+"\")'><div><div class='year-title'>"+y+"</div><div class='year-stats'><span>"+months.length+" months</span><span class='"+(yrRet>=0?'green':'red')+"'>"+(yrRet>=0?'+':'')+yrRet.toFixed(1)+"% year</span><span>End NAV ₹"+(endNav/10000000).toFixed(3)+"Cr</span><span>"+tb+"B · "+ts+"S</span><span>W/L "+tw+"/"+tl+"</span></div></div><div class='expand-icon'>▶</div></div><div class='year-body' id='yb_"+y+"'>"+months.slice().reverse().map(m=>{const mc=m.monthReturn>=0?'var(--green)':'var(--red)';return "<div class='month-item'><div class='month-header'><div><b>"+m.month+"</b> · ₹"+m.navCr.toFixed(3)+"Cr · <span style='color:"+mc+"'>"+(m.monthReturn>=0?'+':'')+m.monthReturn+"% MoM</span> · Total "+(m.totalReturn>=0?'+':'')+m.totalReturn+"%</div><div style='font-size:11px'>Holdings "+m.holdingsCount+" · Cash ₹"+(m.cash/100000).toFixed(1)+"L</div></div>"+(m.bought.length?"<div style='margin-top:3px'><b class='green'>BOUGHT ("+m.bought.length+"):</b> "+m.bought.map(t=>"<span class='tag tag-buy'>"+t+"</span>").join('')+"</div>":'')+(m.sold.length?"<div style='margin-top:3px'><b class='red'>SOLD ("+m.sold.length+"):</b> "+m.sold.map(t=>"<span class='tag tag-sell'>"+t+"</span>").join('')+" <span class='muted' style='font-size:10px'>· W "+m.winsThisMonth+" L "+m.lossesThisMonth+"</span></div>":'')+(m.held.length?"<div style='margin-top:3px'><b class='muted'>HELD ("+m.held.length+"):</b> "+m.held.slice(0,10).map(t=>"<span class='tag tag-hold'>"+t+"</span>").join('')+(m.held.length>10?" <span class='muted'>+"+(m.held.length-10)+"</span>":'')+"</div>":'')+"</div>"}).join('')+"</div></div>"
+    const tw=months.reduce((a,m)=>a+(m.winsThisMonth||0),0);const tl=months.reduce((a,m)=>a+(m.lossesThisMonth||0),0);
+    return "<div class='year-card'><div class='year-header' onclick='toggleYear(\""+y+"\")'><div><div class='year-title'>"+y+"</div><div class='year-stats'><span>"+months.length+" months</span><span class='"+(yrRet>=0?'green':'red')+"'>"+(yrRet>=0?'+':'')+yrRet.toFixed(1)+"% year</span><span>End NAV ₹"+(endNav/10000000).toFixed(3)+"Cr</span><span>"+tb+"B · "+ts+"S</span><span>W/L "+tw+"/"+tl+"</span></div></div><div class='expand-icon'>▶</div></div><div class='year-body' id='yb_"+y+"'>"+months.slice().reverse().map(m=>{const mc=m.monthReturn>=0?'var(--green)':'var(--red)';return "<div class='month-item'><div class='month-header'><div><b>"+m.month+"</b> · ₹"+m.navCr.toFixed(3)+"Cr · <span style='color:"+mc+"'>"+(m.monthReturn>=0?'+':'')+m.monthReturn+"% MoM</span> · Total "+(m.totalReturn>=0?'+':'')+m.totalReturn+"%</div><div style='font-size:11px'>Holdings "+m.holdingsCount+" · Cash ₹"+(m.cash/100000).toFixed(1)+"L</div></div>"+(m.bought.length?"<div style='margin-top:3px'><b class='green'>BOUGHT ("+m.bought.length+"):</b> "+m.bought.map(t=>"<span class='tag tag-buy'>"+t+"</span>").join('')+"</div>":'')+(m.sold.length?"<div style='margin-top:3px'><b class='red'>SOLD ("+m.sold.length+"):</b> "+m.sold.map(t=>"<span class='tag tag-sell'>"+t+"</span>").join('')+" <span class='muted' style='font-size:10px'>· W "+(m.winsThisMonth||0)+" L "+(m.lossesThisMonth||0)+"</span></div>":'')+(m.held.length?"<div style='margin-top:3px'><b class='muted'>HELD ("+m.held.length+"):</b> "+m.held.slice(0,10).map(t=>"<span class='tag tag-hold'>"+t+"</span>").join('')+(m.held.length>10?" <span class='muted'>+"+(m.held.length-10)+"</span>":'')+"</div>":'')+"</div>"}).join('')+"</div></div>"
   }).join('');
 }
 
 function toggleYear(y){const body=$('yb_'+y);const hdr=body.previousElementSibling;body.classList.toggle('open');hdr.classList.toggle('open')}
 function renderAll(){renderPerfStrip();renderTodayActions();renderPortfolio();renderYearHistory()}
 
-function toggleAuto(){state.autoExec=$("autoExec").checked;$("autoBadge").textContent=state.autoExec?"🟢 AUTO EXECUTE":"⚪ READ-ONLY";$("autoBadge").style.background=state.autoExec?"var(--green)":"var(--muted)";save()}
+async function reloadData(){
+  setBanner("pending","🔄 RELOADING","Fetching latest state from server...");
+  const ok=await loadServerData();
+  if(ok){
+    renderAll();showStatus();
+  }else{
+    setBanner("error","❌ LOAD FAILED","Could not reach data.json. Check if server algo has run at least once.");
+  }
+}
+
+function showStatus(){
+  const nav=getNav();const unreal=getUnrealized();const booked=getBooked();
+  if(!state.lastExecuteDate){
+    setBanner("info","⏳ WAITING FOR FIRST RUN","Server algo hasn't executed yet. Click '⚙️ Trigger Server Algo Now' above to run it manually via GitHub Actions, OR wait until 9:45 AM IST tomorrow (weekday auto-run).");
+    return;
+  }
+  const lastRun=state.lastRun?new Date(state.lastRun).toLocaleString('en-IN',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}):state.lastExecuteDate;
+  setBanner("success","✅ SERVER ALGO EXECUTED","Last run: "+lastRun+" · NAV ₹"+(nav/10000000).toFixed(3)+" Cr · Booked "+fmtPnL(booked)+" · Unrealized "+fmtPnL(unreal)+" · "+Object.keys(state.holdings).length+" holdings");
+}
 
 function exportTradesCSV(){if(state.completedTrades.length===0){alert("No closed trades yet");return}const h=["Ticker","EntryDate","ExitDate","EntryPrice","ExitPrice","Shares","Days","PnL_Abs","PnL_Pct","Outcome"];const rows=state.completedTrades.map(t=>[t.ticker,t.entryDate,t.exitDate,t.entryPrice,t.exitPrice,t.shares,t.holdDays,t.pnlAbs,t.pnlPct,t.outcome].join(","));downloadCSV("closed_trades_"+new Date().toISOString().slice(0,10)+".csv",[h.join(","),...rows].join("\n"))}
 function exportPositionsCSV(){const entries=Object.entries(state.holdings);if(entries.length===0){alert("No positions");return}const h=["Symbol","Exchange","Segment","Product","OrderType","TransactionType","Quantity","Price"];const rows=entries.map(([t,p])=>[t,"NSE","EQ","CNC","MARKET","BUY",p.shares,""].join(","));downloadCSV("positions_zerodha_"+new Date().toISOString().slice(0,10)+".csv",[h.join(","),...rows].join("\n"))}
-function exportJournalCSV(){if(state.monthlyJournal.length===0){alert("No history");return}const h=["Month","NAV_Cr","MoM_%","Total_%","Cash","Holdings","Bought","Sold","Wins","Losses"];const rows=state.monthlyJournal.map(m=>[m.month,m.navCr,m.monthReturn,m.totalReturn,Math.round(m.cash/1000)+"K",m.holdingsCount,'"'+m.bought.join(";")+'"','"'+m.sold.join(";")+'"',m.winsThisMonth,m.lossesThisMonth].join(","));downloadCSV("monthly_journal_"+new Date().toISOString().slice(0,10)+".csv",[h.join(","),...rows].join("\n"))}
+function exportJournalCSV(){if(state.monthlyJournal.length===0){alert("No history");return}const h=["Month","NAV_Cr","MoM_%","Total_%","Cash","Holdings","Bought","Sold","Wins","Losses"];const rows=state.monthlyJournal.map(m=>[m.month,m.navCr,m.monthReturn,m.totalReturn,Math.round(m.cash/1000)+"K",m.holdingsCount,'"'+m.bought.join(";")+'"','"'+m.sold.join(";")+'"',m.winsThisMonth||0,m.lossesThisMonth||0].join(","));downloadCSV("monthly_journal_"+new Date().toISOString().slice(0,10)+".csv",[h.join(","),...rows].join("\n"))}
 function downloadCSV(name,content){const b=new Blob([content],{type:"text/csv"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=name;a.click()}
-
-function resetAll(){if(!confirm("Reset ALL data? Clears holdings, trades, history."))return;Object.assign(state,{holdings:{},monthlyJournal:[],completedTrades:[],navHistory:[],startDate:null,lastCycleDate:null,lastRefreshDate:null,lastExecuteDate:null,stocks:[],todayPicks:[],todayExits:[],todayExecutedBuys:[],todayExecutedSells:[]});save();renderAll();setBanner("","⚪ RESET","All data cleared. Refresh page to re-run algo.")}
 
 document.addEventListener("DOMContentLoaded",async()=>{
   const today=new Date();const dateStr=today.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
-  $("todayDate").textContent=dateStr+" · Fully Automated: on open → fetch → rank → auto-execute → show P&L";
+  $("todayDate").textContent=dateStr+" · Server-Automated · Runs 9:45 AM IST weekdays via GitHub Actions · Your laptop can be off";
   $("todayDateBig").textContent=today.toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'});
-  load();
-  if(state.autoExec===false)$("autoExec").checked=false;
-  toggleAuto();
+  await loadServerData();
   renderAll();
-  const todayISO=today.toISOString().slice(0,10);
-  
-  // Clear yesterday's executed lists
-  if(state.lastExecuteDate!==todayISO){state.todayExecutedBuys=[];state.todayExecutedSells=[]}
-  
-  if(!state.autoExec){setBanner("","⚪ READ-ONLY MODE","Auto-execute is off. Toggle switch at bottom to enable.");return}
-  
-  if(state.lastExecuteDate===todayISO){
-    // Already ran today - just refresh live prices
-    await refreshQuotesOnly();
-  }else{
-    // Run algo now (fetch + rank + auto-buy + auto-sell)
-    await runAlgo();
-  }
+  showStatus();
 });
 </script>
 </body></html>
