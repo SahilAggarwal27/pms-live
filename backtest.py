@@ -1,86 +1,128 @@
 """
-PMS 25-Year Backtest
-Runs same Quality+Momentum strategy on 2000-2026 history.
-Produces backtest_data.json which the dashboard displays.
-Full year -> month -> trades drill-down.
+PMS 25-Year Backtest — robust version for GitHub Actions
+Uses curl_cffi session to bypass Yahoo blocking datacenter IPs.
 """
-import yfinance as yf
-import pandas as pd
 import json
 import os
+import sys
+import traceback
+import time
 from datetime import datetime, timedelta
+
+import pandas as pd
+import yfinance as yf
+
+# Try to use curl_cffi (browser-fingerprint) to avoid Yahoo blocking
+try:
+    from curl_cffi import requests as cffi_requests
+    SESSION = cffi_requests.Session(impersonate="chrome")
+    print("Using curl_cffi session (browser fingerprint)")
+except ImportError:
+    SESSION = None
+    print("curl_cffi not available - using default yfinance session")
 
 # ----- CONFIG -----
 UNIVERSE = ["PERSISTENT","COFORGE","MPHASIS","LTIM","KPITTECH","TATAELXSI","OFSS","BOSCHLTD","MRF","MOTHERSON","EXIDEIND","BALKRISIND","BHARATFORG","MUTHOOTFIN","CHOLAFIN","LICHSGFIN","MFSL","PFC","RECLTD","LUPIN","AUROPHARMA","GLENMARK","BIOCON","ALKEM","LAURUSLABS","JBCHEPHARM","ABBOTINDIA","SIEMENS","CUMMINSIND","THERMAX","HAL","BEL","CGPOWER","DIXON","PIIND","DEEPAKNTR","NAVINFLUOR","SRF","ATUL","AARTIIND","VINATIORGA","COROMANDEL","SOLARINDS","PAGEIND","HAVELLS","VOLTAS","CROMPTON","JUBLFOOD","VBL","TRENT","FEDERALBNK","AUBANK","IDFCFIRSTB","BANKBARODA","GODREJPROP","OBEROIRLTY","PRESTIGE","IEX","CDSL","MCX","INDIAMART","NAUKRI","GAIL","IGL","TATAPOWER","HINDZINC","JINDALSTEL","NMDC"]
 
 TOP_N = 15
-CORPUS = 10_000_000  # Rs 1 Cr
-LOOKBACK_MOMENTUM = 126  # 6 months
-LOOKBACK_TREND = 200  # 200-DMA
+CORPUS = 10_000_000
+LOOKBACK_MOMENTUM = 126
+LOOKBACK_TREND = 200
 START_DATE = "2000-01-01"
 END_DATE = datetime.now().strftime("%Y-%m-%d")
 
 
+def download_ticker(ticker, max_retries=3):
+    """Robust download with retries and multiple fallbacks."""
+    for attempt in range(max_retries):
+        try:
+            kwargs = dict(start=START_DATE, end=END_DATE,
+                         progress=False, auto_adjust=True, threads=False)
+            if SESSION:
+                kwargs["session"] = SESSION
+            df = yf.download(ticker, **kwargs)
+            if df is None or df.empty:
+                if attempt < max_retries - 1:
+                    time.sleep(1.5)
+                    continue
+                return None
+            # Handle MultiIndex columns (newer yfinance)
+            if isinstance(df.columns, pd.MultiIndex):
+                df.columns = df.columns.get_level_values(0)
+            closes = df["Close"]
+            if hasattr(closes, "columns") and len(closes.columns) > 0:
+                closes = closes.iloc[:, 0]
+            closes = closes.dropna()
+            if len(closes) < LOOKBACK_TREND + 30:
+                return None
+            return closes
+        except Exception as e:
+            if attempt < max_retries - 1:
+                print(f"    retry {attempt+1}: {str(e)[:80]}")
+                time.sleep(2)
+            else:
+                print(f"    failed after {max_retries} tries: {str(e)[:100]}")
+    return None
+
+
 def download_all_history():
-    """Download 25-year daily prices for all stocks + Nifty."""
-    print(f"Downloading history {START_DATE} to {END_DATE}...")
+    print(f"\nDownloading history {START_DATE} to {END_DATE}")
+    print(f"Universe: {len(UNIVERSE)} stocks")
     all_data = {}
     for i, ticker in enumerate(UNIVERSE):
-        try:
-            print(f"  [{i+1}/{len(UNIVERSE)}] {ticker}")
-            df = yf.download(f"{ticker}.NS", start=START_DATE, end=END_DATE,
-                             progress=False, auto_adjust=True, threads=False)
-            if df.empty or len(df) < LOOKBACK_TREND + 30:
-                print(f"    skipped (only {len(df)} rows)")
-                continue
-            closes = df["Close"]
-            if hasattr(closes, "columns"):
-                closes = closes.iloc[:, 0]
-            all_data[ticker] = closes.dropna()
-        except Exception as e:
-            print(f"    error: {e}")
-    print(f"Downloaded {len(all_data)}/{len(UNIVERSE)} stocks")
+        sys.stdout.write(f"  [{i+1:2d}/{len(UNIVERSE)}] {ticker:<15} ")
+        sys.stdout.flush()
+        closes = download_ticker(f"{ticker}.NS")
+        if closes is not None:
+            all_data[ticker] = closes
+            print(f"OK ({len(closes)} rows, {closes.index[0].strftime('%Y-%m')} → {closes.index[-1].strftime('%Y-%m')})")
+        else:
+            print("SKIP")
+    print(f"\nSuccessfully downloaded {len(all_data)}/{len(UNIVERSE)} stocks")
 
-    # Nifty for benchmark
+    # Nifty - skip on failure
     try:
-        nifty = yf.download("^NSEI", start=START_DATE, end=END_DATE,
-                            progress=False, auto_adjust=True, threads=False)
-        n_closes = nifty["Close"]
-        if hasattr(n_closes, "columns"):
-            n_closes = n_closes.iloc[:, 0]
-        all_data["_NIFTY"] = n_closes.dropna()
+        nifty = download_ticker("^NSEI")
+        if nifty is not None and len(nifty) > 0:
+            all_data["_NIFTY"] = nifty
+            print(f"Nifty: {len(nifty)} rows")
     except Exception as e:
-        print(f"Nifty error: {e}")
+        print(f"Nifty download failed (ok, benchmark skipped): {e}")
+
     return all_data
 
 
 def get_month_ends(start, end):
-    """Get last business day of each month."""
-    dates = pd.date_range(start=start, end=end, freq="BM")
+    """Last business day per month. Try new freq name first, fall back to old."""
+    try:
+        dates = pd.date_range(start=start, end=end, freq="BME")
+    except (ValueError, TypeError):
+        dates = pd.date_range(start=start, end=end, freq="BM")
     return [d.strftime("%Y-%m-%d") for d in dates]
 
 
 def rank_at_date(all_data, date_str):
-    """Rank stocks at given date based on 6M momentum + above 200-DMA filter."""
     ranked = []
     date = pd.Timestamp(date_str)
     for ticker, closes in all_data.items():
         if ticker == "_NIFTY":
             continue
-        # Get closes up to this date
-        hist = closes[closes.index <= date]
-        if len(hist) < LOOKBACK_TREND:
+        try:
+            hist = closes[closes.index <= date]
+            if len(hist) < LOOKBACK_TREND:
+                continue
+            cmp = float(hist.iloc[-1])
+            dma200 = float(hist.tail(LOOKBACK_TREND).mean())
+            if cmp <= dma200:
+                continue
+            if len(hist) < LOOKBACK_MOMENTUM + 1:
+                continue
+            p6 = float(hist.iloc[-LOOKBACK_MOMENTUM-1])
+            ret6m = (cmp / p6) - 1
+            ranked.append({"ticker": ticker, "cmp": round(cmp, 2), "ret6m": ret6m,
+                          "dma200": round(dma200, 2)})
+        except Exception as e:
             continue
-        cmp = float(hist.iloc[-1])
-        dma200 = float(hist.tail(LOOKBACK_TREND).mean())
-        if cmp <= dma200:
-            continue
-        if len(hist) < LOOKBACK_MOMENTUM + 1:
-            continue
-        p6 = float(hist.iloc[-LOOKBACK_MOMENTUM-1])
-        ret6m = (cmp / p6) - 1
-        ranked.append({"ticker": ticker, "cmp": round(cmp, 2), "ret6m": ret6m,
-                       "dma200": round(dma200, 2)})
     ranked.sort(key=lambda x: -x["ret6m"])
     return ranked[:TOP_N]
 
@@ -92,52 +134,52 @@ def run_backtest():
 
     all_data = download_all_history()
     if len(all_data) < 20:
-        print("ERROR: Not enough data downloaded")
-        return
+        print(f"\nERROR: Only {len(all_data)} stocks downloaded (need 20+)")
+        print("Yahoo may be rate-limiting. Try re-running the workflow in a few minutes.")
+        sys.exit(1)
 
-    month_ends = get_month_ends("2000-06-01", END_DATE)  # start after 6mo warm-up
-    print(f"Running {len(month_ends)} monthly rebalances...")
+    month_ends = get_month_ends("2000-06-01", END_DATE)
+    print(f"\nRunning {len(month_ends)} monthly rebalances...")
 
-    # Backtest state
-    holdings = {}  # ticker -> {shares, entry_price, entry_date}
+    holdings = {}
     monthly_journal = []
     completed_trades = []
     nav_history = []
     cash = CORPUS
     starting_nifty = None
-
     prev_nav = CORPUS
 
     for i, date_str in enumerate(month_ends):
-        # Get current prices from history
         date = pd.Timestamp(date_str)
         cmps = {}
         for t, closes in all_data.items():
             if t == "_NIFTY":
                 continue
-            hist = closes[closes.index <= date]
-            if len(hist) > 0:
-                cmps[t] = float(hist.iloc[-1])
+            try:
+                hist = closes[closes.index <= date]
+                if len(hist) > 0:
+                    cmps[t] = float(hist.iloc[-1])
+            except:
+                pass
 
-        # Nifty for benchmark
-        if starting_nifty is None:
-            nifty_hist = all_data.get("_NIFTY", pd.Series()).loc[:date]
-            if len(nifty_hist) > 0:
-                starting_nifty = float(nifty_hist.iloc[-1])
+        if starting_nifty is None and "_NIFTY" in all_data:
+            try:
+                nh = all_data["_NIFTY"]
+                nh = nh[nh.index <= date]
+                if len(nh) > 0:
+                    starting_nifty = float(nh.iloc[-1])
+            except:
+                pass
 
-        # Rank stocks
         picked = rank_at_date(all_data, date_str)
         picked_tickers = [p["ticker"] for p in picked]
 
-        # SELL: exit holdings not in top-15
+        # SELL
         to_sell = [t for t in list(holdings.keys()) if t not in picked_tickers]
         sold = []
         for t in to_sell:
             pos = holdings[t]
-            if t not in cmps:
-                sp = pos["entry_price"]
-            else:
-                sp = cmps[t]
+            sp = cmps.get(t, pos["entry_price"])
             pnl_abs = round((sp - pos["entry_price"]) * pos["shares"])
             pnl_pct = round(((sp - pos["entry_price"]) / pos["entry_price"]) * 100, 2)
             hd = (date - pd.Timestamp(pos["entry_date"])).days
@@ -152,14 +194,16 @@ def run_backtest():
             cash += pos["shares"] * sp
             del holdings[t]
 
-        # BUY: enter new top-15 picks
+        # BUY
         current_mv = sum(h["shares"] * cmps.get(t, h["entry_price"])
                          for t, h in holdings.items())
         current_nav = cash + current_mv
-        per_stock = current_nav / TOP_N
+        per_stock = current_nav / TOP_N if TOP_N > 0 else 0
         bought = []
         for p in picked:
             if p["ticker"] in holdings:
+                continue
+            if p["cmp"] <= 0:
                 continue
             shares = int(per_stock / p["cmp"])
             cost = shares * p["cmp"]
@@ -173,7 +217,6 @@ def run_backtest():
             }
             bought.append(p["ticker"])
 
-        # Compute NAV
         final_mv = sum(h["shares"] * cmps.get(t, h["entry_price"])
                        for t, h in holdings.items())
         final_nav = cash + final_mv
@@ -183,10 +226,10 @@ def run_backtest():
         month_str = date_str[:7]
         held_this = [t for t in holdings if t not in bought]
 
-        wins_month = sum(1 for tr in completed_trades
-                         if tr["exitDate"].startswith(month_str) and tr["pnlPct"] > 0)
-        losses_month = sum(1 for tr in completed_trades
-                           if tr["exitDate"].startswith(month_str) and tr["pnlPct"] <= 0)
+        wins_m = sum(1 for tr in completed_trades
+                     if tr["exitDate"].startswith(month_str) and tr["pnlPct"] > 0)
+        loss_m = sum(1 for tr in completed_trades
+                     if tr["exitDate"].startswith(month_str) and tr["pnlPct"] <= 0)
 
         monthly_journal.append({
             "month": month_str, "date": date_str,
@@ -199,8 +242,8 @@ def run_backtest():
             "bought": bought,
             "sold": sold,
             "held": held_this,
-            "winsThisMonth": wins_month,
-            "lossesThisMonth": losses_month
+            "winsThisMonth": wins_m,
+            "lossesThisMonth": loss_m
         })
         nav_history.append({"date": date_str, "nav": final_nav})
         prev_nav = final_nav
@@ -209,20 +252,18 @@ def run_backtest():
             year = date_str[:4]
             print(f"  {year} complete: NAV Rs {final_nav/10_000_000:.3f}Cr, Total {total:+.1f}%")
 
-    # Summary stats
     if not nav_history:
         print("ERROR: No history generated")
-        return
+        sys.exit(1)
 
     final_nav = nav_history[-1]["nav"]
     total_return = ((final_nav / CORPUS) - 1) * 100
 
-    start_date = pd.Timestamp(nav_history[0]["date"])
-    end_date = pd.Timestamp(nav_history[-1]["date"])
-    years = (end_date - start_date).days / 365.25
+    start_d = pd.Timestamp(nav_history[0]["date"])
+    end_d = pd.Timestamp(nav_history[-1]["date"])
+    years = (end_d - start_d).days / 365.25
     cagr = (pow(final_nav / CORPUS, 1/years) - 1) * 100 if years > 0 else 0
 
-    # Max drawdown
     peak = CORPUS
     max_dd = 0
     for h in nav_history:
@@ -239,15 +280,11 @@ def run_backtest():
     avg_loss = sum(t["pnlPct"] for t in losses) / max(1, len(losses))
     avg_hold = sum(t["holdDays"] for t in completed_trades) / max(1, len(completed_trades))
 
-    # Nifty return for comparison
-    nifty_series = all_data.get("_NIFTY", pd.Series())
-    if len(nifty_series) > 0 and starting_nifty:
+    nifty_cagr = 0
+    nifty_series = all_data.get("_NIFTY")
+    if nifty_series is not None and len(nifty_series) > 0 and starting_nifty:
         nifty_end = float(nifty_series.iloc[-1])
-        nifty_total = ((nifty_end / starting_nifty) - 1) * 100
         nifty_cagr = (pow(nifty_end / starting_nifty, 1/years) - 1) * 100
-    else:
-        nifty_total = 0
-        nifty_cagr = 0
 
     print("\n" + "=" * 70)
     print("BACKTEST COMPLETE")
@@ -262,11 +299,9 @@ def run_backtest():
     print(f"Win Rate:          {win_rate:.1f}%")
     print(f"Avg Win:           {avg_win:+.1f}%")
     print(f"Avg Loss:          {avg_loss:+.1f}%")
-    print(f"Avg Hold Days:     {avg_hold:.0f}")
     print(f"Rs 1 Cr became:    Rs {final_nav/10_000_000:.2f} Cr")
     print("=" * 70)
 
-    # Save backtest_data.json
     output = {
         "monthlyJournal": monthly_journal,
         "completedTrades": completed_trades,
@@ -298,4 +333,9 @@ def run_backtest():
 
 
 if __name__ == "__main__":
-    run_backtest()
+    try:
+        run_backtest()
+    except Exception as e:
+        print(f"\n\nFATAL ERROR: {e}")
+        traceback.print_exc()
+        sys.exit(1)
