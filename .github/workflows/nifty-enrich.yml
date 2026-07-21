@@ -1,0 +1,32 @@
+name: Enrich Backtests with Nifty MoM
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * 0'  # Sundays 11:30 AM IST
+  push:
+    paths:
+      - 'post_process_nifty.py'
+      - '.github/workflows/nifty-enrich.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install "yfinance>=0.2.40" pandas curl_cffi
+      - run: python post_process_nifty.py
+      - name: Commit enriched JSONs
+        run: |
+          git config user.name "PMS Nifty Bot"
+          git config user.email "bot@github.com"
+          git add backtest_*.json
+          git diff --staged --quiet || git commit -m "Nifty MoM enrichment $(date -u +%Y-%m-%d)"
+          git push
