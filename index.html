@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"/><title>PMS Algo - Raw + Realistic + Live</title>
+<head><meta charset="UTF-8"/><title>PMS Algo - Editable Costs</title>
 <style>
-:root{--bg:#0a0e1a;--bg2:#131929;--bg3:#1a2233;--text:#e2e8f0;--muted:#94a3b8;--border:#2a3447;--green:#10b981;--red:#ef4444;--yellow:#f59e0b;--accent:#3b82f6;--purple:#8b5cf6;--teal:#0d9488}
+:root{--bg:#0a0e1a;--bg2:#131929;--bg3:#1a2233;--text:#e2e8f0;--muted:#94a3b8;--border:#2a3447;--green:#10b981;--red:#ef4444;--yellow:#f59e0b;--accent:#3b82f6;--purple:#8b5cf6;--teal:#0d9488;--amber:#f59e0b}
 *{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);margin:0;padding:16px;line-height:1.5;font-size:13px}
 .container{max-width:1500px;margin:0 auto}h1{font-size:22px;margin:0 0 4px}h2{font-size:13px;margin:20px 0 8px;color:var(--accent);text-transform:uppercase;letter-spacing:1px}
 .exec-banner{background:linear-gradient(135deg,#065f46,#059669);border:2px solid var(--green);border-radius:12px;padding:14px 18px;margin-bottom:14px;font-size:14px;font-weight:600}
@@ -11,12 +11,13 @@
 .exec-banner.info{background:linear-gradient(135deg,#1e3a8a,#1e40af);border-color:var(--accent)}
 .exec-banner .title{font-size:11px;letter-spacing:2px;opacity:0.85;margin-bottom:4px}
 .exec-banner .msg{font-size:14px}
-.hero-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
-@media(max-width:900px){.hero-row{grid-template-columns:1fr}}
-.backtest-hero{border-radius:12px;padding:16px}
+.hero-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:14px}
+@media(max-width:1100px){.hero-row{grid-template-columns:1fr}}
+.backtest-hero{border-radius:12px;padding:14px}
 .backtest-hero.raw{background:linear-gradient(135deg,#312e81,#5b21b6);border:2px solid var(--purple)}
 .backtest-hero.realistic{background:linear-gradient(135deg,#134e4a,#0f766e);border:2px solid var(--teal)}
-.bt-title{font-size:11px;color:#fef3c7;letter-spacing:2px;font-weight:700;margin-bottom:10px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px}
+.backtest-hero.custom{background:linear-gradient(135deg,#78350f,#b45309);border:2px solid var(--amber)}
+.bt-title{font-size:10px;color:#fef3c7;letter-spacing:2px;font-weight:700;margin-bottom:10px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px}
 .bt-tag{background:rgba(0,0,0,0.4);color:white;padding:2px 8px;border-radius:10px;font-size:9px}
 .bt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
 .bt-cell{background:rgba(0,0,0,0.35);border-radius:6px;padding:8px 10px}
@@ -24,6 +25,19 @@
 .bt-val{font-size:15px;font-weight:800;margin-top:2px}
 .bt-val.hero{font-size:22px}
 .warn-note{background:rgba(0,0,0,0.3);border-radius:6px;padding:6px 10px;margin-top:8px;font-size:10px;color:#fde68a;font-weight:500}
+.cost-panel{background:linear-gradient(135deg,#1e293b,#0f172a);border:2px solid var(--amber);border-radius:10px;padding:16px;margin-bottom:14px}
+.cost-title{font-size:11px;color:var(--amber);letter-spacing:2px;font-weight:700;margin-bottom:10px}
+.cost-inputs{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:12px}
+.cost-input-cell{background:var(--bg3);border-radius:6px;padding:8px 10px}
+.cost-input-cell label{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px}
+.cost-input-cell input{width:100%;background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:4px;padding:5px 8px;font-size:14px;font-weight:700;font-family:inherit}
+.cost-input-cell input:focus{outline:none;border-color:var(--amber)}
+.cost-input-cell .hint{font-size:9px;color:var(--muted);margin-top:2px}
+.cost-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;background:rgba(0,0,0,0.3);border-radius:8px;padding:10px}
+.cost-summary-cell{padding:6px 10px}
+.cost-summary-cell .lbl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+.cost-summary-cell .val{font-size:16px;font-weight:800;margin-top:2px}
+.cost-btn{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
 .perf-strip{background:linear-gradient(135deg,#1e293b,#0f172a);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));gap:8px}
 .pf-cell{background:var(--bg3);border-radius:6px;padding:8px 10px}
 .pf-lbl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
@@ -36,9 +50,9 @@
 .signal-heading{font-size:12px;font-weight:700;margin-bottom:8px;display:flex;justify-content:space-between}
 .signal-item{background:rgba(255,255,255,0.03);border-radius:6px;padding:6px 10px;margin-bottom:4px;display:flex;justify-content:space-between;align-items:center;font-size:12px;gap:8px}
 .signal-item b{font-size:12px}.buy-item{border-left:3px solid var(--green)}.sell-item{border-left:3px solid var(--red)}
-.green{color:var(--green)}.red{color:var(--red)}.muted{color:var(--muted)}.yellow{color:var(--yellow)}.purple{color:var(--purple)}.teal{color:var(--teal)}
+.green{color:var(--green)}.red{color:var(--red)}.muted{color:var(--muted)}.yellow{color:var(--yellow)}.purple{color:var(--purple)}.teal{color:var(--teal)}.amber{color:var(--amber)}
 .btn{background:var(--accent);color:white;border:none;padding:8px 14px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600;text-decoration:none;display:inline-block}
-.btn-small{padding:5px 10px;font-size:11px}.btn-red{background:var(--red)}.btn-gray{background:var(--bg3);border:1px solid var(--border);color:var(--text)}
+.btn-small{padding:5px 10px;font-size:11px}.btn-red{background:var(--red)}.btn-gray{background:var(--bg3);border:1px solid var(--border);color:var(--text)}.btn-amber{background:var(--amber)}
 .portfolio-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:14px}
 table{width:100%;border-collapse:collapse;font-size:11px}
 th,td{padding:6px 8px;text-align:right;border-bottom:1px solid var(--border)}
@@ -74,7 +88,7 @@ tr:hover{background:rgba(255,255,255,0.02)}
 <body><div class="container">
 
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
-<h1>🤖 PMS Algo — Raw vs Realistic vs Live</h1>
+<h1>🤖 PMS Algo — Editable Costs · Raw · Realistic · Live</h1>
 <span class="server-badge live" id="serverBadge">☁️ SERVER ALGO</span>
 </div>
 <div style="color:var(--muted);font-size:12px;margin-bottom:14px" id="todayDate">Loading...</div>
@@ -84,35 +98,98 @@ tr:hover{background:rgba(255,255,255,0.02)}
   <div class="msg" id="execMsg">Loading state...</div>
 </div>
 
-<div class="hero-row">
-  <div class="backtest-hero raw" id="rawHero" style="display:none">
-    <div class="bt-title"><span>🎯 RAW BACKTEST <span class="bt-tag">SURVIVORSHIP BIAS</span></span><span id="rawPeriod" style="opacity:0.7">—</span></div>
-    <div class="bt-grid">
-      <div class="bt-cell"><div class="bt-lbl">CAGR</div><div class="bt-val hero" id="rawCagr">—</div></div>
-      <div class="bt-cell"><div class="bt-lbl">Alpha vs Nifty</div><div class="bt-val" id="rawAlpha">—</div></div>
-      <div class="bt-cell"><div class="bt-lbl">Max DD</div><div class="bt-val" id="rawDD">—</div></div>
-      <div class="bt-cell"><div class="bt-lbl">Win Rate</div><div class="bt-val" id="rawWin">—</div></div>
-      <div class="bt-cell"><div class="bt-lbl">Trades</div><div class="bt-val" id="rawTrades">—</div></div>
-      <div class="bt-cell"><div class="bt-lbl">₹1Cr →</div><div class="bt-val" id="rawFinal">—</div></div>
+<!-- COST CALCULATOR PANEL -->
+<div class="cost-panel">
+  <div class="cost-title">⚙️ EDITABLE COST INPUTS (change any value → CAGR updates live)</div>
+  <div class="cost-inputs">
+    <div class="cost-input-cell">
+      <label>Brokerage (each side)</label>
+      <input type="number" step="0.05" min="0" max="5" id="inBrokerage" value="0.30" oninput="recalcCosts()"/>
+      <div class="hint">%. Zerodha ~0.03, Full-service ~0.30</div>
     </div>
-    <div class="warn-note">⚠️ Uses today's survivor universe on historical prices. Inflated by 20-25%.</div>
+    <div class="cost-input-cell">
+      <label>Slippage (each side)</label>
+      <input type="number" step="0.05" min="0" max="5" id="inSlippage" value="0.30" oninput="recalcCosts()"/>
+      <div class="hint">%. Impact on small caps</div>
+    </div>
+    <div class="cost-input-cell">
+      <label>STT (on sell only)</label>
+      <input type="number" step="0.01" min="0" max="1" id="inSTT" value="0.10" oninput="recalcCosts()"/>
+      <div class="hint">%. Statutory 0.1% sell</div>
+    </div>
+    <div class="cost-input-cell">
+      <label>Stamp Duty (buy)</label>
+      <input type="number" step="0.005" min="0" max="1" id="inStamp" value="0.015" oninput="recalcCosts()"/>
+      <div class="hint">%. 0.015% buy side</div>
+    </div>
+    <div class="cost-input-cell">
+      <label>GST (on brokerage)</label>
+      <input type="number" step="1" min="0" max="30" id="inGST" value="18" oninput="recalcCosts()"/>
+      <div class="hint">%. 18% GST rate</div>
+    </div>
+    <div class="cost-input-cell">
+      <label>Exchange + SEBI (each side)</label>
+      <input type="number" step="0.001" min="0" max="0.5" id="inExch" value="0.004" oninput="recalcCosts()"/>
+      <div class="hint">%. NSE txn charges</div>
+    </div>
   </div>
-
-  <div class="backtest-hero realistic" id="realHero" style="display:none">
-    <div class="bt-title"><span>✅ REALISTIC (SEBI-DEFENSIBLE) <span class="bt-tag">NET OF COSTS</span></span><span id="realPeriod" style="opacity:0.7">—</span></div>
-    <div class="bt-grid">
-      <div class="bt-cell"><div class="bt-lbl">CAGR</div><div class="bt-val hero" id="realCagr">—</div></div>
-      <div class="bt-cell"><div class="bt-lbl">Alpha vs Nifty</div><div class="bt-val" id="realAlpha">—</div></div>
-      <div class="bt-cell"><div class="bt-lbl">Max DD</div><div class="bt-val" id="realDD">—</div></div>
-      <div class="bt-cell"><div class="bt-lbl">Win Rate</div><div class="bt-val" id="realWin">—</div></div>
-      <div class="bt-cell"><div class="bt-lbl">Trades</div><div class="bt-val" id="realTrades">—</div></div>
-      <div class="bt-cell"><div class="bt-lbl">₹1Cr →</div><div class="bt-val" id="realFinal">—</div></div>
-    </div>
-    <div class="warn-note" id="realNote">✓ 1.5% costs + 3yr listing filter + 200% momentum cap</div>
+  <div class="cost-summary">
+    <div class="cost-summary-cell"><div class="lbl">Total Per-Side Cost</div><div class="val amber" id="totalPerSide">—</div></div>
+    <div class="cost-summary-cell"><div class="lbl">Round-Trip Cost</div><div class="val amber" id="totalRoundTrip">—</div></div>
+    <div class="cost-summary-cell"><div class="lbl">Annual Turnover</div><div class="val" id="annualTurnover">—</div></div>
+    <div class="cost-summary-cell"><div class="lbl">Annual Cost Drag</div><div class="val red" id="annualDrag">—</div></div>
+  </div>
+  <div class="cost-btn">
+    <button class="btn btn-small btn-amber" onclick="resetCosts()">↺ Reset to Defaults</button>
+    <button class="btn btn-small btn-gray" onclick="presetZerodha()">📊 Preset: Zerodha (0.03%)</button>
+    <button class="btn btn-small btn-gray" onclick="presetFullservice()">📊 Preset: Full-Service (0.30%)</button>
+    <button class="btn btn-small btn-gray" onclick="presetPMS()">📊 Preset: PMS Bulk (0.10%)</button>
   </div>
 </div>
 
-<h2>📈 Live Performance (paper trades from today)</h2>
+<!-- 3 HEROS: RAW | REALISTIC | YOUR CUSTOM -->
+<div class="hero-row">
+  <div class="backtest-hero raw" id="rawHero" style="display:none">
+    <div class="bt-title"><span>🎯 RAW <span class="bt-tag">SURVIVORSHIP</span></span><span id="rawPeriod" style="opacity:0.7">—</span></div>
+    <div class="bt-grid">
+      <div class="bt-cell"><div class="bt-lbl">CAGR</div><div class="bt-val hero" id="rawCagr">—</div></div>
+      <div class="bt-cell"><div class="bt-lbl">Alpha</div><div class="bt-val" id="rawAlpha">—</div></div>
+      <div class="bt-cell"><div class="bt-lbl">Max DD</div><div class="bt-val" id="rawDD">—</div></div>
+      <div class="bt-cell"><div class="bt-lbl">Win %</div><div class="bt-val" id="rawWin">—</div></div>
+      <div class="bt-cell"><div class="bt-lbl">Trades</div><div class="bt-val" id="rawTrades">—</div></div>
+      <div class="bt-cell"><div class="bt-lbl">₹1Cr →</div><div class="bt-val" id="rawFinal">—</div></div>
+    </div>
+    <div class="warn-note">⚠️ No costs. Survivor bias. Not defensible.</div>
+  </div>
+
+  <div class="backtest-hero realistic" id="realHero" style="display:none">
+    <div class="bt-title"><span>✅ REALISTIC (1.5%) <span class="bt-tag">BASELINE</span></span><span id="realPeriod" style="opacity:0.7">—</span></div>
+    <div class="bt-grid">
+      <div class="bt-cell"><div class="bt-lbl">CAGR</div><div class="bt-val hero" id="realCagr">—</div></div>
+      <div class="bt-cell"><div class="bt-lbl">Alpha</div><div class="bt-val" id="realAlpha">—</div></div>
+      <div class="bt-cell"><div class="bt-lbl">Max DD</div><div class="bt-val" id="realDD">—</div></div>
+      <div class="bt-cell"><div class="bt-lbl">Win %</div><div class="bt-val" id="realWin">—</div></div>
+      <div class="bt-cell"><div class="bt-lbl">Trades</div><div class="bt-val" id="realTrades">—</div></div>
+      <div class="bt-cell"><div class="bt-lbl">₹1Cr →</div><div class="bt-val" id="realFinal">—</div></div>
+    </div>
+    <div class="warn-note" id="realNote">✓ Baseline: 0.75% per side</div>
+  </div>
+
+  <div class="backtest-hero custom" id="customHero">
+    <div class="bt-title"><span>🎯 YOUR CUSTOM COSTS <span class="bt-tag">LIVE-ADJUSTED</span></span><span style="opacity:0.7" id="customPeriod">—</span></div>
+    <div class="bt-grid">
+      <div class="bt-cell"><div class="bt-lbl">CAGR (Adj)</div><div class="bt-val hero" id="customCagr">—</div></div>
+      <div class="bt-cell"><div class="bt-lbl">vs Realistic</div><div class="bt-val" id="customDelta">—</div></div>
+      <div class="bt-cell"><div class="bt-lbl">Max DD</div><div class="bt-val" id="customDD">—</div></div>
+      <div class="bt-cell"><div class="bt-lbl">Alpha</div><div class="bt-val" id="customAlpha">—</div></div>
+      <div class="bt-cell"><div class="bt-lbl">Cost/Year</div><div class="bt-val" id="customCostYr">—</div></div>
+      <div class="bt-cell"><div class="bt-lbl">₹1Cr →</div><div class="bt-val" id="customFinal">—</div></div>
+    </div>
+    <div class="warn-note">✓ Live-computed from your cost inputs above</div>
+  </div>
+</div>
+
+<h2>📈 Live Performance</h2>
 <div class="perf-strip">
   <div class="pf-cell"><div class="pf-lbl">NAV</div><div class="pf-val big" id="pfNav">₹1.00 Cr</div></div>
   <div class="pf-cell"><div class="pf-lbl">Cash</div><div class="pf-val" id="pfCash">₹1.00 Cr</div></div>
@@ -150,19 +227,21 @@ tr:hover{background:rgba(255,255,255,0.02)}
   <button class="btn btn-small btn-gray" onclick="exportJournalCSV()">📥 Journal CSV</button>
 </div>
 
-<h2>📅 History by Year — Click year to expand months</h2>
+<h2>📅 History by Year</h2>
 <div class="tab-switcher">
-  <button class="tab-btn realistic active" onclick="setHistoryView('realistic',this)">✅ Realistic (Defensible)</button>
-  <button class="tab-btn" onclick="setHistoryView('raw',this)">⚠️ Raw (Survivorship)</button>
-  <button class="tab-btn" onclick="setHistoryView('live',this)">🟢 Live Only</button>
+  <button class="tab-btn realistic active" onclick="setHistoryView('realistic',this)">✅ Realistic</button>
+  <button class="tab-btn" onclick="setHistoryView('raw',this)">⚠️ Raw</button>
+  <button class="tab-btn" onclick="setHistoryView('live',this)">🟢 Live</button>
 </div>
-<div id="yearHistory"><div class="empty">Run backtest workflows to populate history</div></div>
+<div id="yearHistory"><div class="empty">Run backtest workflows to populate</div></div>
 
 </div>
-<div class="version">v3.2 · Raw + Realistic + Live · GitHub Pages</div>
+<div class="version">v3.3 · Editable Costs · Live · GitHub</div>
 
 <script>
 const CORPUS=10000000;
+const BASELINE_COST_PER_SIDE=0.75; // % - what realistic backtest was run with
+
 let liveState={holdings:{},monthlyJournal:[],completedTrades:[],navHistory:[],startDate:null,lastExecuteDate:null,lastRun:null,todayExecutedBuys:[],todayExecutedSells:[],prices:{}};
 let rawBT={monthlyJournal:[],completedTrades:[],summary:null};
 let realBT={monthlyJournal:[],completedTrades:[],summary:null};
@@ -176,14 +255,108 @@ async function loadServerData(){
   try{const r=await fetch("backtest_realistic.json?t="+Date.now(),{cache:"no-store"});if(r.ok){realBT=await r.json()}}catch(e){}
 }
 
-function setBanner(cls,title,msg){const b=$("execBanner");b.className="exec-banner "+(cls||"info");b.innerHTML='<div class="title">'+title+'</div><div class="msg">'+msg+'</div>'}
+// ========== COST CALCULATOR ==========
+function loadCostPrefs(){
+  try{const p=JSON.parse(localStorage.getItem('pms_costs_v1')||'{}');
+    if(p.brokerage!==undefined)$("inBrokerage").value=p.brokerage;
+    if(p.slippage!==undefined)$("inSlippage").value=p.slippage;
+    if(p.stt!==undefined)$("inSTT").value=p.stt;
+    if(p.stamp!==undefined)$("inStamp").value=p.stamp;
+    if(p.gst!==undefined)$("inGST").value=p.gst;
+    if(p.exch!==undefined)$("inExch").value=p.exch;
+  }catch(e){}
+}
+function saveCostPrefs(){
+  localStorage.setItem('pms_costs_v1',JSON.stringify({
+    brokerage:+$("inBrokerage").value,slippage:+$("inSlippage").value,
+    stt:+$("inSTT").value,stamp:+$("inStamp").value,
+    gst:+$("inGST").value,exch:+$("inExch").value
+  }));
+}
+function resetCosts(){$("inBrokerage").value=0.30;$("inSlippage").value=0.30;$("inSTT").value=0.10;$("inStamp").value=0.015;$("inGST").value=18;$("inExch").value=0.004;recalcCosts()}
+function presetZerodha(){$("inBrokerage").value=0.03;$("inSlippage").value=0.20;$("inSTT").value=0.10;$("inStamp").value=0.015;$("inGST").value=18;$("inExch").value=0.004;recalcCosts()}
+function presetFullservice(){$("inBrokerage").value=0.30;$("inSlippage").value=0.30;$("inSTT").value=0.10;$("inStamp").value=0.015;$("inGST").value=18;$("inExch").value=0.004;recalcCosts()}
+function presetPMS(){$("inBrokerage").value=0.10;$("inSlippage").value=0.25;$("inSTT").value=0.10;$("inStamp").value=0.015;$("inGST").value=18;$("inExch").value=0.004;recalcCosts()}
 
+function computeCosts(){
+  const b=+$("inBrokerage").value||0;
+  const sl=+$("inSlippage").value||0;
+  const stt=+$("inSTT").value||0;
+  const stamp=+$("inStamp").value||0;
+  const gst=+$("inGST").value||0;
+  const exch=+$("inExch").value||0;
+  // per side buy: brokerage + slippage + stamp + exch + GST_on_brokerage
+  const buySide=b*(1+gst/100)+sl+stamp+exch;
+  // per side sell: brokerage + slippage + stt + exch + GST_on_brokerage
+  const sellSide=b*(1+gst/100)+sl+stt+exch;
+  const roundTrip=buySide+sellSide;
+  return {buySide,sellSide,roundTrip,avgPerSide:roundTrip/2};
+}
+
+function computeTurnover(){
+  // Annual turnover ratio from realistic backtest
+  if(!realBT.summary)return 0;
+  const N=15; // portfolio size
+  const trades=realBT.summary.totalTrades;
+  const years=realBT.summary.years;
+  if(!years)return 0;
+  // Each completed trade = 1 buy + 1 sell = 1 round trip on 1 stock
+  // Annual round trips = trades / years
+  // Turnover ratio = annual_round_trips / N (how many times portfolio rotates)
+  return (trades/years)/N;
+}
+
+function recalcCosts(){
+  saveCostPrefs();
+  const c=computeCosts();
+  $("totalPerSide").textContent=c.avgPerSide.toFixed(3)+"%";
+  $("totalRoundTrip").textContent=c.roundTrip.toFixed(3)+"%";
+  const turnover=computeTurnover();
+  $("annualTurnover").textContent=turnover>0?(turnover*100).toFixed(0)+"%":"—";
+  const drag=turnover*c.roundTrip;
+  $("annualDrag").textContent=drag>0?"-"+drag.toFixed(2)+"%":"—";
+  renderCustomHero();
+}
+
+function renderCustomHero(){
+  if(!realBT.summary){
+    $("customCagr").textContent="Run backtest";
+    $("customDelta").textContent="—";
+    $("customDD").textContent="—";
+    $("customAlpha").textContent="—";
+    $("customCostYr").textContent="—";
+    $("customFinal").textContent="—";
+    return;
+  }
+  const s=realBT.summary;
+  const turnover=computeTurnover();
+  const c=computeCosts();
+  const baselineDrag=turnover*(BASELINE_COST_PER_SIDE*2); // baseline was 1.5% RT
+  const newDrag=turnover*c.roundTrip;
+  const deltaDrag=newDrag-baselineDrag; // positive = MORE cost = LESS CAGR
+  const adjustedCAGR=s.cagr-deltaDrag;
+  const cagrCls=adjustedCAGR>=0?"green":"red";
+  $("customCagr").innerHTML="<span class='"+cagrCls+"'>"+(adjustedCAGR>=0?"+":"")+adjustedCAGR.toFixed(2)+"%</span>";
+  const delta=adjustedCAGR-s.cagr;
+  $("customDelta").innerHTML="<span class='"+(delta>=0?"green":"red")+"'>"+(delta>=0?"+":"")+delta.toFixed(2)+"%</span>";
+  $("customDD").innerHTML="<span class='red'>"+s.maxDrawdown+"%</span>";
+  const alpha=adjustedCAGR-s.niftyCagr;
+  $("customAlpha").innerHTML="<span class='"+(alpha>=0?"green":"red")+"'>"+(alpha>=0?"+":"")+alpha.toFixed(2)+"%</span>";
+  $("customCostYr").innerHTML="<span class='red'>-"+newDrag.toFixed(2)+"%</span>";
+  // Recompute final NAV from adjusted CAGR
+  const finalNav=CORPUS*Math.pow(1+adjustedCAGR/100,s.years);
+  $("customFinal").textContent="₹"+(finalNav/10000000).toFixed(2)+"Cr";
+  $("customPeriod").textContent=s.years+"yr";
+}
+
+// ========== BACKTEST HEROS ==========
+function setBanner(cls,title,msg){const b=$("execBanner");b.className="exec-banner "+(cls||"info");b.innerHTML='<div class="title">'+title+'</div><div class="msg">'+msg+'</div>'}
+function fmtPnL(v){const abs=Math.abs(v);const s=v>=0?"+":"-";return s+"₹"+(abs>=100000?(abs/100000).toFixed(2)+"L":Math.round(abs))}
 function getCash(){const inv=Object.values(liveState.holdings).reduce((a,p)=>a+p.shares*p.entryPrice,0);const b=liveState.completedTrades.reduce((a,t)=>a+t.pnlAbs,0);return CORPUS+b-inv}
 function getMV(){return Object.entries(liveState.holdings).reduce((a,[t,p])=>{const cmp=liveState.prices[t]?liveState.prices[t].cmp:p.entryPrice;return a+p.shares*cmp},0)}
 function getNav(){return getCash()+getMV()}
 function getBooked(){return liveState.completedTrades.reduce((a,t)=>a+t.pnlAbs,0)}
 function getUnreal(){return Object.entries(liveState.holdings).reduce((a,[t,p])=>{const cmp=liveState.prices[t]?liveState.prices[t].cmp:p.entryPrice;return a+(cmp-p.entryPrice)*p.shares},0)}
-function fmtPnL(v){const abs=Math.abs(v);const s=v>=0?"+":"-";return s+"₹"+(abs>=100000?(abs/100000).toFixed(2)+"L":Math.round(abs))}
 
 function renderHero(state,prefix,noteText){
   if(!state.summary){$(prefix+"Hero").style.display="none";return}
@@ -258,7 +431,7 @@ function renderYearHistory(){
   else if(historyView==='raw'){months=(rawBT.monthlyJournal||[]).map(m=>({...m,source:'raw'}));tagCls='bt-tag2';tagText='RAW'}
   else if(historyView==='live'){months=(liveState.monthlyJournal||[]).map(m=>({...m,source:'live'}));tagCls='live-tag';tagText='LIVE'}
   
-  if(months.length===0){div.innerHTML='<div class="empty">No data for this view. Trigger the workflow via GitHub Actions.</div>';return}
+  if(months.length===0){div.innerHTML='<div class="empty">No data for this view.</div>';return}
   
   const byYear={};months.forEach(m=>{const y=m.month.slice(0,4);if(!byYear[y])byYear[y]=[];byYear[y].push(m)});
   const years=Object.keys(byYear).sort().reverse();
@@ -276,29 +449,31 @@ function renderYearHistory(){
 }
 
 function toggleYear(y){const body=$('yb_'+y);const hdr=body.previousElementSibling;body.classList.toggle('open');hdr.classList.toggle('open')}
-function renderAll(){renderHero(rawBT,"raw");renderHero(realBT,"real","realNote");renderPerfStrip();renderTodayActions();renderPortfolio();renderYearHistory()}
+function renderAll(){renderHero(rawBT,"raw");renderHero(realBT,"real","realNote");recalcCosts();renderPerfStrip();renderTodayActions();renderPortfolio();renderYearHistory()}
 
 async function reloadData(){setBanner("pending","🔄 RELOADING","Fetching...");await loadServerData();renderAll();showStatus()}
 
 function showStatus(){
   const hasRaw=!!rawBT.summary;const hasReal=!!realBT.summary;const hasLive=liveState.lastExecuteDate;
   const parts=[];
-  if(hasReal)parts.push("✅ Realistic: "+realBT.summary.cagr+"% CAGR · ₹1Cr→₹"+realBT.summary.finalNavCr+"Cr");
-  if(hasRaw)parts.push("⚠️ Raw: "+rawBT.summary.cagr+"% CAGR (biased)");
+  if(hasReal)parts.push("✅ Realistic: "+realBT.summary.cagr+"% CAGR");
+  if(hasRaw)parts.push("⚠️ Raw: "+rawBT.summary.cagr+"%");
   if(hasLive)parts.push("🟢 Live: NAV ₹"+(getNav()/10000000).toFixed(3)+"Cr");
-  if(parts.length===0){setBanner("info","⏳ WAITING","Trigger backtest workflows via GitHub Actions to populate data.");return}
+  if(parts.length===0){setBanner("info","⏳ WAITING","Trigger backtest workflows via GitHub Actions.");return}
   setBanner("success","✅ DATA LOADED",parts.join(" · "));
 }
 
-function exportTradesCSV(){const src=historyView==='realistic'?realBT:(historyView==='raw'?rawBT:{completedTrades:liveState.completedTrades});const trades=src.completedTrades||[];if(trades.length===0){alert("No trades in this view");return}const h=["Ticker","EntryDate","ExitDate","EntryPrice","ExitPrice","Shares","Days","PnL_Abs","PnL_Pct","Outcome"];const rows=trades.map(t=>[t.ticker,t.entryDate,t.exitDate,t.entryPrice,t.exitPrice,t.shares,t.holdDays,t.pnlAbs,t.pnlPct,t.outcome].join(","));downloadCSV(historyView+"_trades_"+new Date().toISOString().slice(0,10)+".csv",[h.join(","),...rows].join("\n"))}
+function exportTradesCSV(){const src=historyView==='realistic'?realBT:(historyView==='raw'?rawBT:{completedTrades:liveState.completedTrades});const trades=src.completedTrades||[];if(trades.length===0){alert("No trades");return}const h=["Ticker","EntryDate","ExitDate","EntryPrice","ExitPrice","Shares","Days","PnL_Abs","PnL_Pct","Outcome"];const rows=trades.map(t=>[t.ticker,t.entryDate,t.exitDate,t.entryPrice,t.exitPrice,t.shares,t.holdDays,t.pnlAbs,t.pnlPct,t.outcome].join(","));downloadCSV(historyView+"_trades_"+new Date().toISOString().slice(0,10)+".csv",[h.join(","),...rows].join("\n"))}
 function exportJournalCSV(){const src=historyView==='realistic'?realBT:(historyView==='raw'?rawBT:{monthlyJournal:liveState.monthlyJournal});const j=src.monthlyJournal||[];if(j.length===0){alert("No history");return}const h=["Month","NAV_Cr","MoM_%","Total_%","Cash","Holdings","Bought","Sold","Wins","Losses"];const rows=j.map(m=>[m.month,m.navCr,m.monthReturn,m.totalReturn,Math.round(m.cash/1000)+"K",m.holdingsCount,'"'+(m.bought||[]).join(";")+'"','"'+(m.sold||[]).join(";")+'"',m.winsThisMonth||0,m.lossesThisMonth||0].join(","));downloadCSV(historyView+"_journal_"+new Date().toISOString().slice(0,10)+".csv",[h.join(","),...rows].join("\n"))}
 function downloadCSV(name,content){const b=new Blob([content],{type:"text/csv"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=name;a.click()}
 
 document.addEventListener("DOMContentLoaded",async()=>{
   const today=new Date();const dateStr=today.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
-  $("todayDate").textContent=dateStr+" · Raw vs Realistic vs Live · GitHub Actions cron 9:45 AM IST";
+  $("todayDate").textContent=dateStr+" · Editable Costs · Live-Adjusted CAGR";
   $("todayDateBig").textContent=today.toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'});
-  await loadServerData();renderAll();showStatus();
+  loadCostPrefs();
+  await loadServerData();
+  renderAll();showStatus();
 });
 </script>
 </body></html>
