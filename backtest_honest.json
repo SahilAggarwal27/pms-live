@@ -33,7 +33,9 @@
       "eligibleUniverse": 46,
       "regimeCostBuy": 0.884,
       "regimeCostSell": 0.864,
-      "regimeEvent": "Pre-STT era - full-service brokers dominant"
+      "regimeEvent": "Pre-STT era - full-service brokers dominant",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2003-07",
@@ -73,7 +75,9 @@
       "eligibleUniverse": 46,
       "regimeCostBuy": 0.884,
       "regimeCostSell": 0.864,
-      "regimeEvent": "Pre-STT era - full-service brokers dominant"
+      "regimeEvent": "Pre-STT era - full-service brokers dominant",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2003-08",
@@ -114,7 +118,9 @@
       "eligibleUniverse": 48,
       "regimeCostBuy": 0.884,
       "regimeCostSell": 0.864,
-      "regimeEvent": "Pre-STT era - full-service brokers dominant"
+      "regimeEvent": "Pre-STT era - full-service brokers dominant",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2003-09",
@@ -154,7 +160,9 @@
       "eligibleUniverse": 48,
       "regimeCostBuy": 0.884,
       "regimeCostSell": 0.864,
-      "regimeEvent": "Pre-STT era - full-service brokers dominant"
+      "regimeEvent": "Pre-STT era - full-service brokers dominant",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2003-10",
@@ -195,7 +203,9 @@
       "eligibleUniverse": 48,
       "regimeCostBuy": 0.884,
       "regimeCostSell": 0.864,
-      "regimeEvent": "Pre-STT era - full-service brokers dominant"
+      "regimeEvent": "Pre-STT era - full-service brokers dominant",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2003-11",
@@ -238,7 +248,9 @@
       "eligibleUniverse": 48,
       "regimeCostBuy": 0.884,
       "regimeCostSell": 0.864,
-      "regimeEvent": "Pre-STT era - full-service brokers dominant"
+      "regimeEvent": "Pre-STT era - full-service brokers dominant",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2003-12",
@@ -280,7 +292,9 @@
       "eligibleUniverse": 48,
       "regimeCostBuy": 0.884,
       "regimeCostSell": 0.864,
-      "regimeEvent": "Pre-STT era - full-service brokers dominant"
+      "regimeEvent": "Pre-STT era - full-service brokers dominant",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2004-01",
@@ -317,7 +331,9 @@
       "eligibleUniverse": 48,
       "regimeCostBuy": 0.884,
       "regimeCostSell": 0.864,
-      "regimeEvent": "Pre-STT era - full-service brokers dominant"
+      "regimeEvent": "Pre-STT era - full-service brokers dominant",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2004-02",
@@ -356,7 +372,9 @@
       "eligibleUniverse": 48,
       "regimeCostBuy": 0.884,
       "regimeCostSell": 0.864,
-      "regimeEvent": "Pre-STT era - full-service brokers dominant"
+      "regimeEvent": "Pre-STT era - full-service brokers dominant",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2004-03",
@@ -395,7 +413,9 @@
       "eligibleUniverse": 48,
       "regimeCostBuy": 0.884,
       "regimeCostSell": 0.864,
-      "regimeEvent": "Pre-STT era - full-service brokers dominant"
+      "regimeEvent": "Pre-STT era - full-service brokers dominant",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2004-04",
@@ -435,7 +455,9 @@
       "eligibleUniverse": 48,
       "regimeCostBuy": 0.884,
       "regimeCostSell": 0.864,
-      "regimeEvent": "Pre-STT era - full-service brokers dominant"
+      "regimeEvent": "Pre-STT era - full-service brokers dominant",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2004-05",
@@ -477,7 +499,9 @@
       "eligibleUniverse": 48,
       "regimeCostBuy": 0.884,
       "regimeCostSell": 0.864,
-      "regimeEvent": "Pre-STT era - full-service brokers dominant"
+      "regimeEvent": "Pre-STT era - full-service brokers dominant",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2004-06",
@@ -514,7 +538,9 @@
       "eligibleUniverse": 48,
       "regimeCostBuy": 0.884,
       "regimeCostSell": 0.864,
-      "regimeEvent": "Pre-STT era - full-service brokers dominant"
+      "regimeEvent": "Pre-STT era - full-service brokers dominant",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2004-07",
@@ -551,7 +577,9 @@
       "eligibleUniverse": 50,
       "regimeCostBuy": 0.884,
       "regimeCostSell": 0.864,
-      "regimeEvent": "Pre-STT era - full-service brokers dominant"
+      "regimeEvent": "Pre-STT era - full-service brokers dominant",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2004-08",
@@ -590,7 +618,9 @@
       "eligibleUniverse": 50,
       "regimeCostBuy": 0.884,
       "regimeCostSell": 0.864,
-      "regimeEvent": "Pre-STT era - full-service brokers dominant"
+      "regimeEvent": "Pre-STT era - full-service brokers dominant",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2004-09",
@@ -628,7 +658,9 @@
       "eligibleUniverse": 51,
       "regimeCostBuy": 0.884,
       "regimeCostSell": 0.864,
-      "regimeEvent": "Pre-STT era - full-service brokers dominant"
+      "regimeEvent": "Pre-STT era - full-service brokers dominant",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2004-10",
@@ -666,7 +698,9 @@
       "eligibleUniverse": 51,
       "regimeCostBuy": 0.959,
       "regimeCostSell": 0.939,
-      "regimeEvent": "STT introduced by Finance Act 2004 (P. Chidambaram)"
+      "regimeEvent": "STT introduced by Finance Act 2004 (P. Chidambaram)",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2004-11",
@@ -706,7 +740,9 @@
       "eligibleUniverse": 51,
       "regimeCostBuy": 0.959,
       "regimeCostSell": 0.939,
-      "regimeEvent": "STT introduced by Finance Act 2004 (P. Chidambaram)"
+      "regimeEvent": "STT introduced by Finance Act 2004 (P. Chidambaram)",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2004-12",
@@ -747,7 +783,9 @@
       "eligibleUniverse": 52,
       "regimeCostBuy": 0.959,
       "regimeCostSell": 0.939,
-      "regimeEvent": "STT introduced by Finance Act 2004 (P. Chidambaram)"
+      "regimeEvent": "STT introduced by Finance Act 2004 (P. Chidambaram)",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2005-01",
@@ -787,7 +825,9 @@
       "eligibleUniverse": 53,
       "regimeCostBuy": 0.959,
       "regimeCostSell": 0.939,
-      "regimeEvent": "STT introduced by Finance Act 2004 (P. Chidambaram)"
+      "regimeEvent": "STT introduced by Finance Act 2004 (P. Chidambaram)",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2005-02",
@@ -825,7 +865,9 @@
       "eligibleUniverse": 53,
       "regimeCostBuy": 0.959,
       "regimeCostSell": 0.939,
-      "regimeEvent": "STT introduced by Finance Act 2004 (P. Chidambaram)"
+      "regimeEvent": "STT introduced by Finance Act 2004 (P. Chidambaram)",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2005-03",
@@ -864,7 +906,9 @@
       "eligibleUniverse": 53,
       "regimeCostBuy": 0.959,
       "regimeCostSell": 0.939,
-      "regimeEvent": "STT introduced by Finance Act 2004 (P. Chidambaram)"
+      "regimeEvent": "STT introduced by Finance Act 2004 (P. Chidambaram)",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2005-04",
@@ -897,7 +941,9 @@
       "eligibleUniverse": 53,
       "regimeCostBuy": 0.959,
       "regimeCostSell": 0.939,
-      "regimeEvent": "STT introduced by Finance Act 2004 (P. Chidambaram)"
+      "regimeEvent": "STT introduced by Finance Act 2004 (P. Chidambaram)",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2005-05",
@@ -934,7 +980,9 @@
       "eligibleUniverse": 53,
       "regimeCostBuy": 0.959,
       "regimeCostSell": 0.939,
-      "regimeEvent": "STT introduced by Finance Act 2004 (P. Chidambaram)"
+      "regimeEvent": "STT introduced by Finance Act 2004 (P. Chidambaram)",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2005-06",
@@ -981,7 +1029,9 @@
       "eligibleUniverse": 121,
       "regimeCostBuy": 0.984,
       "regimeCostSell": 0.964,
-      "regimeEvent": "STT increased to 0.10%"
+      "regimeEvent": "STT increased to 0.10%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2005-07",
@@ -1021,7 +1071,9 @@
       "eligibleUniverse": 122,
       "regimeCostBuy": 0.984,
       "regimeCostSell": 0.964,
-      "regimeEvent": "STT increased to 0.10%"
+      "regimeEvent": "STT increased to 0.10%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2005-08",
@@ -1062,7 +1114,9 @@
       "eligibleUniverse": 134,
       "regimeCostBuy": 0.984,
       "regimeCostSell": 0.964,
-      "regimeEvent": "STT increased to 0.10%"
+      "regimeEvent": "STT increased to 0.10%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2005-09",
@@ -1099,7 +1153,9 @@
       "eligibleUniverse": 135,
       "regimeCostBuy": 0.984,
       "regimeCostSell": 0.964,
-      "regimeEvent": "STT increased to 0.10%"
+      "regimeEvent": "STT increased to 0.10%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2005-10",
@@ -1140,7 +1196,9 @@
       "eligibleUniverse": 135,
       "regimeCostBuy": 0.984,
       "regimeCostSell": 0.964,
-      "regimeEvent": "STT increased to 0.10%"
+      "regimeEvent": "STT increased to 0.10%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2005-11",
@@ -1179,7 +1237,9 @@
       "eligibleUniverse": 135,
       "regimeCostBuy": 0.984,
       "regimeCostSell": 0.964,
-      "regimeEvent": "STT increased to 0.10%"
+      "regimeEvent": "STT increased to 0.10%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2005-12",
@@ -1218,7 +1278,9 @@
       "eligibleUniverse": 136,
       "regimeCostBuy": 0.984,
       "regimeCostSell": 0.964,
-      "regimeEvent": "STT increased to 0.10%"
+      "regimeEvent": "STT increased to 0.10%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2006-01",
@@ -1261,7 +1323,9 @@
       "eligibleUniverse": 136,
       "regimeCostBuy": 0.984,
       "regimeCostSell": 0.964,
-      "regimeEvent": "STT increased to 0.10%"
+      "regimeEvent": "STT increased to 0.10%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2006-02",
@@ -1302,7 +1366,9 @@
       "eligibleUniverse": 136,
       "regimeCostBuy": 0.984,
       "regimeCostSell": 0.964,
-      "regimeEvent": "STT increased to 0.10%"
+      "regimeEvent": "STT increased to 0.10%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2006-03",
@@ -1347,7 +1413,9 @@
       "eligibleUniverse": 138,
       "regimeCostBuy": 0.984,
       "regimeCostSell": 0.964,
-      "regimeEvent": "STT increased to 0.10%"
+      "regimeEvent": "STT increased to 0.10%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2006-04",
@@ -1390,7 +1458,9 @@
       "eligibleUniverse": 138,
       "regimeCostBuy": 0.984,
       "regimeCostSell": 0.964,
-      "regimeEvent": "STT increased to 0.10%"
+      "regimeEvent": "STT increased to 0.10%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2006-05",
@@ -1433,7 +1503,9 @@
       "eligibleUniverse": 139,
       "regimeCostBuy": 0.984,
       "regimeCostSell": 0.964,
-      "regimeEvent": "STT increased to 0.10%"
+      "regimeEvent": "STT increased to 0.10%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2006-06",
@@ -1476,7 +1548,9 @@
       "eligibleUniverse": 140,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2006-07",
@@ -1514,7 +1588,9 @@
       "eligibleUniverse": 141,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2006-08",
@@ -1554,7 +1630,9 @@
       "eligibleUniverse": 141,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2006-09",
@@ -1596,7 +1674,9 @@
       "eligibleUniverse": 141,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2006-10",
@@ -1642,7 +1722,9 @@
       "eligibleUniverse": 141,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2006-11",
@@ -1686,7 +1768,9 @@
       "eligibleUniverse": 141,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2006-12",
@@ -1727,7 +1811,9 @@
       "eligibleUniverse": 142,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2007-01",
@@ -1770,7 +1856,9 @@
       "eligibleUniverse": 142,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2007-02",
@@ -1809,7 +1897,9 @@
       "eligibleUniverse": 142,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2007-03",
@@ -1846,7 +1936,9 @@
       "eligibleUniverse": 142,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2007-04",
@@ -1887,7 +1979,9 @@
       "eligibleUniverse": 144,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2007-05",
@@ -1930,7 +2024,9 @@
       "eligibleUniverse": 144,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2007-06",
@@ -1969,7 +2065,9 @@
       "eligibleUniverse": 145,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2007-07",
@@ -2010,7 +2108,9 @@
       "eligibleUniverse": 145,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2007-08",
@@ -2049,7 +2149,9 @@
       "eligibleUniverse": 146,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": null,
+      "niftyMonthReturn": null
     },
     {
       "month": "2007-09",
@@ -2090,7 +2192,9 @@
       "eligibleUniverse": 147,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 5021.35,
+      "niftyMonthReturn": 0.0
     },
     {
       "month": "2007-10",
@@ -2134,7 +2238,9 @@
       "eligibleUniverse": 147,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 5900.65,
+      "niftyMonthReturn": 17.51
     },
     {
       "month": "2007-11",
@@ -2177,7 +2283,9 @@
       "eligibleUniverse": 148,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 5762.75,
+      "niftyMonthReturn": -2.34
     },
     {
       "month": "2007-12",
@@ -2218,7 +2326,9 @@
       "eligibleUniverse": 148,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 6138.6,
+      "niftyMonthReturn": 6.52
     },
     {
       "month": "2008-01",
@@ -2260,7 +2370,9 @@
       "eligibleUniverse": 148,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 5137.45,
+      "niftyMonthReturn": -16.31
     },
     {
       "month": "2008-02",
@@ -2296,7 +2408,9 @@
       "eligibleUniverse": 148,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 5223.5,
+      "niftyMonthReturn": 1.67
     },
     {
       "month": "2008-03",
@@ -2336,7 +2450,9 @@
       "eligibleUniverse": 149,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 4734.5,
+      "niftyMonthReturn": -9.36
     },
     {
       "month": "2008-04",
@@ -2372,7 +2488,9 @@
       "eligibleUniverse": 150,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 5165.9,
+      "niftyMonthReturn": 9.11
     },
     {
       "month": "2008-05",
@@ -2413,7 +2531,9 @@
       "eligibleUniverse": 150,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 4870.1,
+      "niftyMonthReturn": -5.73
     },
     {
       "month": "2008-06",
@@ -2454,7 +2574,9 @@
       "eligibleUniverse": 151,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 4040.55,
+      "niftyMonthReturn": -17.03
     },
     {
       "month": "2008-07",
@@ -2495,7 +2617,9 @@
       "eligibleUniverse": 152,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 4332.95,
+      "niftyMonthReturn": 7.24
     },
     {
       "month": "2008-08",
@@ -2533,7 +2657,9 @@
       "eligibleUniverse": 152,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 4360.0,
+      "niftyMonthReturn": 0.62
     },
     {
       "month": "2008-09",
@@ -2572,7 +2698,9 @@
       "eligibleUniverse": 153,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 3921.2,
+      "niftyMonthReturn": -10.06
     },
     {
       "month": "2008-10",
@@ -2608,7 +2736,9 @@
       "eligibleUniverse": 154,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 2885.6,
+      "niftyMonthReturn": -26.41
     },
     {
       "month": "2008-11",
@@ -2639,7 +2769,9 @@
       "eligibleUniverse": 154,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 2755.1,
+      "niftyMonthReturn": -4.52
     },
     {
       "month": "2008-12",
@@ -2674,7 +2806,9 @@
       "eligibleUniverse": 154,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 2959.15,
+      "niftyMonthReturn": 7.41
     },
     {
       "month": "2009-01",
@@ -2713,7 +2847,9 @@
       "eligibleUniverse": 155,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 2874.8,
+      "niftyMonthReturn": -2.85
     },
     {
       "month": "2009-02",
@@ -2750,7 +2886,9 @@
       "eligibleUniverse": 157,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 2763.65,
+      "niftyMonthReturn": -3.87
     },
     {
       "month": "2009-03",
@@ -2790,7 +2928,9 @@
       "eligibleUniverse": 158,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 3020.95,
+      "niftyMonthReturn": 9.31
     },
     {
       "month": "2009-04",
@@ -2836,7 +2976,9 @@
       "eligibleUniverse": 159,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 3473.95,
+      "niftyMonthReturn": 15.0
     },
     {
       "month": "2009-05",
@@ -2881,7 +3023,9 @@
       "eligibleUniverse": 160,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 4448.95,
+      "niftyMonthReturn": 28.07
     },
     {
       "month": "2009-06",
@@ -2923,7 +3067,9 @@
       "eligibleUniverse": 161,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 4291.1,
+      "niftyMonthReturn": -3.55
     },
     {
       "month": "2009-07",
@@ -2969,7 +3115,9 @@
       "eligibleUniverse": 161,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 4636.45,
+      "niftyMonthReturn": 8.05
     },
     {
       "month": "2009-08",
@@ -3016,7 +3164,9 @@
       "eligibleUniverse": 163,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 4662.1,
+      "niftyMonthReturn": 0.55
     },
     {
       "month": "2009-09",
@@ -3065,7 +3215,9 @@
       "eligibleUniverse": 164,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 5083.95,
+      "niftyMonthReturn": 9.05
     },
     {
       "month": "2009-10",
@@ -3114,7 +3266,9 @@
       "eligibleUniverse": 165,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 4711.7,
+      "niftyMonthReturn": -7.32
     },
     {
       "month": "2009-11",
@@ -3159,7 +3313,9 @@
       "eligibleUniverse": 167,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 5032.7,
+      "niftyMonthReturn": 6.81
     },
     {
       "month": "2009-12",
@@ -3199,7 +3355,9 @@
       "eligibleUniverse": 167,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 5201.05,
+      "niftyMonthReturn": 3.35
     },
     {
       "month": "2010-01",
@@ -3241,7 +3399,9 @@
       "eligibleUniverse": 167,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 4882.05,
+      "niftyMonthReturn": -6.13
     },
     {
       "month": "2010-02",
@@ -3281,7 +3441,9 @@
       "eligibleUniverse": 168,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 4922.3,
+      "niftyMonthReturn": 0.82
     },
     {
       "month": "2010-03",
@@ -3322,7 +3484,9 @@
       "eligibleUniverse": 171,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 5249.1,
+      "niftyMonthReturn": 6.64
     },
     {
       "month": "2010-04",
@@ -3365,7 +3529,9 @@
       "eligibleUniverse": 172,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 5278.0,
+      "niftyMonthReturn": 0.55
     },
     {
       "month": "2010-05",
@@ -3404,7 +3570,9 @@
       "eligibleUniverse": 174,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 5086.3,
+      "niftyMonthReturn": -3.63
     },
     {
       "month": "2010-06",
@@ -3443,7 +3611,9 @@
       "eligibleUniverse": 174,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 5312.5,
+      "niftyMonthReturn": 4.45
     },
     {
       "month": "2010-07",
@@ -3482,7 +3652,9 @@
       "eligibleUniverse": 174,
       "regimeCostBuy": 0.953,
       "regimeCostSell": 0.932,
-      "regimeEvent": "STT peak at 0.125%"
+      "regimeEvent": "STT peak at 0.125%",
+      "niftyValue": 5367.6,
+      "niftyMonthReturn": 1.04
     },
     {
       "month": "2010-08",
@@ -3523,7 +3695,9 @@
       "eligibleUniverse": 175,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 5402.4,
+      "niftyMonthReturn": 0.65
     },
     {
       "month": "2010-09",
@@ -3563,7 +3737,9 @@
       "eligibleUniverse": 175,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 6029.95,
+      "niftyMonthReturn": 11.62
     },
     {
       "month": "2010-10",
@@ -3604,7 +3780,9 @@
       "eligibleUniverse": 176,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 6017.7,
+      "niftyMonthReturn": -0.2
     },
     {
       "month": "2010-11",
@@ -3644,7 +3822,9 @@
       "eligibleUniverse": 177,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 5862.7,
+      "niftyMonthReturn": -2.58
     },
     {
       "month": "2010-12",
@@ -3683,7 +3863,9 @@
       "eligibleUniverse": 180,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 6134.5,
+      "niftyMonthReturn": 4.64
     },
     {
       "month": "2011-01",
@@ -3723,7 +3905,9 @@
       "eligibleUniverse": 181,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 5505.9,
+      "niftyMonthReturn": -10.25
     },
     {
       "month": "2011-02",
@@ -3764,7 +3948,9 @@
       "eligibleUniverse": 184,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 5333.25,
+      "niftyMonthReturn": -3.14
     },
     {
       "month": "2011-03",
@@ -3809,7 +3995,9 @@
       "eligibleUniverse": 186,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 5833.75,
+      "niftyMonthReturn": 9.38
     },
     {
       "month": "2011-04",
@@ -3850,7 +4038,9 @@
       "eligibleUniverse": 186,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 5749.5,
+      "niftyMonthReturn": -1.44
     },
     {
       "month": "2011-05",
@@ -3892,7 +4082,9 @@
       "eligibleUniverse": 186,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 5473.1,
+      "niftyMonthReturn": -4.81
     },
     {
       "month": "2011-06",
@@ -3933,7 +4125,9 @@
       "eligibleUniverse": 186,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 5647.4,
+      "niftyMonthReturn": 3.18
     },
     {
       "month": "2011-07",
@@ -3973,7 +4167,9 @@
       "eligibleUniverse": 187,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 5482.0,
+      "niftyMonthReturn": -2.93
     },
     {
       "month": "2011-08",
@@ -4014,7 +4210,9 @@
       "eligibleUniverse": 187,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 5001.0,
+      "niftyMonthReturn": -8.77
     },
     {
       "month": "2011-09",
@@ -4050,7 +4248,9 @@
       "eligibleUniverse": 187,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 4943.25,
+      "niftyMonthReturn": -1.15
     },
     {
       "month": "2011-10",
@@ -4088,7 +4288,9 @@
       "eligibleUniverse": 187,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 5326.6,
+      "niftyMonthReturn": 7.76
     },
     {
       "month": "2011-11",
@@ -4125,7 +4327,9 @@
       "eligibleUniverse": 187,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 4832.05,
+      "niftyMonthReturn": -9.28
     },
     {
       "month": "2011-12",
@@ -4168,7 +4372,9 @@
       "eligibleUniverse": 187,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 4624.3,
+      "niftyMonthReturn": -4.3
     },
     {
       "month": "2012-01",
@@ -4208,7 +4414,9 @@
       "eligibleUniverse": 187,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 5199.25,
+      "niftyMonthReturn": 12.43
     },
     {
       "month": "2012-02",
@@ -4252,7 +4460,9 @@
       "eligibleUniverse": 187,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 5385.2,
+      "niftyMonthReturn": 3.58
     },
     {
       "month": "2012-03",
@@ -4291,7 +4501,9 @@
       "eligibleUniverse": 187,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 5295.55,
+      "niftyMonthReturn": -1.66
     },
     {
       "month": "2012-04",
@@ -4332,7 +4544,9 @@
       "eligibleUniverse": 187,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 5248.15,
+      "niftyMonthReturn": -0.9
     },
     {
       "month": "2012-05",
@@ -4372,7 +4586,9 @@
       "eligibleUniverse": 187,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 4924.25,
+      "niftyMonthReturn": -6.17
     },
     {
       "month": "2012-06",
@@ -4411,7 +4627,9 @@
       "eligibleUniverse": 187,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 5278.9,
+      "niftyMonthReturn": 7.2
     },
     {
       "month": "2012-07",
@@ -4450,7 +4668,9 @@
       "eligibleUniverse": 188,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 5229.0,
+      "niftyMonthReturn": -0.95
     },
     {
       "month": "2012-08",
@@ -4490,7 +4710,9 @@
       "eligibleUniverse": 190,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 5258.5,
+      "niftyMonthReturn": 0.56
     },
     {
       "month": "2012-09",
@@ -4524,7 +4746,9 @@
       "eligibleUniverse": 190,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 5703.3,
+      "niftyMonthReturn": 8.46
     },
     {
       "month": "2012-10",
@@ -4562,7 +4786,9 @@
       "eligibleUniverse": 191,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 5619.7,
+      "niftyMonthReturn": -1.47
     },
     {
       "month": "2012-11",
@@ -4598,7 +4824,9 @@
       "eligibleUniverse": 192,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 5879.85,
+      "niftyMonthReturn": 4.63
     },
     {
       "month": "2012-12",
@@ -4638,7 +4866,9 @@
       "eligibleUniverse": 192,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 5905.1,
+      "niftyMonthReturn": 0.43
     },
     {
       "month": "2013-01",
@@ -4678,7 +4908,9 @@
       "eligibleUniverse": 197,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 6034.75,
+      "niftyMonthReturn": 2.2
     },
     {
       "month": "2013-02",
@@ -4716,7 +4948,9 @@
       "eligibleUniverse": 198,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 5693.05,
+      "niftyMonthReturn": -5.66
     },
     {
       "month": "2013-03",
@@ -4756,7 +4990,9 @@
       "eligibleUniverse": 199,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 5682.55,
+      "niftyMonthReturn": -0.18
     },
     {
       "month": "2013-04",
@@ -4797,7 +5033,9 @@
       "eligibleUniverse": 200,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 5930.2,
+      "niftyMonthReturn": 4.36
     },
     {
       "month": "2013-05",
@@ -4838,7 +5076,9 @@
       "eligibleUniverse": 200,
       "regimeCostBuy": 0.84,
       "regimeCostSell": 0.82,
-      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins"
+      "regimeEvent": "Zerodha launched \u2014 discount brokerage era begins",
+      "niftyValue": 5985.95,
+      "niftyMonthReturn": 0.94
     },
     {
       "month": "2013-06",
@@ -4879,7 +5119,9 @@
       "eligibleUniverse": 200,
       "regimeCostBuy": 0.759,
       "regimeCostSell": 0.739,
-      "regimeEvent": "STT reduced to 0.10% (still current in 2026)"
+      "regimeEvent": "STT reduced to 0.10% (still current in 2026)",
+      "niftyValue": 5842.2,
+      "niftyMonthReturn": -2.4
     },
     {
       "month": "2013-07",
@@ -4917,7 +5159,9 @@
       "eligibleUniverse": 200,
       "regimeCostBuy": 0.759,
       "regimeCostSell": 0.739,
-      "regimeEvent": "STT reduced to 0.10% (still current in 2026)"
+      "regimeEvent": "STT reduced to 0.10% (still current in 2026)",
+      "niftyValue": 5742.0,
+      "niftyMonthReturn": -1.72
     },
     {
       "month": "2013-08",
@@ -4953,7 +5197,9 @@
       "eligibleUniverse": 200,
       "regimeCostBuy": 0.759,
       "regimeCostSell": 0.739,
-      "regimeEvent": "STT reduced to 0.10% (still current in 2026)"
+      "regimeEvent": "STT reduced to 0.10% (still current in 2026)",
+      "niftyValue": 5471.8,
+      "niftyMonthReturn": -4.71
     },
     {
       "month": "2013-09",
@@ -4990,7 +5236,9 @@
       "eligibleUniverse": 201,
       "regimeCostBuy": 0.759,
       "regimeCostSell": 0.739,
-      "regimeEvent": "STT reduced to 0.10% (still current in 2026)"
+      "regimeEvent": "STT reduced to 0.10% (still current in 2026)",
+      "niftyValue": 5735.3,
+      "niftyMonthReturn": 4.82
     },
     {
       "month": "2013-10",
@@ -5029,7 +5277,9 @@
       "eligibleUniverse": 203,
       "regimeCostBuy": 0.759,
       "regimeCostSell": 0.739,
-      "regimeEvent": "STT reduced to 0.10% (still current in 2026)"
+      "regimeEvent": "STT reduced to 0.10% (still current in 2026)",
+      "niftyValue": 6299.15,
+      "niftyMonthReturn": 9.83
     },
     {
       "month": "2013-11",
@@ -5066,7 +5316,9 @@
       "eligibleUniverse": 204,
       "regimeCostBuy": 0.759,
       "regimeCostSell": 0.739,
-      "regimeEvent": "STT reduced to 0.10% (still current in 2026)"
+      "regimeEvent": "STT reduced to 0.10% (still current in 2026)",
+      "niftyValue": 6176.1,
+      "niftyMonthReturn": -1.95
     },
     {
       "month": "2013-12",
@@ -5104,7 +5356,9 @@
       "eligibleUniverse": 205,
       "regimeCostBuy": 0.759,
       "regimeCostSell": 0.739,
-      "regimeEvent": "STT reduced to 0.10% (still current in 2026)"
+      "regimeEvent": "STT reduced to 0.10% (still current in 2026)",
+      "niftyValue": 6304.0,
+      "niftyMonthReturn": 2.07
     },
     {
       "month": "2014-01",
@@ -5139,7 +5393,9 @@
       "eligibleUniverse": 205,
       "regimeCostBuy": 0.759,
       "regimeCostSell": 0.739,
-      "regimeEvent": "STT reduced to 0.10% (still current in 2026)"
+      "regimeEvent": "STT reduced to 0.10% (still current in 2026)",
+      "niftyValue": 6089.5,
+      "niftyMonthReturn": -3.4
     },
     {
       "month": "2014-02",
@@ -5176,7 +5432,9 @@
       "eligibleUniverse": 205,
       "regimeCostBuy": 0.759,
       "regimeCostSell": 0.739,
-      "regimeEvent": "STT reduced to 0.10% (still current in 2026)"
+      "regimeEvent": "STT reduced to 0.10% (still current in 2026)",
+      "niftyValue": 6276.95,
+      "niftyMonthReturn": 3.08
     },
     {
       "month": "2014-03",
@@ -5218,7 +5476,9 @@
       "eligibleUniverse": 205,
       "regimeCostBuy": 0.759,
       "regimeCostSell": 0.739,
-      "regimeEvent": "STT reduced to 0.10% (still current in 2026)"
+      "regimeEvent": "STT reduced to 0.10% (still current in 2026)",
+      "niftyValue": 6704.2,
+      "niftyMonthReturn": 6.81
     },
     {
       "month": "2014-04",
@@ -5259,7 +5519,9 @@
       "eligibleUniverse": 205,
       "regimeCostBuy": 0.759,
       "regimeCostSell": 0.739,
-      "regimeEvent": "STT reduced to 0.10% (still current in 2026)"
+      "regimeEvent": "STT reduced to 0.10% (still current in 2026)",
+      "niftyValue": 6696.4,
+      "niftyMonthReturn": -0.12
     },
     {
       "month": "2014-05",
@@ -5303,7 +5565,9 @@
       "eligibleUniverse": 206,
       "regimeCostBuy": 0.759,
       "regimeCostSell": 0.739,
-      "regimeEvent": "STT reduced to 0.10% (still current in 2026)"
+      "regimeEvent": "STT reduced to 0.10% (still current in 2026)",
+      "niftyValue": 7229.95,
+      "niftyMonthReturn": 7.97
     },
     {
       "month": "2014-06",
@@ -5346,7 +5610,9 @@
       "eligibleUniverse": 208,
       "regimeCostBuy": 0.759,
       "regimeCostSell": 0.739,
-      "regimeEvent": "STT reduced to 0.10% (still current in 2026)"
+      "regimeEvent": "STT reduced to 0.10% (still current in 2026)",
+      "niftyValue": 7611.35,
+      "niftyMonthReturn": 5.28
     },
     {
       "month": "2014-07",
@@ -5388,7 +5654,9 @@
       "eligibleUniverse": 208,
       "regimeCostBuy": 0.759,
       "regimeCostSell": 0.739,
-      "regimeEvent": "STT reduced to 0.10% (still current in 2026)"
+      "regimeEvent": "STT reduced to 0.10% (still current in 2026)",
+      "niftyValue": 7721.3,
+      "niftyMonthReturn": 1.44
     },
     {
       "month": "2014-08",
@@ -5430,7 +5698,9 @@
       "eligibleUniverse": 208,
       "regimeCostBuy": 0.759,
       "regimeCostSell": 0.739,
-      "regimeEvent": "STT reduced to 0.10% (still current in 2026)"
+      "regimeEvent": "STT reduced to 0.10% (still current in 2026)",
+      "niftyValue": 7954.35,
+      "niftyMonthReturn": 3.02
     },
     {
       "month": "2014-09",
@@ -5474,7 +5744,9 @@
       "eligibleUniverse": 208,
       "regimeCostBuy": 0.759,
       "regimeCostSell": 0.739,
-      "regimeEvent": "STT reduced to 0.10% (still current in 2026)"
+      "regimeEvent": "STT reduced to 0.10% (still current in 2026)",
+      "niftyValue": 7964.8,
+      "niftyMonthReturn": 0.13
     },
     {
       "month": "2014-10",
@@ -5514,7 +5786,9 @@
       "eligibleUniverse": 208,
       "regimeCostBuy": 0.759,
       "regimeCostSell": 0.739,
-      "regimeEvent": "STT reduced to 0.10% (still current in 2026)"
+      "regimeEvent": "STT reduced to 0.10% (still current in 2026)",
+      "niftyValue": 8322.2,
+      "niftyMonthReturn": 4.49
     },
     {
       "month": "2014-11",
@@ -5557,7 +5831,9 @@
       "eligibleUniverse": 208,
       "regimeCostBuy": 0.759,
       "regimeCostSell": 0.739,
-      "regimeEvent": "STT reduced to 0.10% (still current in 2026)"
+      "regimeEvent": "STT reduced to 0.10% (still current in 2026)",
+      "niftyValue": 8588.25,
+      "niftyMonthReturn": 3.2
     },
     {
       "month": "2014-12",
@@ -5598,7 +5874,9 @@
       "eligibleUniverse": 209,
       "regimeCostBuy": 0.759,
       "regimeCostSell": 0.739,
-      "regimeEvent": "STT reduced to 0.10% (still current in 2026)"
+      "regimeEvent": "STT reduced to 0.10% (still current in 2026)",
+      "niftyValue": 8282.7,
+      "niftyMonthReturn": -3.56
     },
     {
       "month": "2015-01",
@@ -5641,7 +5919,9 @@
       "eligibleUniverse": 209,
       "regimeCostBuy": 0.759,
       "regimeCostSell": 0.739,
-      "regimeEvent": "STT reduced to 0.10% (still current in 2026)"
+      "regimeEvent": "STT reduced to 0.10% (still current in 2026)",
+      "niftyValue": 8808.9,
+      "niftyMonthReturn": 6.35
     },
     {
       "month": "2015-02",
@@ -5683,7 +5963,9 @@
       "eligibleUniverse": 209,
       "regimeCostBuy": 0.759,
       "regimeCostSell": 0.739,
-      "regimeEvent": "STT reduced to 0.10% (still current in 2026)"
+      "regimeEvent": "STT reduced to 0.10% (still current in 2026)",
+      "niftyValue": 8844.6,
+      "niftyMonthReturn": 0.41
     },
     {
       "month": "2015-03",
@@ -5724,7 +6006,9 @@
       "eligibleUniverse": 211,
       "regimeCostBuy": 0.759,
       "regimeCostSell": 0.739,
-      "regimeEvent": "STT reduced to 0.10% (still current in 2026)"
+      "regimeEvent": "STT reduced to 0.10% (still current in 2026)",
+      "niftyValue": 8491.0,
+      "niftyMonthReturn": -4.0
     },
     {
       "month": "2015-04",
@@ -5766,7 +6050,9 @@
       "eligibleUniverse": 212,
       "regimeCostBuy": 0.759,
       "regimeCostSell": 0.739,
-      "regimeEvent": "STT reduced to 0.10% (still current in 2026)"
+      "regimeEvent": "STT reduced to 0.10% (still current in 2026)",
+      "niftyValue": 8181.5,
+      "niftyMonthReturn": -3.65
     },
     {
       "month": "2015-05",
@@ -5808,7 +6094,9 @@
       "eligibleUniverse": 212,
       "regimeCostBuy": 0.759,
       "regimeCostSell": 0.739,
-      "regimeEvent": "STT reduced to 0.10% (still current in 2026)"
+      "regimeEvent": "STT reduced to 0.10% (still current in 2026)",
+      "niftyValue": 8433.65,
+      "niftyMonthReturn": 3.08
     },
     {
       "month": "2015-06",
@@ -5848,7 +6136,9 @@
       "eligibleUniverse": 212,
       "regimeCostBuy": 0.708,
       "regimeCostSell": 0.688,
-      "regimeEvent": "Service Tax raised to 14%"
+      "regimeEvent": "Service Tax raised to 14%",
+      "niftyValue": 8368.5,
+      "niftyMonthReturn": -0.77
     },
     {
       "month": "2015-07",
@@ -5886,7 +6176,9 @@
       "eligibleUniverse": 212,
       "regimeCostBuy": 0.708,
       "regimeCostSell": 0.688,
-      "regimeEvent": "Service Tax raised to 14%"
+      "regimeEvent": "Service Tax raised to 14%",
+      "niftyValue": 8532.85,
+      "niftyMonthReturn": 1.96
     },
     {
       "month": "2015-08",
@@ -5926,7 +6218,9 @@
       "eligibleUniverse": 212,
       "regimeCostBuy": 0.708,
       "regimeCostSell": 0.688,
-      "regimeEvent": "Service Tax raised to 14%"
+      "regimeEvent": "Service Tax raised to 14%",
+      "niftyValue": 7971.3,
+      "niftyMonthReturn": -6.58
     },
     {
       "month": "2015-09",
@@ -5965,7 +6259,9 @@
       "eligibleUniverse": 212,
       "regimeCostBuy": 0.708,
       "regimeCostSell": 0.688,
-      "regimeEvent": "Service Tax raised to 14%"
+      "regimeEvent": "Service Tax raised to 14%",
+      "niftyValue": 7948.9,
+      "niftyMonthReturn": -0.28
     },
     {
       "month": "2015-10",
@@ -6002,7 +6298,9 @@
       "eligibleUniverse": 212,
       "regimeCostBuy": 0.708,
       "regimeCostSell": 0.688,
-      "regimeEvent": "Service Tax raised to 14%"
+      "regimeEvent": "Service Tax raised to 14%",
+      "niftyValue": 8065.8,
+      "niftyMonthReturn": 1.47
     },
     {
       "month": "2015-11",
@@ -6041,7 +6339,9 @@
       "eligibleUniverse": 212,
       "regimeCostBuy": 0.708,
       "regimeCostSell": 0.688,
-      "regimeEvent": "Service Tax raised to 14%"
+      "regimeEvent": "Service Tax raised to 14%",
+      "niftyValue": 7935.25,
+      "niftyMonthReturn": -1.62
     },
     {
       "month": "2015-12",
@@ -6078,7 +6378,9 @@
       "eligibleUniverse": 212,
       "regimeCostBuy": 0.708,
       "regimeCostSell": 0.688,
-      "regimeEvent": "Service Tax raised to 14%"
+      "regimeEvent": "Service Tax raised to 14%",
+      "niftyValue": 7946.35,
+      "niftyMonthReturn": 0.14
     },
     {
       "month": "2016-01",
@@ -6117,7 +6419,9 @@
       "eligibleUniverse": 212,
       "regimeCostBuy": 0.708,
       "regimeCostSell": 0.688,
-      "regimeEvent": "Service Tax raised to 14%"
+      "regimeEvent": "Service Tax raised to 14%",
+      "niftyValue": 7563.55,
+      "niftyMonthReturn": -4.82
     },
     {
       "month": "2016-02",
@@ -6158,7 +6462,9 @@
       "eligibleUniverse": 212,
       "regimeCostBuy": 0.708,
       "regimeCostSell": 0.688,
-      "regimeEvent": "Service Tax raised to 14%"
+      "regimeEvent": "Service Tax raised to 14%",
+      "niftyValue": 6987.05,
+      "niftyMonthReturn": -7.62
     },
     {
       "month": "2016-03",
@@ -6194,7 +6500,9 @@
       "eligibleUniverse": 212,
       "regimeCostBuy": 0.708,
       "regimeCostSell": 0.688,
-      "regimeEvent": "Service Tax raised to 14%"
+      "regimeEvent": "Service Tax raised to 14%",
+      "niftyValue": 7738.4,
+      "niftyMonthReturn": 10.75
     },
     {
       "month": "2016-04",
@@ -6234,7 +6542,9 @@
       "eligibleUniverse": 212,
       "regimeCostBuy": 0.708,
       "regimeCostSell": 0.688,
-      "regimeEvent": "Service Tax raised to 14%"
+      "regimeEvent": "Service Tax raised to 14%",
+      "niftyValue": 7849.8,
+      "niftyMonthReturn": 1.44
     },
     {
       "month": "2016-05",
@@ -6275,7 +6585,9 @@
       "eligibleUniverse": 212,
       "regimeCostBuy": 0.708,
       "regimeCostSell": 0.688,
-      "regimeEvent": "Service Tax raised to 14%"
+      "regimeEvent": "Service Tax raised to 14%",
+      "niftyValue": 8160.1,
+      "niftyMonthReturn": 3.95
     },
     {
       "month": "2016-06",
@@ -6314,7 +6626,9 @@
       "eligibleUniverse": 212,
       "regimeCostBuy": 0.676,
       "regimeCostSell": 0.656,
-      "regimeEvent": "Swachh Bharat + Krishi Kalyan cess added \u2192 15%"
+      "regimeEvent": "Swachh Bharat + Krishi Kalyan cess added \u2192 15%",
+      "niftyValue": 8287.75,
+      "niftyMonthReturn": 1.56
     },
     {
       "month": "2016-07",
@@ -6354,7 +6668,9 @@
       "eligibleUniverse": 213,
       "regimeCostBuy": 0.676,
       "regimeCostSell": 0.656,
-      "regimeEvent": "Swachh Bharat + Krishi Kalyan cess added \u2192 15%"
+      "regimeEvent": "Swachh Bharat + Krishi Kalyan cess added \u2192 15%",
+      "niftyValue": 8638.5,
+      "niftyMonthReturn": 4.23
     },
     {
       "month": "2016-08",
@@ -6393,7 +6709,9 @@
       "eligibleUniverse": 213,
       "regimeCostBuy": 0.676,
       "regimeCostSell": 0.656,
-      "regimeEvent": "Swachh Bharat + Krishi Kalyan cess added \u2192 15%"
+      "regimeEvent": "Swachh Bharat + Krishi Kalyan cess added \u2192 15%",
+      "niftyValue": 8786.2,
+      "niftyMonthReturn": 1.71
     },
     {
       "month": "2016-09",
@@ -6432,7 +6750,9 @@
       "eligibleUniverse": 213,
       "regimeCostBuy": 0.676,
       "regimeCostSell": 0.656,
-      "regimeEvent": "Swachh Bharat + Krishi Kalyan cess added \u2192 15%"
+      "regimeEvent": "Swachh Bharat + Krishi Kalyan cess added \u2192 15%",
+      "niftyValue": 8611.15,
+      "niftyMonthReturn": -1.99
     },
     {
       "month": "2016-10",
@@ -6471,7 +6791,9 @@
       "eligibleUniverse": 213,
       "regimeCostBuy": 0.676,
       "regimeCostSell": 0.656,
-      "regimeEvent": "Swachh Bharat + Krishi Kalyan cess added \u2192 15%"
+      "regimeEvent": "Swachh Bharat + Krishi Kalyan cess added \u2192 15%",
+      "niftyValue": 8638.0,
+      "niftyMonthReturn": 0.31
     },
     {
       "month": "2016-11",
@@ -6514,7 +6836,9 @@
       "eligibleUniverse": 213,
       "regimeCostBuy": 0.676,
       "regimeCostSell": 0.656,
-      "regimeEvent": "Swachh Bharat + Krishi Kalyan cess added \u2192 15%"
+      "regimeEvent": "Swachh Bharat + Krishi Kalyan cess added \u2192 15%",
+      "niftyValue": 8224.5,
+      "niftyMonthReturn": -4.79
     },
     {
       "month": "2016-12",
@@ -6555,7 +6879,9 @@
       "eligibleUniverse": 213,
       "regimeCostBuy": 0.676,
       "regimeCostSell": 0.656,
-      "regimeEvent": "Swachh Bharat + Krishi Kalyan cess added \u2192 15%"
+      "regimeEvent": "Swachh Bharat + Krishi Kalyan cess added \u2192 15%",
+      "niftyValue": 8185.8,
+      "niftyMonthReturn": -0.47
     },
     {
       "month": "2017-01",
@@ -6593,7 +6919,9 @@
       "eligibleUniverse": 213,
       "regimeCostBuy": 0.676,
       "regimeCostSell": 0.656,
-      "regimeEvent": "Swachh Bharat + Krishi Kalyan cess added \u2192 15%"
+      "regimeEvent": "Swachh Bharat + Krishi Kalyan cess added \u2192 15%",
+      "niftyValue": 8561.3,
+      "niftyMonthReturn": 4.59
     },
     {
       "month": "2017-02",
@@ -6635,7 +6963,9 @@
       "eligibleUniverse": 213,
       "regimeCostBuy": 0.676,
       "regimeCostSell": 0.656,
-      "regimeEvent": "Swachh Bharat + Krishi Kalyan cess added \u2192 15%"
+      "regimeEvent": "Swachh Bharat + Krishi Kalyan cess added \u2192 15%",
+      "niftyValue": 8879.6,
+      "niftyMonthReturn": 3.72
     },
     {
       "month": "2017-03",
@@ -6677,7 +7007,9 @@
       "eligibleUniverse": 213,
       "regimeCostBuy": 0.676,
       "regimeCostSell": 0.656,
-      "regimeEvent": "Swachh Bharat + Krishi Kalyan cess added \u2192 15%"
+      "regimeEvent": "Swachh Bharat + Krishi Kalyan cess added \u2192 15%",
+      "niftyValue": 9173.75,
+      "niftyMonthReturn": 3.31
     },
     {
       "month": "2017-04",
@@ -6718,7 +7050,9 @@
       "eligibleUniverse": 213,
       "regimeCostBuy": 0.676,
       "regimeCostSell": 0.656,
-      "regimeEvent": "Swachh Bharat + Krishi Kalyan cess added \u2192 15%"
+      "regimeEvent": "Swachh Bharat + Krishi Kalyan cess added \u2192 15%",
+      "niftyValue": 9304.05,
+      "niftyMonthReturn": 1.42
     },
     {
       "month": "2017-05",
@@ -6762,7 +7096,9 @@
       "eligibleUniverse": 213,
       "regimeCostBuy": 0.676,
       "regimeCostSell": 0.656,
-      "regimeEvent": "Swachh Bharat + Krishi Kalyan cess added \u2192 15%"
+      "regimeEvent": "Swachh Bharat + Krishi Kalyan cess added \u2192 15%",
+      "niftyValue": 9621.25,
+      "niftyMonthReturn": 3.41
     },
     {
       "month": "2017-06",
@@ -6803,7 +7139,9 @@
       "eligibleUniverse": 213,
       "regimeCostBuy": 0.676,
       "regimeCostSell": 0.656,
-      "regimeEvent": "Swachh Bharat + Krishi Kalyan cess added \u2192 15%"
+      "regimeEvent": "Swachh Bharat + Krishi Kalyan cess added \u2192 15%",
+      "niftyValue": 9520.9,
+      "niftyMonthReturn": -1.04
     },
     {
       "month": "2017-07",
@@ -6844,7 +7182,9 @@
       "eligibleUniverse": 213,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 10077.1,
+      "niftyMonthReturn": 5.84
     },
     {
       "month": "2017-08",
@@ -6888,7 +7228,9 @@
       "eligibleUniverse": 213,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 9917.9,
+      "niftyMonthReturn": -1.58
     },
     {
       "month": "2017-09",
@@ -6931,7 +7273,9 @@
       "eligibleUniverse": 213,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 9788.6,
+      "niftyMonthReturn": -1.3
     },
     {
       "month": "2017-10",
@@ -6973,7 +7317,9 @@
       "eligibleUniverse": 213,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 10335.3,
+      "niftyMonthReturn": 5.59
     },
     {
       "month": "2017-11",
@@ -7014,7 +7360,9 @@
       "eligibleUniverse": 213,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 10226.55,
+      "niftyMonthReturn": -1.05
     },
     {
       "month": "2017-12",
@@ -7051,7 +7399,9 @@
       "eligibleUniverse": 213,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 10530.7,
+      "niftyMonthReturn": 2.97
     },
     {
       "month": "2018-01",
@@ -7089,7 +7439,9 @@
       "eligibleUniverse": 213,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 11027.7,
+      "niftyMonthReturn": 4.72
     },
     {
       "month": "2018-02",
@@ -7127,7 +7479,9 @@
       "eligibleUniverse": 213,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 10492.85,
+      "niftyMonthReturn": -4.85
     },
     {
       "month": "2018-03",
@@ -7165,7 +7519,9 @@
       "eligibleUniverse": 213,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 10113.7,
+      "niftyMonthReturn": -3.61
     },
     {
       "month": "2018-04",
@@ -7205,7 +7561,9 @@
       "eligibleUniverse": 214,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 10739.35,
+      "niftyMonthReturn": 6.19
     },
     {
       "month": "2018-05",
@@ -7245,7 +7603,9 @@
       "eligibleUniverse": 214,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 10736.15,
+      "niftyMonthReturn": -0.03
     },
     {
       "month": "2018-06",
@@ -7285,7 +7645,9 @@
       "eligibleUniverse": 214,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 10714.3,
+      "niftyMonthReturn": -0.2
     },
     {
       "month": "2018-07",
@@ -7327,7 +7689,9 @@
       "eligibleUniverse": 214,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 11356.5,
+      "niftyMonthReturn": 5.99
     },
     {
       "month": "2018-08",
@@ -7367,7 +7731,9 @@
       "eligibleUniverse": 214,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 11680.5,
+      "niftyMonthReturn": 2.85
     },
     {
       "month": "2018-09",
@@ -7408,7 +7774,9 @@
       "eligibleUniverse": 214,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 10930.45,
+      "niftyMonthReturn": -6.42
     },
     {
       "month": "2018-10",
@@ -7448,7 +7816,9 @@
       "eligibleUniverse": 214,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 10386.6,
+      "niftyMonthReturn": -4.98
     },
     {
       "month": "2018-11",
@@ -7488,7 +7858,9 @@
       "eligibleUniverse": 216,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 10876.75,
+      "niftyMonthReturn": 4.72
     },
     {
       "month": "2018-12",
@@ -7529,7 +7901,9 @@
       "eligibleUniverse": 218,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 10862.55,
+      "niftyMonthReturn": -0.13
     },
     {
       "month": "2019-01",
@@ -7572,7 +7946,9 @@
       "eligibleUniverse": 218,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 10830.95,
+      "niftyMonthReturn": -0.29
     },
     {
       "month": "2019-02",
@@ -7617,7 +7993,9 @@
       "eligibleUniverse": 218,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 10792.5,
+      "niftyMonthReturn": -0.36
     },
     {
       "month": "2019-03",
@@ -7659,7 +8037,9 @@
       "eligibleUniverse": 219,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 11570.0,
+      "niftyMonthReturn": 7.2
     },
     {
       "month": "2019-04",
@@ -7700,7 +8080,9 @@
       "eligibleUniverse": 219,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 11748.15,
+      "niftyMonthReturn": 1.54
     },
     {
       "month": "2019-05",
@@ -7746,7 +8128,9 @@
       "eligibleUniverse": 221,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 11922.8,
+      "niftyMonthReturn": 1.49
     },
     {
       "month": "2019-06",
@@ -7788,7 +8172,9 @@
       "eligibleUniverse": 221,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 11788.85,
+      "niftyMonthReturn": -1.12
     },
     {
       "month": "2019-07",
@@ -7830,7 +8216,9 @@
       "eligibleUniverse": 222,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 11118.0,
+      "niftyMonthReturn": -5.69
     },
     {
       "month": "2019-08",
@@ -7876,7 +8264,9 @@
       "eligibleUniverse": 222,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 11023.25,
+      "niftyMonthReturn": -0.85
     },
     {
       "month": "2019-09",
@@ -7920,7 +8310,9 @@
       "eligibleUniverse": 223,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 11474.45,
+      "niftyMonthReturn": 4.09
     },
     {
       "month": "2019-10",
@@ -7962,7 +8354,9 @@
       "eligibleUniverse": 223,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 11877.45,
+      "niftyMonthReturn": 3.51
     },
     {
       "month": "2019-11",
@@ -8004,7 +8398,9 @@
       "eligibleUniverse": 224,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 12056.05,
+      "niftyMonthReturn": 1.5
     },
     {
       "month": "2019-12",
@@ -8047,7 +8443,9 @@
       "eligibleUniverse": 225,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 12168.45,
+      "niftyMonthReturn": 0.93
     },
     {
       "month": "2020-01",
@@ -8090,7 +8488,9 @@
       "eligibleUniverse": 225,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 11962.1,
+      "niftyMonthReturn": -1.7
     },
     {
       "month": "2020-02",
@@ -8132,7 +8532,9 @@
       "eligibleUniverse": 225,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 11201.75,
+      "niftyMonthReturn": -6.36
     },
     {
       "month": "2020-03",
@@ -8175,7 +8577,9 @@
       "eligibleUniverse": 225,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 8597.75,
+      "niftyMonthReturn": -23.25
     },
     {
       "month": "2020-04",
@@ -8215,7 +8619,9 @@
       "eligibleUniverse": 225,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 9859.9,
+      "niftyMonthReturn": 14.68
     },
     {
       "month": "2020-05",
@@ -8255,7 +8661,9 @@
       "eligibleUniverse": 225,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 9580.3,
+      "niftyMonthReturn": -2.84
     },
     {
       "month": "2020-06",
@@ -8296,7 +8704,9 @@
       "eligibleUniverse": 227,
       "regimeCostBuy": 0.659,
       "regimeCostSell": 0.639,
-      "regimeEvent": "GST replaces Service Tax at 18%"
+      "regimeEvent": "GST replaces Service Tax at 18%",
+      "niftyValue": 10302.1,
+      "niftyMonthReturn": 7.53
     },
     {
       "month": "2020-07",
@@ -8336,7 +8746,9 @@
       "eligibleUniverse": 228,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 11073.45,
+      "niftyMonthReturn": 7.49
     },
     {
       "month": "2020-08",
@@ -8378,7 +8790,9 @@
       "eligibleUniverse": 229,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 11387.5,
+      "niftyMonthReturn": 2.84
     },
     {
       "month": "2020-09",
@@ -8424,7 +8838,9 @@
       "eligibleUniverse": 230,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 11247.55,
+      "niftyMonthReturn": -1.23
     },
     {
       "month": "2020-10",
@@ -8466,7 +8882,9 @@
       "eligibleUniverse": 233,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 11642.4,
+      "niftyMonthReturn": 3.51
     },
     {
       "month": "2020-11",
@@ -8507,7 +8925,9 @@
       "eligibleUniverse": 235,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 12968.95,
+      "niftyMonthReturn": 11.39
     },
     {
       "month": "2020-12",
@@ -8551,7 +8971,9 @@
       "eligibleUniverse": 235,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 13981.75,
+      "niftyMonthReturn": 7.81
     },
     {
       "month": "2021-01",
@@ -8593,7 +9015,9 @@
       "eligibleUniverse": 235,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 13634.6,
+      "niftyMonthReturn": -2.48
     },
     {
       "month": "2021-02",
@@ -8633,7 +9057,9 @@
       "eligibleUniverse": 235,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 14529.15,
+      "niftyMonthReturn": 6.56
     },
     {
       "month": "2021-03",
@@ -8676,7 +9102,9 @@
       "eligibleUniverse": 237,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 14690.7,
+      "niftyMonthReturn": 1.11
     },
     {
       "month": "2021-04",
@@ -8718,7 +9146,9 @@
       "eligibleUniverse": 239,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 14631.1,
+      "niftyMonthReturn": -0.41
     },
     {
       "month": "2021-05",
@@ -8761,7 +9191,9 @@
       "eligibleUniverse": 239,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 15582.8,
+      "niftyMonthReturn": 6.5
     },
     {
       "month": "2021-06",
@@ -8804,7 +9236,9 @@
       "eligibleUniverse": 239,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 15721.5,
+      "niftyMonthReturn": 0.89
     },
     {
       "month": "2021-07",
@@ -8847,7 +9281,9 @@
       "eligibleUniverse": 240,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 15763.05,
+      "niftyMonthReturn": 0.26
     },
     {
       "month": "2021-08",
@@ -8889,7 +9325,9 @@
       "eligibleUniverse": 240,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 17132.2,
+      "niftyMonthReturn": 8.69
     },
     {
       "month": "2021-09",
@@ -8931,7 +9369,9 @@
       "eligibleUniverse": 241,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 17618.15,
+      "niftyMonthReturn": 2.84
     },
     {
       "month": "2021-10",
@@ -8972,7 +9412,9 @@
       "eligibleUniverse": 241,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 17671.65,
+      "niftyMonthReturn": 0.3
     },
     {
       "month": "2021-11",
@@ -9010,7 +9452,9 @@
       "eligibleUniverse": 241,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 16983.2,
+      "niftyMonthReturn": -3.9
     },
     {
       "month": "2021-12",
@@ -9049,7 +9493,9 @@
       "eligibleUniverse": 242,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 17354.05,
+      "niftyMonthReturn": 2.18
     },
     {
       "month": "2022-01",
@@ -9093,7 +9539,9 @@
       "eligibleUniverse": 242,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 17339.85,
+      "niftyMonthReturn": -0.08
     },
     {
       "month": "2022-02",
@@ -9136,7 +9584,9 @@
       "eligibleUniverse": 243,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 16793.9,
+      "niftyMonthReturn": -3.15
     },
     {
       "month": "2022-03",
@@ -9178,7 +9628,9 @@
       "eligibleUniverse": 243,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 17464.75,
+      "niftyMonthReturn": 3.99
     },
     {
       "month": "2022-04",
@@ -9222,7 +9674,9 @@
       "eligibleUniverse": 246,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 17102.55,
+      "niftyMonthReturn": -2.07
     },
     {
       "month": "2022-05",
@@ -9266,7 +9720,9 @@
       "eligibleUniverse": 246,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 16584.55,
+      "niftyMonthReturn": -3.03
     },
     {
       "month": "2022-06",
@@ -9308,7 +9764,9 @@
       "eligibleUniverse": 246,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 15780.25,
+      "niftyMonthReturn": -4.85
     },
     {
       "month": "2022-07",
@@ -9348,7 +9806,9 @@
       "eligibleUniverse": 247,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 17158.25,
+      "niftyMonthReturn": 8.73
     },
     {
       "month": "2022-08",
@@ -9388,7 +9848,9 @@
       "eligibleUniverse": 249,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 17759.3,
+      "niftyMonthReturn": 3.5
     },
     {
       "month": "2022-09",
@@ -9431,7 +9893,9 @@
       "eligibleUniverse": 249,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 17094.35,
+      "niftyMonthReturn": -3.74
     },
     {
       "month": "2022-10",
@@ -9473,7 +9937,9 @@
       "eligibleUniverse": 250,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 18012.2,
+      "niftyMonthReturn": 5.37
     },
     {
       "month": "2022-11",
@@ -9515,7 +9981,9 @@
       "eligibleUniverse": 250,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 18758.35,
+      "niftyMonthReturn": 4.14
     },
     {
       "month": "2022-12",
@@ -9557,7 +10025,9 @@
       "eligibleUniverse": 251,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 18105.3,
+      "niftyMonthReturn": -3.48
     },
     {
       "month": "2023-01",
@@ -9590,7 +10060,9 @@
       "eligibleUniverse": 251,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 17662.15,
+      "niftyMonthReturn": -2.45
     },
     {
       "month": "2023-02",
@@ -9629,7 +10101,9 @@
       "eligibleUniverse": 251,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 17303.95,
+      "niftyMonthReturn": -2.03
     },
     {
       "month": "2023-03",
@@ -9668,7 +10142,9 @@
       "eligibleUniverse": 251,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 17359.75,
+      "niftyMonthReturn": 0.32
     },
     {
       "month": "2023-04",
@@ -9708,7 +10184,9 @@
       "eligibleUniverse": 251,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 18065.0,
+      "niftyMonthReturn": 4.06
     },
     {
       "month": "2023-05",
@@ -9751,7 +10229,9 @@
       "eligibleUniverse": 251,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 18534.4,
+      "niftyMonthReturn": 2.6
     },
     {
       "month": "2023-06",
@@ -9789,7 +10269,9 @@
       "eligibleUniverse": 251,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 19189.05,
+      "niftyMonthReturn": 3.53
     },
     {
       "month": "2023-07",
@@ -9827,7 +10309,9 @@
       "eligibleUniverse": 251,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 19753.8,
+      "niftyMonthReturn": 2.94
     },
     {
       "month": "2023-08",
@@ -9866,7 +10350,9 @@
       "eligibleUniverse": 252,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 19253.8,
+      "niftyMonthReturn": -2.53
     },
     {
       "month": "2023-09",
@@ -9907,7 +10393,9 @@
       "eligibleUniverse": 252,
       "regimeCostBuy": 0.595,
       "regimeCostSell": 0.58,
-      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only"
+      "regimeEvent": "Stamp Duty nationalized to 0.015% on buy only",
+      "niftyValue": 19638.3,
+      "niftyMonthReturn": 2.0
     },
     {
       "month": "2023-10",
@@ -9947,7 +10435,9 @@
       "eligibleUniverse": 253,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 19079.6,
+      "niftyMonthReturn": -2.84
     },
     {
       "month": "2023-11",
@@ -9988,7 +10478,9 @@
       "eligibleUniverse": 254,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 20133.15,
+      "niftyMonthReturn": 5.52
     },
     {
       "month": "2023-12",
@@ -10032,7 +10524,9 @@
       "eligibleUniverse": 254,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 21731.4,
+      "niftyMonthReturn": 7.94
     },
     {
       "month": "2024-01",
@@ -10072,7 +10566,9 @@
       "eligibleUniverse": 255,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 21725.7,
+      "niftyMonthReturn": -0.03
     },
     {
       "month": "2024-02",
@@ -10115,7 +10611,9 @@
       "eligibleUniverse": 255,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 21982.8,
+      "niftyMonthReturn": 1.18
     },
     {
       "month": "2024-03",
@@ -10158,7 +10656,9 @@
       "eligibleUniverse": 256,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 22326.9,
+      "niftyMonthReturn": 1.57
     },
     {
       "month": "2024-04",
@@ -10199,7 +10699,9 @@
       "eligibleUniverse": 256,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 22604.85,
+      "niftyMonthReturn": 1.24
     },
     {
       "month": "2024-05",
@@ -10241,7 +10743,9 @@
       "eligibleUniverse": 256,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 22530.7,
+      "niftyMonthReturn": -0.33
     },
     {
       "month": "2024-06",
@@ -10285,7 +10789,9 @@
       "eligibleUniverse": 256,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 24010.6,
+      "niftyMonthReturn": 6.57
     },
     {
       "month": "2024-07",
@@ -10325,7 +10831,9 @@
       "eligibleUniverse": 256,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 24951.15,
+      "niftyMonthReturn": 3.92
     },
     {
       "month": "2024-08",
@@ -10366,7 +10874,9 @@
       "eligibleUniverse": 257,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 25235.9,
+      "niftyMonthReturn": 1.14
     },
     {
       "month": "2024-09",
@@ -10405,7 +10915,9 @@
       "eligibleUniverse": 257,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 25810.85,
+      "niftyMonthReturn": 2.28
     },
     {
       "month": "2024-10",
@@ -10445,7 +10957,9 @@
       "eligibleUniverse": 257,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 24205.35,
+      "niftyMonthReturn": -6.22
     },
     {
       "month": "2024-11",
@@ -10488,7 +11002,9 @@
       "eligibleUniverse": 257,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 24131.1,
+      "niftyMonthReturn": -0.31
     },
     {
       "month": "2024-12",
@@ -10528,7 +11044,9 @@
       "eligibleUniverse": 258,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 23644.8,
+      "niftyMonthReturn": -2.02
     },
     {
       "month": "2025-01",
@@ -10568,7 +11086,9 @@
       "eligibleUniverse": 258,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 23508.4,
+      "niftyMonthReturn": -0.58
     },
     {
       "month": "2025-02",
@@ -10610,7 +11130,9 @@
       "eligibleUniverse": 258,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 22124.7,
+      "niftyMonthReturn": -5.89
     },
     {
       "month": "2025-03",
@@ -10650,7 +11172,9 @@
       "eligibleUniverse": 258,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 23519.35,
+      "niftyMonthReturn": 6.3
     },
     {
       "month": "2025-04",
@@ -10692,7 +11216,9 @@
       "eligibleUniverse": 258,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 24334.2,
+      "niftyMonthReturn": 3.46
     },
     {
       "month": "2025-05",
@@ -10732,7 +11258,9 @@
       "eligibleUniverse": 258,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 24750.7,
+      "niftyMonthReturn": 1.71
     },
     {
       "month": "2025-06",
@@ -10770,7 +11298,9 @@
       "eligibleUniverse": 258,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 25517.05,
+      "niftyMonthReturn": 3.1
     },
     {
       "month": "2025-07",
@@ -10811,7 +11341,9 @@
       "eligibleUniverse": 258,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 24768.35,
+      "niftyMonthReturn": -2.93
     },
     {
       "month": "2025-08",
@@ -10851,7 +11383,9 @@
       "eligibleUniverse": 258,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 24426.85,
+      "niftyMonthReturn": -1.38
     },
     {
       "month": "2025-09",
@@ -10894,7 +11428,9 @@
       "eligibleUniverse": 259,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 24611.1,
+      "niftyMonthReturn": 0.75
     },
     {
       "month": "2025-10",
@@ -10932,7 +11468,9 @@
       "eligibleUniverse": 259,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 25722.1,
+      "niftyMonthReturn": 4.51
     },
     {
       "month": "2025-11",
@@ -10971,7 +11509,9 @@
       "eligibleUniverse": 260,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 26202.95,
+      "niftyMonthReturn": 1.87
     },
     {
       "month": "2025-12",
@@ -11013,7 +11553,9 @@
       "eligibleUniverse": 260,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 26129.6,
+      "niftyMonthReturn": -0.28
     },
     {
       "month": "2026-01",
@@ -11052,7 +11594,9 @@
       "eligibleUniverse": 260,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 25320.65,
+      "niftyMonthReturn": -3.1
     },
     {
       "month": "2026-02",
@@ -11090,7 +11634,9 @@
       "eligibleUniverse": 260,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 25178.65,
+      "niftyMonthReturn": -0.56
     },
     {
       "month": "2026-03",
@@ -11129,7 +11675,9 @@
       "eligibleUniverse": 260,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 22331.4,
+      "niftyMonthReturn": -11.31
     },
     {
       "month": "2026-04",
@@ -11167,7 +11715,9 @@
       "eligibleUniverse": 260,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 23997.55,
+      "niftyMonthReturn": 7.46
     },
     {
       "month": "2026-05",
@@ -11208,7 +11758,9 @@
       "eligibleUniverse": 260,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 23547.75,
+      "niftyMonthReturn": -1.87
     },
     {
       "month": "2026-06",
@@ -11251,7 +11803,9 @@
       "eligibleUniverse": 260,
       "regimeCostBuy": 0.536,
       "regimeCostSell": 0.521,
-      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale"
+      "regimeEvent": "F&O STT hike (equity unchanged) - Zerodha at scale",
+      "niftyValue": 23865.75,
+      "niftyMonthReturn": 1.35
     }
   ],
   "completedTrades": [
