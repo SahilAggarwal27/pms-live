@@ -1,15 +1,22 @@
 """
 PMS Algo - Server-side execution via GitHub Actions
-Runs daily 9:15 AM IST. Fetches prices, ranks stocks, auto-executes paper trades.
+Runs daily 9:15 AM IST. Fetches prices, checks exits DAILY, rebalances WEEKLY.
 State persisted to data.json (committed back to repo).
 
-RULES (Updated):
-- HARD STOP LOSS: -8% from entry → AUTO SELL
-- TRAILING STOP: -22% from peak → AUTO SELL (let winners run!)
+CADENCE (Design B — crash-safe weekly):
+- EXITS run EVERY DAY: -8% hard stop / -22% trailing stop fire the same day,
+  so a mid-week crash is still handled. No waiting for the weekly slot.
+- RANKING + NEW BUYS run ONCE A WEEK (Monday). This kills daily churn
+  (the in/out noise from re-ranking every day) without touching protection.
+- MARKET FILTER checked daily; Nifty below 200-DMA blocks new buys regardless.
+
+RULES:
+- HARD STOP LOSS: -8% from entry → AUTO SELL (daily)
+- TRAILING STOP: -22% from peak → AUTO SELL (daily, lets winners run)
 - NO PROFIT CAP: winners run until trailing stop or rank drop
-- MARKET FILTER: Only buy when Nifty > 200-DMA
-- MAX POSITIONS: 12 (not 15)
+- MAX POSITIONS: 12
 - CASH BUFFER: Minimum 10% always
+- REBALANCE_WEEKDAY: 0=Mon .. 4=Fri (ranking + buys + rank-drop sells)
 """
 import yfinance as yf
 import json
@@ -19,13 +26,14 @@ from datetime import datetime
 UNIVERSE = ["PERSISTENT","COFORGE","MPHASIS","LTIM","KPITTECH","TATAELXSI","OFSS","BOSCHLTD","MRF","MOTHERSON","EXIDEIND","BALKRISIND","BHARATFORG","MUTHOOTFIN","CHOLAFIN","LICHSGFIN","MFSL","PFC","RECLTD","LUPIN","AUROPHARMA","GLENMARK","BIOCON","ALKEM","LAURUSLABS","JBCHEPHARM","ABBOTINDIA","SIEMENS","CUMMINSIND","THERMAX","HAL","BEL","CGPOWER","DIXON","PIIND","DEEPAKNTR","NAVINFLUOR","SRF","ATUL","AARTIIND","VINATIORGA","COROMANDEL","SOLARINDS","PAGEIND","HAVELLS","VOLTAS","CROMPTON","JUBLFOOD","VBL","TRENT","FEDERALBNK","AUBANK","IDFCFIRSTB","BANKBARODA","GODREJPROP","OBEROIRLTY","PRESTIGE","IEX","CDSL","MCX","INDIAMART","NAUKRI","GAIL","IGL","TATAPOWER","HINDZINC","JINDALSTEL","NMDC"]
 
 # ============ RISK PARAMETERS (TUNABLE) ============
-TOP_N = 12                  # Max positions (was 15)
+TOP_N = 12                  # Max positions
 CORPUS = 10_000_000         # Rs 1 Cr starting capital
-HARD_STOP_LOSS_PCT = -8.0   # Exit if down 8% from entry
-TRAILING_STOP_PCT = 22.0    # Exit if down 22% from peak (let winners run)
+HARD_STOP_LOSS_PCT = -8.0   # Exit if down 8% from entry (checked DAILY)
+TRAILING_STOP_PCT = 22.0    # Exit if down 22% from peak (checked DAILY)
 MIN_CASH_BUFFER_PCT = 10.0  # Keep minimum 10% cash
+REBALANCE_WEEKDAY = 0       # 0=Monday. Ranking + new buys + rank-drop sells run only on this day.
 # NOTE: Profit target removed. Winners run until trailing stop or rank drop.
-#       This aligns live rules with the momentum edge (uncapped upside).
+#       Stops are DAILY so crashes are handled; only ranking/buys are weekly.
 # ===================================================
 
 def default_state():
@@ -35,12 +43,13 @@ def default_state():
         "completedTrades": [],
         "navHistory": [],
         "startDate": None,
-        "lastExecuteDate": None,
+        "lastExecuteDate": None,      # last day ANY trade logic ran (stops or rebalance)
+        "lastRebalanceDate": None,    # last day ranking + buys ran
         "lastRun": None,
         "todayExecutedBuys": [],
         "todayExecutedSells": [],
         "prices": {},
-        "niftyAbove200DMA": True,  # Market filter
+        "niftyAbove200DMA": True,     # Market filter
         "niftyPrice": 0,
         "nifty200DMA": 0
     }
@@ -126,51 +135,69 @@ def get_nav(state, prices_map):
 
 def check_exit_conditions(ticker, pos, cmp):
     """
-    Check if position should be exited based on:
+    DAILY exit checks:
     1. HARD STOP LOSS: -8% from entry
     2. TRAILING STOP: -22% from peak (lets winners run)
 
-    NO profit cap — winners exit only on trailing stop or rank drop.
-
+    NO profit cap. Rank-drop exits are handled separately on rebalance day.
     Returns: (should_exit, exit_reason)
     """
     entry_price = pos["entryPrice"]
     peak_price = pos.get("peakPrice", entry_price)
-    
+
     # Update peak if current price is higher
     if cmp > peak_price:
         pos["peakPrice"] = cmp
         peak_price = cmp
-    
-    # Calculate P&L percentages
+
     pnl_from_entry = ((cmp - entry_price) / entry_price) * 100
     drawdown_from_peak = ((peak_price - cmp) / peak_price) * 100
-    
-    # 1. HARD STOP LOSS: -8% from entry
+
     if pnl_from_entry <= HARD_STOP_LOSS_PCT:
         return True, f"STOP_LOSS ({pnl_from_entry:+.1f}%)"
-    
-    # 2. TRAILING STOP: -22% from peak (only if we were up at some point)
+
     if peak_price > entry_price and drawdown_from_peak >= TRAILING_STOP_PCT:
         return True, f"TRAILING_STOP ({drawdown_from_peak:.1f}% from peak)"
-    
+
     return False, None
+
+def close_position(state, t, prices_map, today, reason):
+    """Book a sell into completedTrades and remove from holdings. Returns display string."""
+    pos = state["holdings"][t]
+    sp = prices_map[t]["cmp"] if t in prices_map else pos["entryPrice"]
+    pnl_abs = round((sp - pos["entryPrice"]) * pos["shares"])
+    pnl_pct = round(((sp - pos["entryPrice"]) / pos["entryPrice"]) * 100, 2)
+    hd = (datetime.now() - datetime.strptime(pos["entryDate"], "%Y-%m-%d")).days
+    state["completedTrades"].append({
+        "ticker": t, "entryDate": pos["entryDate"], "exitDate": today,
+        "entryPrice": pos["entryPrice"], "exitPrice": sp,
+        "shares": pos["shares"], "holdDays": hd,
+        "pnlAbs": pnl_abs, "pnlPct": pnl_pct,
+        "outcome": "WIN" if pnl_pct > 0 else "LOSS",
+        "exitReason": reason
+    })
+    del state["holdings"][t]
+    return f"{t} ({'+' if pnl_pct>=0 else ''}{pnl_pct}% → {reason})"
 
 def run_algo():
     print(f"[{datetime.now().isoformat()}] Starting PMS Algo run")
     state = load_state()
     today = datetime.now().strftime("%Y-%m-%d")
+    weekday = datetime.now().weekday()  # 0=Mon .. 6=Sun
     month = today[:7]
-
-    # Idempotency: don't double-execute same day
-    if state.get("lastExecuteDate") == today:
-        print(f"Already executed today ({today}). Refreshing prices only.")
-        state["lastRun"] = datetime.now().isoformat()
+    is_rebalance_day = (weekday == REBALANCE_WEEKDAY)
 
     if state["startDate"] is None:
         state["startDate"] = today
 
-    # 0. CHECK MARKET FILTER (Nifty > 200-DMA)
+    # Idempotency: has stop-check already run today?
+    stops_already_ran_today = (state.get("lastExecuteDate") == today)
+    rebalance_already_ran_today = (state.get("lastRebalanceDate") == today)
+
+    print(f"Weekday={weekday} | Rebalance day={is_rebalance_day} "
+          f"(REBALANCE_WEEKDAY={REBALANCE_WEEKDAY})")
+
+    # 0. MARKET FILTER (daily)
     print("Checking Nifty 200-DMA filter...")
     nifty_ok, nifty_price, nifty_dma = fetch_nifty()
     state["niftyAbove200DMA"] = nifty_ok
@@ -178,7 +205,7 @@ def run_algo():
     state["nifty200DMA"] = nifty_dma
     print(f"  Nifty: {nifty_price} vs 200-DMA: {nifty_dma} → {'✅ BULLISH' if nifty_ok else '🛑 BEARISH'}")
 
-    # 1. FETCH ALL PRICES
+    # 1. FETCH ALL PRICES (needed daily for stop checks + MTM)
     print(f"Fetching {len(UNIVERSE)} stocks...")
     prices = []
     for i, ticker in enumerate(UNIVERSE):
@@ -197,108 +224,77 @@ def run_algo():
         save_state(state)
         return
 
-    # 2. RANK & IDENTIFY SIGNALS
+    # 2. RANK (only meaningful on rebalance day, but compute for logging)
     picked = rank_stocks(prices)
     picked_tickers = [p["ticker"] for p in picked]
-    print(f"Top-{TOP_N} picks: {picked_tickers}")
+    if is_rebalance_day:
+        print(f"Top-{TOP_N} picks (rebalance): {picked_tickers}")
 
-    # If already executed today, just save updated prices and exit
-    if state.get("lastExecuteDate") == today:
-        save_state(state)
-        print("Prices refreshed for MTM. Skipping trades (already ran today).")
-        return
-
-    # ============================================================
-    # 3. AUTO-EXECUTE SELLS (STOP LOSS & TRAILING STOP)
-    # ============================================================
-    to_sell = []
-    sell_reasons = {}
-    
-    for t, pos in list(state["holdings"].items()):
-        cmp = prices_map.get(t, {}).get("cmp", pos["entryPrice"])
-        
-        # Check exit conditions (stop loss, trailing stop)
-        should_exit, reason = check_exit_conditions(t, pos, cmp)
-        
-        if should_exit:
-            to_sell.append(t)
-            sell_reasons[t] = reason
-            print(f"  📢 {t}: EXIT triggered → {reason}")
-        elif t not in picked_tickers:
-            # Also sell if fell out of top rankings
-            to_sell.append(t)
-            sell_reasons[t] = "RANK_DROP"
-            print(f"  📢 {t}: EXIT triggered → Fell out of top {TOP_N}")
-    
     sold = []
-    for t in to_sell:
-        pos = state["holdings"][t]
-        if t in prices_map:
-            sp = prices_map[t]["cmp"]
-        else:
-            sp = pos["entryPrice"]
-        pnl_abs = round((sp - pos["entryPrice"]) * pos["shares"])
-        pnl_pct = round(((sp - pos["entryPrice"]) / pos["entryPrice"]) * 100, 2)
-        hd = (datetime.now() - datetime.strptime(pos["entryDate"], "%Y-%m-%d")).days
-        exit_reason = sell_reasons.get(t, "UNKNOWN")
-        
-        state["completedTrades"].append({
-            "ticker": t, "entryDate": pos["entryDate"], "exitDate": today,
-            "entryPrice": pos["entryPrice"], "exitPrice": sp,
-            "shares": pos["shares"], "holdDays": hd,
-            "pnlAbs": pnl_abs, "pnlPct": pnl_pct,
-            "outcome": "WIN" if pnl_pct > 0 else "LOSS",
-            "exitReason": exit_reason
-        })
-        sold.append(f"{t} ({'+' if pnl_pct>=0 else ''}{pnl_pct}% → {exit_reason})")
-        del state["holdings"][t]
+    bought = []
 
     # ============================================================
-    # 4. AUTO-EXECUTE BUYS (WITH MARKET FILTER & CASH BUFFER)
+    # 3. DAILY EXITS — stop loss & trailing stop (EVERY DAY)
     # ============================================================
-    cash = get_cash(state)
-    current_nav = cash + get_mv(state, prices_map)
-    
-    # Check cash buffer - don't buy if cash would go below 10%
-    min_cash_required = current_nav * (MIN_CASH_BUFFER_PCT / 100)
-    available_for_buys = max(0, cash - min_cash_required)
-    
-    # Check market filter - don't buy new positions if Nifty below 200-DMA
-    if not nifty_ok:
-        print(f"🛑 MARKET FILTER: Nifty below 200-DMA. NO NEW BUYS today.")
-        available_for_buys = 0
-    
-    # Check position limit
-    current_positions = len(state["holdings"])
-    max_new_buys = max(0, TOP_N - current_positions)
-    
-    print(f"  Cash: ₹{cash/100000:.1f}L | Min buffer: ₹{min_cash_required/100000:.1f}L | Available: ₹{available_for_buys/100000:.1f}L")
-    print(f"  Current positions: {current_positions}/{TOP_N} | Can buy: {max_new_buys}")
-    
-    per_stock = available_for_buys / max(1, max_new_buys) if max_new_buys > 0 else 0
-    
-    bought = []
-    for p in picked:
-        if p["ticker"] in state["holdings"]:
-            continue
-        if len(bought) >= max_new_buys:
-            break
-        if available_for_buys <= 0:
-            break
-            
-        shares = int(per_stock / p["cmp"])
-        cost = shares * p["cmp"]
-        if shares < 1 or available_for_buys < cost:
-            continue
-            
-        available_for_buys -= cost
-        state["holdings"][p["ticker"]] = {
-            "shares": shares,
-            "entryPrice": p["cmp"],
-            "entryDate": today,
-            "peakPrice": p["cmp"]  # Track peak for trailing stop
-        }
-        bought.append(p["ticker"])
+    if not stops_already_ran_today:
+        for t, pos in list(state["holdings"].items()):
+            cmp = prices_map.get(t, {}).get("cmp", pos["entryPrice"])
+            should_exit, reason = check_exit_conditions(t, pos, cmp)
+            if should_exit:
+                print(f"  📢 {t}: DAILY EXIT → {reason}")
+                sold.append(close_position(state, t, prices_map, today, reason))
+    else:
+        print("Stops already checked today — skipping duplicate exit pass.")
+
+    # ============================================================
+    # 4. WEEKLY REBALANCE — rank-drop sells + new buys (Mon only)
+    # ============================================================
+    if is_rebalance_day and not rebalance_already_ran_today:
+        # 4a. Rank-drop sells: holdings no longer in top N
+        for t in list(state["holdings"].keys()):
+            if t not in picked_tickers:
+                print(f"  📢 {t}: REBALANCE EXIT → Fell out of top {TOP_N}")
+                sold.append(close_position(state, t, prices_map, today, "RANK_DROP"))
+
+        # 4b. New buys (respect market filter, cash buffer, position cap)
+        cash = get_cash(state)
+        current_nav = cash + get_mv(state, prices_map)
+        min_cash_required = current_nav * (MIN_CASH_BUFFER_PCT / 100)
+        available_for_buys = max(0, cash - min_cash_required)
+
+        if not nifty_ok:
+            print(f"🛑 MARKET FILTER: Nifty below 200-DMA. NO NEW BUYS this rebalance.")
+            available_for_buys = 0
+
+        current_positions = len(state["holdings"])
+        max_new_buys = max(0, TOP_N - current_positions)
+        print(f"  Cash: ₹{cash/100000:.1f}L | Min buffer: ₹{min_cash_required/100000:.1f}L "
+              f"| Available: ₹{available_for_buys/100000:.1f}L")
+        print(f"  Positions: {current_positions}/{TOP_N} | Can buy: {max_new_buys}")
+
+        per_stock = available_for_buys / max(1, max_new_buys) if max_new_buys > 0 else 0
+        for p in picked:
+            if p["ticker"] in state["holdings"]:
+                continue
+            if len(bought) >= max_new_buys or available_for_buys <= 0:
+                break
+            shares = int(per_stock / p["cmp"])
+            cost = shares * p["cmp"]
+            if shares < 1 or available_for_buys < cost:
+                continue
+            available_for_buys -= cost
+            state["holdings"][p["ticker"]] = {
+                "shares": shares,
+                "entryPrice": p["cmp"],
+                "entryDate": today,
+                "peakPrice": p["cmp"]
+            }
+            bought.append(p["ticker"])
+
+        state["lastRebalanceDate"] = today
+    elif not is_rebalance_day:
+        print(f"Not rebalance day — holding positions, no new buys. "
+              f"(Next rebalance: weekday {REBALANCE_WEEKDAY})")
 
     # 5. UPDATE MONTHLY JOURNAL
     nav = get_nav(state, prices_map)
@@ -333,7 +329,6 @@ def run_algo():
             "lossesThisMonth": 0
         })
 
-    # Update win/loss counts for this month
     for m in state["monthlyJournal"]:
         m["winsThisMonth"] = sum(1 for t in state["completedTrades"]
                                  if t["exitDate"].startswith(m["month"]) and t["pnlPct"] > 0)
@@ -346,13 +341,12 @@ def run_algo():
     state["lastExecuteDate"] = today
     state["lastRun"] = datetime.now().isoformat()
 
-    # Calculate stats
     wins = sum(1 for t in state["completedTrades"] if t["pnlPct"] > 0)
     losses = sum(1 for t in state["completedTrades"] if t["pnlPct"] <= 0)
     win_rate = (wins / (wins + losses) * 100) if (wins + losses) > 0 else 0
 
     print(f"\n{'='*60}")
-    print(f"EXECUTION SUMMARY - {today}")
+    print(f"EXECUTION SUMMARY - {today} ({'REBALANCE' if is_rebalance_day else 'stops-only'})")
     print(f"{'='*60}")
     print(f"MARKET: Nifty {'✅ BULLISH' if nifty_ok else '🛑 BEARISH'} ({nifty_price} vs 200-DMA {nifty_dma})")
     print(f"BOUGHT ({len(bought)}): {bought}")
