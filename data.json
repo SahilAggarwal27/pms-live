@@ -63,31 +63,31 @@
     {
       "month": "2026-07",
       "date": "2026-07-21",
-      "nav": 9850684,
-      "navCr": 0.985,
-      "monthReturn": -0.03,
-      "totalReturn": -1.49,
+      "nav": 9857041,
+      "navCr": 0.986,
+      "monthReturn": 0.06,
+      "totalReturn": -1.43,
       "cash": 2589234,
       "holdingsCount": 11,
       "bought": [
-        "LAURUSLABS",
-        "SIEMENS",
-        "DIXON",
-        "FEDERALBNK",
-        "EXIDEIND",
-        "OFSS",
-        "GODREJPROP",
-        "MOTHERSON",
         "JBCHEPHARM",
-        "NAVINFLUOR",
-        "AARTIIND",
-        "CGPOWER",
-        "AUROPHARMA",
-        "CUMMINSIND",
-        "SOLARINDS",
-        "BHARATFORG",
+        "SIEMENS",
         "THERMAX",
-        "PAGEIND"
+        "GODREJPROP",
+        "PAGEIND",
+        "AARTIIND",
+        "DIXON",
+        "OFSS",
+        "AUROPHARMA",
+        "EXIDEIND",
+        "LAURUSLABS",
+        "NAVINFLUOR",
+        "FEDERALBNK",
+        "CUMMINSIND",
+        "BHARATFORG",
+        "MOTHERSON",
+        "SOLARINDS",
+        "CGPOWER"
       ],
       "sold": [
         "JBCHEPHARM (+0.0%)",
@@ -251,52 +251,56 @@
     {
       "date": "2026-07-28",
       "nav": 9850683.746680908
+    },
+    {
+      "date": "2026-07-28",
+      "nav": 9857041.317054443
     }
   ],
   "startDate": "2026-07-21",
   "lastExecuteDate": "2026-07-28",
-  "lastRun": "2026-07-28T04:54:27.437340",
+  "lastRun": "2026-07-28T06:38:09.927894",
   "todayExecutedBuys": [],
   "todayExecutedSells": [],
   "prices": {
     "AARTIIND": {
-      "cmp": 480.8
+      "cmp": 479.15
     },
     "AUROPHARMA": {
-      "cmp": 1548.8
+      "cmp": 1548.3
     },
     "BHARATFORG": {
-      "cmp": 2150.3
+      "cmp": 2164.0
     },
     "CGPOWER": {
-      "cmp": 838.6
+      "cmp": 835.75
     },
     "CUMMINSIND": {
-      "cmp": 5474.5
+      "cmp": 5434.0
     },
     "GODREJPROP": {
-      "cmp": 2114.5
+      "cmp": 2122.6
     },
     "LAURUSLABS": {
-      "cmp": 1739.2
+      "cmp": 1739.5
     },
     "MOTHERSON": {
-      "cmp": 146.45
+      "cmp": 148.11
     },
     "NAVINFLUOR": {
-      "cmp": 7604.0
+      "cmp": 7577.5
     },
     "OFSS": {
-      "cmp": 11369.0
+      "cmp": 11387.0
     },
     "SOLARINDS": {
-      "cmp": 18144.0
+      "cmp": 18211.0
     }
   },
   "note": "This file is auto-updated by GitHub Actions daily at 9:45 AM IST",
   "niftyAbove200DMA": false,
-  "niftyPrice": 23992.95,
-  "nifty200DMA": 24795.49,
+  "niftyPrice": 24008.4,
+  "nifty200DMA": 24795.57,
   "lastRebalanceDate": null,
   "lastRebalanceMonth": null,
   "totalCostsPaid": 0.0
