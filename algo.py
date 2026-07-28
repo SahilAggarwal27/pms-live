@@ -5,8 +5,8 @@ State persisted to data.json (committed back to repo).
 
 RULES (Updated):
 - HARD STOP LOSS: -8% from entry → AUTO SELL
-- TRAILING STOP: -15% from peak → AUTO SELL  
-- PROFIT TARGET: +10% → AUTO SELL (book winner!)
+- TRAILING STOP: -22% from peak → AUTO SELL (let winners run!)
+- NO PROFIT CAP: winners run until trailing stop or rank drop
 - MARKET FILTER: Only buy when Nifty > 200-DMA
 - MAX POSITIONS: 12 (not 15)
 - CASH BUFFER: Minimum 10% always
@@ -22,9 +22,10 @@ UNIVERSE = ["PERSISTENT","COFORGE","MPHASIS","LTIM","KPITTECH","TATAELXSI","OFSS
 TOP_N = 12                  # Max positions (was 15)
 CORPUS = 10_000_000         # Rs 1 Cr starting capital
 HARD_STOP_LOSS_PCT = -8.0   # Exit if down 8% from entry
-TRAILING_STOP_PCT = 15.0    # Exit if down 15% from peak
-PROFIT_TARGET_PCT = 10.0    # Book profits at +10%
+TRAILING_STOP_PCT = 22.0    # Exit if down 22% from peak (let winners run)
 MIN_CASH_BUFFER_PCT = 10.0  # Keep minimum 10% cash
+# NOTE: Profit target removed. Winners run until trailing stop or rank drop.
+#       This aligns live rules with the momentum edge (uncapped upside).
 # ===================================================
 
 def default_state():
@@ -127,9 +128,10 @@ def check_exit_conditions(ticker, pos, cmp):
     """
     Check if position should be exited based on:
     1. HARD STOP LOSS: -8% from entry
-    2. TRAILING STOP: -15% from peak
-    3. PROFIT TARGET: +10% (book winner!)
-    
+    2. TRAILING STOP: -22% from peak (lets winners run)
+
+    NO profit cap — winners exit only on trailing stop or rank drop.
+
     Returns: (should_exit, exit_reason)
     """
     entry_price = pos["entryPrice"]
@@ -148,13 +150,9 @@ def check_exit_conditions(ticker, pos, cmp):
     if pnl_from_entry <= HARD_STOP_LOSS_PCT:
         return True, f"STOP_LOSS ({pnl_from_entry:+.1f}%)"
     
-    # 2. TRAILING STOP: -15% from peak (only if we were up at some point)
+    # 2. TRAILING STOP: -22% from peak (only if we were up at some point)
     if peak_price > entry_price and drawdown_from_peak >= TRAILING_STOP_PCT:
         return True, f"TRAILING_STOP ({drawdown_from_peak:.1f}% from peak)"
-    
-    # 3. PROFIT TARGET: +10% (book winner!)
-    if pnl_from_entry >= PROFIT_TARGET_PCT:
-        return True, f"PROFIT_BOOKED (+{pnl_from_entry:.1f}%)"
     
     return False, None
 
@@ -211,7 +209,7 @@ def run_algo():
         return
 
     # ============================================================
-    # 3. AUTO-EXECUTE SELLS (NEW LOGIC WITH STOP LOSS & TARGETS)
+    # 3. AUTO-EXECUTE SELLS (STOP LOSS & TRAILING STOP)
     # ============================================================
     to_sell = []
     sell_reasons = {}
@@ -219,7 +217,7 @@ def run_algo():
     for t, pos in list(state["holdings"].items()):
         cmp = prices_map.get(t, {}).get("cmp", pos["entryPrice"])
         
-        # Check exit conditions (stop loss, trailing stop, profit target)
+        # Check exit conditions (stop loss, trailing stop)
         should_exit, reason = check_exit_conditions(t, pos, cmp)
         
         if should_exit:
