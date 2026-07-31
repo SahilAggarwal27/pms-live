@@ -11,24 +11,24 @@
       "cash": 9871016,
       "holdingsCount": 0,
       "bought": [
-        "SIEMENS",
-        "MOTHERSON",
-        "THERMAX",
-        "NAVINFLUOR",
-        "OFSS",
-        "CGPOWER",
-        "GODREJPROP",
         "AUROPHARMA",
-        "FEDERALBNK",
-        "AARTIIND",
-        "DIXON",
         "BHARATFORG",
+        "OFSS",
+        "MOTHERSON",
+        "JBCHEPHARM",
+        "CGPOWER",
+        "EXIDEIND",
+        "THERMAX",
+        "FEDERALBNK",
         "PAGEIND",
         "CUMMINSIND",
+        "SIEMENS",
         "SOLARINDS",
         "LAURUSLABS",
-        "EXIDEIND",
-        "JBCHEPHARM"
+        "NAVINFLUOR",
+        "DIXON",
+        "AARTIIND",
+        "GODREJPROP"
       ],
       "sold": [
         "JBCHEPHARM (+0.0%)",
@@ -358,18 +358,22 @@
     {
       "date": "2026-07-30",
       "nav": 9871016
+    },
+    {
+      "date": "2026-07-31",
+      "nav": 9871016
     }
   ],
   "startDate": "2026-07-21",
-  "lastExecuteDate": "2026-07-30",
-  "lastRun": "2026-07-30T06:38:39.182539",
+  "lastExecuteDate": "2026-07-31",
+  "lastRun": "2026-07-31T06:53:09.208126",
   "todayExecutedBuys": [],
   "todayExecutedSells": [],
   "prices": {},
   "note": "This file is auto-updated by GitHub Actions daily at 9:45 AM IST",
   "niftyAbove200DMA": false,
-  "niftyPrice": 24261.55,
-  "nifty200DMA": 24782.81,
+  "niftyPrice": 24377.15,
+  "nifty200DMA": 24779.43,
   "lastRebalanceDate": null,
   "lastRebalanceMonth": "2026-07",
   "totalCostsPaid": 38155.17082699814
