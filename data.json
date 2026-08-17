@@ -417,18 +417,22 @@
     {
       "date": "2026-08-14",
       "nav": 9871016
+    },
+    {
+      "date": "2026-08-17",
+      "nav": 9871016
     }
   ],
   "startDate": "2026-07-21",
-  "lastExecuteDate": "2026-08-14",
-  "lastRun": "2026-08-14T05:44:02.095020",
+  "lastExecuteDate": "2026-08-17",
+  "lastRun": "2026-08-17T04:55:03.848062",
   "todayExecutedBuys": [],
   "todayExecutedSells": [],
   "prices": {},
   "note": "This file is auto-updated by GitHub Actions daily at 9:45 AM IST",
   "niftyAbove200DMA": false,
-  "niftyPrice": 24313.3,
-  "nifty200DMA": 24735.48,
+  "niftyPrice": 24252.55,
+  "nifty200DMA": 24727.55,
   "lastRebalanceDate": null,
   "lastRebalanceMonth": "2026-07",
   "totalCostsPaid": 38155.17082699814
