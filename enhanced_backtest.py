@@ -1,14 +1,23 @@
 """
-PMS ENHANCED BACKTEST — 5 layers of improvement stacked
+PMS ENHANCED BACKTEST — PURE RANK-AND-REBALANCE MOMENTUM
 
-Layers over Honest backtest:
+Aligned exactly to algo.py (live). This is how India's best momentum PMSs run:
+NO per-stock stop-loss, NO take-profit. The monthly re-ranking IS the profit
+booking — winners are held while top-ranked, losers cut when they fall out of
+the ranks. Only downside brake is a portfolio-level regime filter.
+
   L1: NIFTY REGIME FILTER — hold cash when Nifty < 200-DMA
-  L2: TRAILING STOP LOSS — exit any stock down 15% from its peak (per-position)
-  L3: QUALITY PROXY — exclude stocks with 6M realized vol > 60% (data-driven)
-  L4: SECTOR CAP — max 30% (5 stocks) per sector
+  L3: QUALITY PROXY       — exclude stocks with 6M realized vol > 60%
+  L4: SECTOR CAP          — max 30% (per TOP_N) per sector
   L5: MULTI-TIMEFRAME MOMENTUM — weighted 3M + 6M + 12M rank score
+  BUFFER: buy into top TOP_N, hold until a name exits top HOLD_RANK (hysteresis)
 
-Expected: 25% -> 32-35% CAGR
+REMOVED vs prior version:
+  - L2 15% trailing stop (per-position). In a rank-driven book it only churned
+    winners; the ranking already ejects faders. Gone, matching live.
+
+Accounting: entryPrice stores the RAW fill; transaction costs are counted once
+in total_costs_paid and netted from proceeds. Cash is tracked incrementally.
 """
 import json
 import os
@@ -62,8 +71,9 @@ def sector_of(ticker):
             return sec
     return "OTHER"
 
-# CONFIG
+# CONFIG (aligned to algo.py)
 TOP_N = 15
+HOLD_RANK = 25              # hysteresis: hold until a name exits top HOLD_RANK
 CORPUS = 10_000_000
 SLIPPAGE_PER_SIDE = 0.30
 MIN_LISTING_DAYS = 3 * 365
@@ -73,7 +83,6 @@ END_DATE = datetime.now().strftime("%Y-%m-%d")
 
 # LAYER PARAMETERS
 NIFTY_TREND_LOOKBACK = 200  # L1
-TRAILING_STOP_PCT = 15.0    # L2 (%)
 MAX_VOLATILITY = 60.0       # L3 (%) annualized realized vol cap
 MAX_SECTOR_PCT = 30.0       # L4 (%)
 LOOKBACK_MOM_3M = 63        # L5
@@ -150,13 +159,13 @@ def nifty_above_dma(data, date):
 
 def realized_vol(prices):
     """L3: annualized realized vol from daily returns"""
-    if len(prices) < 30: return 100.0  # unknown → high vol → excluded
+    if len(prices) < 30: return 100.0  # unknown -> high vol -> excluded
     rets = prices.pct_change().dropna()
     if len(rets) == 0: return 100.0
     return float(rets.std() * np.sqrt(252) * 100)
 
 def rank_enhanced(data, date_str):
-    """L5: multi-timeframe momentum + L3: vol filter"""
+    """L5: multi-timeframe momentum + L3: vol filter. Returns full ranked list."""
     ranked = []
     date = pd.Timestamp(date_str)
     for ticker, closes in data.items():
@@ -195,7 +204,7 @@ def rank_enhanced(data, date_str):
     return ranked
 
 def apply_sector_cap(ranked, top_n, max_pct):
-    """L4: cap max stocks per sector"""
+    """L4: cap max stocks per sector while filling to top_n"""
     max_per_sector = max(1, int(top_n * max_pct / 100))
     picked = []
     sector_count = {}
@@ -209,8 +218,8 @@ def apply_sector_cap(ranked, top_n, max_pct):
 
 def run_backtest():
     print("="*70)
-    print(f"PMS ENHANCED BACKTEST (5 layers) | {START_DATE} -> {END_DATE}")
-    print(f"L1: Nifty regime | L2: {TRAILING_STOP_PCT}% trail | L3: {MAX_VOLATILITY}% vol cap | L4: {MAX_SECTOR_PCT}% sector | L5: multi-TF mom")
+    print(f"PMS BACKTEST (pure rank-only momentum) | {START_DATE} -> {END_DATE}")
+    print(f"L1: Nifty regime | L3: {MAX_VOLATILITY}% vol cap | L4: {MAX_SECTOR_PCT}% sector | L5: multi-TF mom | HOLD_RANK {HOLD_RANK}")
     print("="*70)
 
     regimes = load_cost_regimes()
@@ -218,9 +227,9 @@ def run_backtest():
     if len(data) < 50: print("ERROR: too few stocks"); sys.exit(1)
 
     month_ends = get_month_ends("2003-06-01", END_DATE)
-    print(f"\nRunning {len(month_ends)} monthly rebalances with 5-layer strategy...")
+    print(f"\nRunning {len(month_ends)} monthly rebalances (rank-only)...")
 
-    holdings = {}  # ticker -> {shares, entry, entryDate, peak}
+    holdings = {}  # ticker -> {shares, entry_price(raw), entry_date}
     monthly_journal = []
     completed_trades = []
     nav_history = []
@@ -249,54 +258,46 @@ def run_backtest():
         regime_ok = nifty_above_dma(data, date)
         if not regime_ok: regime_offs += 1
 
-        # L2: Update peak prices and check trailing stops
-        forced_sells = []
-        for t, pos in list(holdings.items()):
-            if t in cmps:
-                if cmps[t] > pos["peak"]: pos["peak"] = cmps[t]
-                drop_from_peak = (pos["peak"] - cmps[t]) / pos["peak"] * 100
-                if drop_from_peak >= TRAILING_STOP_PCT:
-                    forced_sells.append(t)
-
         # Rank candidates using L3+L5
         ranked = rank_enhanced(data, date_str)
-        # Apply L4 sector cap
-        picked = apply_sector_cap(ranked, TOP_N, MAX_SECTOR_PCT)
+        picked = apply_sector_cap(ranked, TOP_N, MAX_SECTOR_PCT)          # buy set
         picked_tickers = [p["ticker"] for p in picked]
+        hold_ok = set(p["ticker"] for p in apply_sector_cap(ranked, HOLD_RANK, 100.0))  # hold band
 
-        # SELL: (1) trailing stops forced, (2) not in top ranks, (3) regime off
-        to_sell = set(forced_sells)
+        # SELL: rank-drop (out of HOLD band) when regime ON; everything when OFF.
+        # NO trailing stop.
+        to_sell = set()
         if regime_ok:
-            to_sell.update([t for t in holdings if t not in picked_tickers])
+            to_sell.update([t for t in holdings if t not in hold_ok])
         else:
-            # Regime OFF: sell everything (go to cash)
             to_sell.update(list(holdings.keys()))
 
         sold = []
-        for t in to_sell:
+        for t in list(to_sell):
             if t not in holdings: continue
             pos = holdings[t]
             raw_sp = cmps.get(t, pos["entry_price"])
-            sp = raw_sp * (1 - c["sell"]/100)
             cost = raw_sp * pos["shares"] * c["sell"]/100
+            proceeds = raw_sp * pos["shares"] - cost
             total_costs_paid += cost
-            pnl_abs = round((sp-pos["entry_price"])*pos["shares"])
-            pnl_pct = round(((sp-pos["entry_price"])/pos["entry_price"])*100, 2)
+            pnl_abs = round((raw_sp - pos["entry_price"])*pos["shares"] - cost)
+            pnl_pct = round((((raw_sp*(1-c["sell"]/100)) - pos["entry_price"])/pos["entry_price"])*100, 2)
             hd = (date - pd.Timestamp(pos["entry_date"])).days
-            reason = "TRAIL_STOP" if t in forced_sells else ("REGIME_OFF" if not regime_ok else "TOP_ROTATION")
+            reason = "REGIME_OFF" if not regime_ok else "RANK_DROP"
             completed_trades.append({
                 "ticker":t,"entryDate":pos["entry_date"],"exitDate":date_str,
-                "entryPrice":pos["entry_price"],"exitPrice":round(sp,2),
+                "entryPrice":pos["entry_price"],"exitPrice":round(raw_sp,2),
                 "shares":pos["shares"],"holdDays":hd,
                 "pnlAbs":pnl_abs,"pnlPct":pnl_pct,
                 "outcome":"WIN" if pnl_pct>0 else "LOSS",
                 "exitReason": reason
             })
             sold.append(f"{t} ({'+' if pnl_pct>=0 else ''}{pnl_pct}% via {reason[:6]})")
-            cash += pos["shares"]*sp
+            cash += proceeds
             del holdings[t]
 
-        # BUY: only if regime is ON
+        # BUY: only if regime is ON. Size against nav/TOP_N so held names count
+        # toward the book and we fill to TOP_N. entry_price = RAW fill.
         bought = []
         if regime_ok:
             current_mv = sum(h["shares"]*cmps.get(t,h["entry_price"]) for t,h in holdings.items())
@@ -304,16 +305,20 @@ def run_backtest():
             per_stock = current_nav / TOP_N
             for p in picked:
                 if p["ticker"] in holdings: continue
-                eff = p["cmp"] * (1 + c["buy"]/100)
-                if eff <= 0: continue
-                shares = int(per_stock/eff)
-                outlay = shares*eff
-                if shares < 1 or cash < outlay: continue
-                cost = shares * p["cmp"] * c["buy"]/100
+                raw = p["cmp"]
+                if raw <= 0: continue
+                buy_rate = c["buy"]/100
+                budget = min(per_stock, cash)
+                shares = int(budget / (raw * (1 + buy_rate)))
+                if shares < 1: continue
+                gross = raw*shares
+                cost = gross*buy_rate
+                outlay = gross + cost
+                if cash < outlay: continue
                 total_costs_paid += cost
                 cash -= outlay
-                holdings[p["ticker"]] = {"shares":shares,"entry_price":round(eff,2),
-                                         "entry_date":date_str,"peak":p["cmp"]}
+                holdings[p["ticker"]] = {"shares":shares,"entry_price":round(raw,2),
+                                         "entry_date":date_str}
                 bought.append(p["ticker"])
 
         final_mv = sum(h["shares"]*cmps.get(t,h["entry_price"]) for t,h in holdings.items())
@@ -358,9 +363,8 @@ def run_backtest():
     losses = [t for t in completed_trades if t["pnlPct"]<=0]
     avg_loss = sum(t["pnlPct"] for t in losses)/max(1,len(losses))
     avg_hold = sum(t["holdDays"] for t in completed_trades)/max(1,len(completed_trades))
-    trail_exits = sum(1 for t in completed_trades if t.get("exitReason")=="TRAIL_STOP")
     regime_exits = sum(1 for t in completed_trades if t.get("exitReason")=="REGIME_OFF")
-    top_exits = sum(1 for t in completed_trades if t.get("exitReason")=="TOP_ROTATION")
+    rank_exits = sum(1 for t in completed_trades if t.get("exitReason")=="RANK_DROP")
 
     nifty_cagr = 0
     if "_NIFTY" in data and starting_nifty:
@@ -368,16 +372,16 @@ def run_backtest():
         nifty_cagr = (pow(nifty_end/starting_nifty, 1/years)-1)*100
 
     print("\n"+"="*70)
-    print("ENHANCED BACKTEST COMPLETE — 5 LAYERS APPLIED")
+    print("BACKTEST COMPLETE — PURE RANK-ONLY MOMENTUM")
     print("="*70)
-    print(f"CAGR:              {cagr:+.2f}%   (Honest was 25.65%)")
+    print(f"CAGR:              {cagr:+.2f}%")
     print(f"Nifty CAGR:        {nifty_cagr:+.2f}%")
     print(f"Alpha:             {cagr-nifty_cagr:+.2f}%")
     print(f"Max Drawdown:      {max_dd:.1f}%")
     print(f"Trades:            {len(completed_trades)} | Win {win_rate:.1f}% | Hold {avg_hold:.0f}d")
     print(f"Avg W/L:           +{avg_win:.1f}% / {avg_loss:.1f}%")
     print(f"Rs 1 Cr became:    Rs {final_nav/10_000_000:.2f} Cr")
-    print(f"Exit reasons:      Trailing {trail_exits} | Regime off {regime_exits} | Top rotation {top_exits}")
+    print(f"Exit reasons:      Rank drop {rank_exits} | Regime off {regime_exits}")
     print(f"Months in cash:    {regime_offs}/{len(month_ends)} ({regime_offs/len(month_ends)*100:.0f}%)")
     print("="*70)
 
@@ -392,11 +396,11 @@ def run_backtest():
             "maxDrawdown":round(max_dd,1),"totalTrades":len(completed_trades),
             "winRate":round(win_rate,1),"avgWin":round(avg_win,1),"avgLoss":round(avg_loss,1),
             "avgHoldDays":round(avg_hold,0),"finalNavCr":round(final_nav/10_000_000,2),
-            "mode":"enhanced-5-layers",
-            "trailingStopExits":trail_exits,"regimeOffExits":regime_exits,
+            "mode":"rank-only-momentum",
+            "rankDropExits":rank_exits,"regimeOffExits":regime_exits,
             "monthsInCash":regime_offs,
-            "layers":"L1 Nifty regime + L2 15% trailing stop + L3 60% vol cap + L4 30% sector cap + L5 3M/6M/12M momentum",
-            "assumptions":"5-layer enhancement on 261 stock universe"
+            "layers":"L1 Nifty regime + L3 60% vol cap + L4 30% sector cap + L5 3M/6M/12M momentum + HOLD_RANK 25 hysteresis (no stop-loss)",
+            "assumptions":"pure rank-and-rebalance on 261 stock universe"
         },
         "runDate":datetime.now().isoformat()
     }
