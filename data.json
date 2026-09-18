@@ -74,11 +74,11 @@
     {
       "month": "2026-09",
       "date": "2026-09-01",
-      "nav": 9871016,
-      "navCr": 0.987,
-      "monthReturn": 0.0,
-      "totalReturn": -1.29,
-      "cash": 9871016,
+      "nav": 10000000,
+      "navCr": 1.0,
+      "monthReturn": 1.31,
+      "totalReturn": 0.0,
+      "cash": 10000000,
       "holdingsCount": 0,
       "bought": [],
       "sold": [],
@@ -528,19 +528,24 @@
     {
       "date": "2026-09-17",
       "nav": 9871016
+    },
+    {
+      "date": "2026-09-18",
+      "nav": 10000000
     }
   ],
   "startDate": "2026-07-21",
-  "lastExecuteDate": "2026-09-17",
-  "lastRun": "2026-09-17T09:24:31.500347",
+  "lastExecuteDate": "2026-09-18",
+  "lastRun": "2026-09-18T08:47:07.644920",
   "todayExecutedBuys": [],
   "todayExecutedSells": [],
   "prices": {},
   "note": "This file is auto-updated by GitHub Actions daily at 9:45 AM IST",
   "niftyAbove200DMA": false,
-  "niftyPrice": 23297.5,
-  "nifty200DMA": 24508.69,
+  "niftyPrice": 23355.35,
+  "nifty200DMA": 24494.31,
   "lastRebalanceDate": null,
   "lastRebalanceMonth": "2026-08",
-  "totalCostsPaid": 38155.17082699814
+  "totalCostsPaid": 38155.17082699814,
+  "cash": 10000000
 }
