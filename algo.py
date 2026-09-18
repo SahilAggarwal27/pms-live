@@ -1,25 +1,38 @@
 """
 PMS Algo - Server-side execution via GitHub Actions
-Runs daily 9:15 AM IST. State persisted to data.json (committed back to repo).
+Runs on weekdays. State persisted to data.json (committed back to repo).
 
-ALIGNED TO BACKTEST (enhanced_backtest.py) — same strategy, now live:
-  L1: Nifty regime filter — no buys / go to cash when Nifty < 200-DMA
-  L2: Trailing stop 15% from peak (matches backtest)
-  L3: Volatility cap — exclude 6M realized vol > 60%
-  L4: Sector cap — max 30% (per TOP_N) per sector
-  L5: Multi-timeframe momentum — 0.25*3M + 0.50*6M + 0.25*12M
-  + Cost model from cost_history.json (brokerage+GST+STT+stamp+slippage)
+STRATEGY = PURE RANK-AND-REBALANCE MOMENTUM (aligned to enhanced_backtest.py)
+  This is how India's best momentum PMSs (e.g. Capitalmind Adaptive Momentum,
+  Wright, Nifty 200 Momentum 30) actually run. There is NO per-stock stop-loss
+  and NO take-profit target. The monthly re-ranking IS the profit booking:
+  winners are held as long as they stay top-ranked; losers are cut when they
+  fall out of the ranks. The only downside brake is a portfolio-level regime
+  filter (go to cash when Nifty < 200-DMA).
 
-DELIBERATE DIFFERENCE FROM BACKTEST (more conservative, intentional):
-  + DAILY -8% HARD STOP on fresh positions. The 15% trailing stop cannot
-    catch a new buy that craters before setting a peak above entry
-    (the THERMAX case). This -8% floor runs every day. Backtest lacks it.
+  L1: Nifty regime filter  — liquidate to cash when Nifty < 200-DMA, no buys.
+  L3: Volatility cap        — exclude 6M annualized realized vol > 60%.
+  L4: Sector cap            — max 30% of book (per TOP_N) per sector.
+  L5: Multi-timeframe momentum — 0.25*3M + 0.50*6M + 0.25*12M composite score.
+  + Cost model from cost_history.json (brokerage+GST+STT+stamp+slippage).
+
+REMOVED (were the cause of "stops kept hitting, no profit booking"):
+  - The -8% daily hard stop. It fired on normal momentum noise, ejecting fresh
+    buys as locked-in LOSSES before they could set a peak above entry.
+  - The 15% trailing stop. In a rank-driven book it only churned winners.
+  Both are gone. Exits now happen ONLY at the monthly rebalance (rank-drop or
+  regime-off), so there is no daily exit pass and no daily universe fetch.
+
+BUFFER: buy into the top TOP_N, but HOLD an existing name until it falls out of
+  the top HOLD_RANK. This hysteresis band cuts turnover and tax drag — again,
+  standard practice at the top momentum PMSs.
 
 CADENCE:
-  - EXITS (hard stop + trailing) checked EVERY DAY → crash-safe.
-  - RANKING + rank-drop sells + new buys run MONTHLY (last run of each
-    calendar month), matching the backtest's monthly rebalance.
-  - Market filter checked daily.
+  - RANKING + rank-drop sells + new buys run MONTHLY (last weekday-run of each
+    calendar month). lastRebalanceMonth guard prevents a double-run.
+  - On non-rebalance runs the algo only marks-to-market held names and updates
+    NAV; it places no trades.
+  - Market regime is evaluated at rebalance and drives liquidate-to-cash.
 """
 import yfinance as yf
 import numpy as np
@@ -61,10 +74,9 @@ def sector_of(ticker):
     return "OTHER"
 
 # ============ PARAMETERS (aligned to enhanced_backtest.py) ============
-TOP_N = 15                  # matches backtest
+TOP_N = 15                  # book size / buy into top N
+HOLD_RANK = 25              # hysteresis: hold an existing name until it exits top HOLD_RANK
 CORPUS = 10_000_000
-TRAILING_STOP_PCT = 15.0    # L2 — matches backtest
-HARD_STOP_LOSS_PCT = -8.0   # extra daily floor (backtest lacks this — intentional)
 MAX_VOLATILITY = 60.0       # L3 — 6M annualized realized vol cap (%)
 MAX_SECTOR_PCT = 30.0       # L4 — max % of book per sector
 MAX_MOMENTUM = 2.0          # skip data-error outliers (>200% 12M)
@@ -77,6 +89,7 @@ def default_state():
     return {
         "holdings": {}, "monthlyJournal": [], "completedTrades": [],
         "navHistory": [], "startDate": None,
+        "cash": CORPUS,
         "lastExecuteDate": None, "lastRebalanceMonth": None, "lastRun": None,
         "todayExecutedBuys": [], "todayExecutedSells": [],
         "prices": {}, "niftyAbove200DMA": True, "niftyPrice": 0, "nifty200DMA": 0,
@@ -91,6 +104,17 @@ def load_state():
                 for k, v in default_state().items():
                     if k not in s:
                         s[k] = v
+                # ---- one-time migration for pre-rank-only state files ----
+                # Old files inflated entryPrice by buy costs and tracked no cash
+                # field. If cash is missing/None, reconstruct it from CORPUS,
+                # booked P&L and current invested-at-entry so NAV stays sane.
+                if s.get("cash") is None:
+                    invested = sum(p["shares"] * p["entryPrice"] for p in s["holdings"].values())
+                    booked = sum(t.get("pnlAbs", 0) for t in s["completedTrades"])
+                    s["cash"] = CORPUS + booked - invested
+                # drop any stale peakPrice keys — no longer used
+                for p in s["holdings"].values():
+                    p.pop("peakPrice", None)
                 return s
         except Exception as e:
             print(f"Warning: could not load data.json ({e}), using default")
@@ -123,7 +147,7 @@ def costs_for_date(date_str, regimes):
         "sell": b*(1+gst) + SLIPPAGE_PER_SIDE + active["sttSellDelivery"] + active["exchangeSebi"]
     }
 
-# ---- Data fetch: full 1y daily history per stock (needed for vol + multi-TF) ----
+# ---- Data fetch: full history per stock (needed for vol + multi-TF) ----
 def fetch_history(ticker):
     try:
         df = yf.download(f"{ticker}.NS", period="15mo", progress=False, auto_adjust=True, threads=False)
@@ -166,7 +190,7 @@ def realized_vol(closes):
     return float(rets.std() * np.sqrt(252) * 100)
 
 def rank_enhanced(histories):
-    """L3 vol cap + L5 multi-timeframe momentum. Returns ranked list of dicts."""
+    """L3 vol cap + L5 multi-timeframe momentum. Returns full ranked list of dicts."""
     ranked = []
     for ticker, closes in histories.items():
         try:
@@ -192,7 +216,7 @@ def rank_enhanced(histories):
     return ranked
 
 def apply_sector_cap(ranked, top_n, max_pct):
-    """L4: cap stocks per sector."""
+    """L4: cap stocks per sector while filling to top_n."""
     max_per_sector = max(1, int(top_n * max_pct / 100))
     picked, sector_count = [], {}
     for r in ranked:
@@ -205,49 +229,34 @@ def apply_sector_cap(ranked, top_n, max_pct):
             break
     return picked
 
-def get_cash(state):
-    invested = sum(p["shares"] * p["entryPrice"] for p in state["holdings"].values())
-    booked = sum(t["pnlAbs"] for t in state["completedTrades"])
-    return CORPUS + booked - invested
-
 def get_mv(state, cmps):
     return sum(p["shares"] * cmps.get(t, p["entryPrice"]) for t, p in state["holdings"].items())
 
 def get_nav(state, cmps):
-    return get_cash(state) + get_mv(state, cmps)
-
-def check_daily_exit(pos, cmp):
-    """Daily: -8% hard stop, then 15% trailing. Returns (exit?, reason)."""
-    entry = pos["entryPrice"]
-    peak = pos.get("peakPrice", entry)
-    if cmp > peak:
-        pos["peakPrice"] = cmp
-        peak = cmp
-    pnl = (cmp - entry) / entry * 100
-    dd_peak = (peak - cmp) / peak * 100
-    if pnl <= HARD_STOP_LOSS_PCT:
-        return True, f"STOP_LOSS ({pnl:+.1f}%)"
-    if peak > entry and dd_peak >= TRAILING_STOP_PCT:
-        return True, f"TRAILING_STOP ({dd_peak:.1f}% from peak)"
-    return False, None
+    return state["cash"] + get_mv(state, cmps)
 
 def close_position(state, t, cmps, today, reason, sell_cost_pct):
+    """Sell a holding. entryPrice is the RAW fill; costs are tracked once in
+    totalCostsPaid and netted out of proceeds here. Cash is credited with the
+    net proceeds."""
     pos = state["holdings"][t]
     raw = cmps.get(t, pos["entryPrice"])
-    sp = raw * (1 - sell_cost_pct/100)           # net of sell costs
-    state["totalCostsPaid"] += raw * pos["shares"] * sell_cost_pct/100
-    pnl_abs = round((sp - pos["entryPrice"]) * pos["shares"])
-    pnl_pct = round((sp - pos["entryPrice"]) / pos["entryPrice"] * 100, 2)
+    cost = raw * pos["shares"] * sell_cost_pct/100
+    proceeds = raw * pos["shares"] - cost           # net cash received
+    state["totalCostsPaid"] += cost
+    state["cash"] += proceeds
+    pnl_abs = round((raw - pos["entryPrice"]) * pos["shares"] - cost)
+    pnl_pct = round(((raw * (1 - sell_cost_pct/100)) - pos["entryPrice"]) / pos["entryPrice"] * 100, 2)
     hd = (datetime.now() - datetime.strptime(pos["entryDate"], "%Y-%m-%d")).days
     state["completedTrades"].append({
         "ticker": t, "entryDate": pos["entryDate"], "exitDate": today,
-        "entryPrice": pos["entryPrice"], "exitPrice": round(sp, 2),
+        "entryPrice": pos["entryPrice"], "exitPrice": round(raw, 2),
         "shares": pos["shares"], "holdDays": hd,
         "pnlAbs": pnl_abs, "pnlPct": pnl_pct,
         "outcome": "WIN" if pnl_pct > 0 else "LOSS", "exitReason": reason
     })
     del state["holdings"][t]
-    return f"{t} ({'+' if pnl_pct>=0 else ''}{pnl_pct}% → {reason})"
+    return f"{t} ({'+' if pnl_pct>=0 else ''}{pnl_pct}% -> {reason})"
 
 def is_last_trading_run_of_month(today, weekday):
     """
@@ -261,7 +270,7 @@ def is_last_trading_run_of_month(today, weekday):
     return weekday < 5 and (last_day - d) <= 2
 
 def run_algo():
-    print(f"[{datetime.now().isoformat()}] Starting PMS Algo run")
+    print(f"[{datetime.now().isoformat()}] Starting PMS Algo run (pure rank-only)")
     state = load_state()
     today = datetime.now().strftime("%Y-%m-%d")
     weekday = datetime.now().weekday()
@@ -270,7 +279,6 @@ def run_algo():
     if state["startDate"] is None:
         state["startDate"] = today
 
-    stops_ran_today = (state.get("lastExecuteDate") == today)
     rebalance_done_this_month = (state.get("lastRebalanceMonth") == month)
     do_rebalance = is_last_trading_run_of_month(today, weekday) and not rebalance_done_this_month
 
@@ -281,22 +289,22 @@ def run_algo():
     c = costs_for_date(today, regimes)
     print(f"Costs today: buy {c['buy']:.3f}% | sell {c['sell']:.3f}%")
 
-    # Market filter
+    # Market filter (evaluated every run; only acted on at rebalance)
     nifty_ok, nifty_price, nifty_dma = fetch_nifty()
     state["niftyAbove200DMA"] = nifty_ok
     state["niftyPrice"] = nifty_price
     state["nifty200DMA"] = nifty_dma
-    print(f"Nifty: {nifty_price} vs 200-DMA {nifty_dma} → {'BULLISH' if nifty_ok else 'BEARISH'}")
+    print(f"Nifty: {nifty_price} vs 200-DMA {nifty_dma} -> {'BULLISH' if nifty_ok else 'BEARISH'}")
 
-    # Fetch histories (only need full histories on rebalance; on plain days we
-    # still need current prices for held names + MTM). Fetch held always; fetch
-    # full universe only when rebalancing to save time.
+    # Fetch histories. With no per-stock stops there is no daily exit pass, so
+    # on non-rebalance runs we only need current prices for held names (MTM).
+    # Full universe is fetched only when rebalancing.
     tickers_to_fetch = set(state["holdings"].keys())
     if do_rebalance:
         tickers_to_fetch = set(UNIVERSE) | tickers_to_fetch
 
     print(f"Fetching {len(tickers_to_fetch)} tickers "
-          f"({'full rebalance' if do_rebalance else 'held-only'})...")
+          f"({'full rebalance' if do_rebalance else 'held-only MTM'})...")
     histories = {}
     for i, t in enumerate(sorted(tickers_to_fetch)):
         if (i+1) % 25 == 0:
@@ -306,64 +314,66 @@ def run_algo():
             histories[t] = h
 
     cmps = {t: float(h.iloc[-1]) for t, h in histories.items()}
-    # keep last-known prices for any held name that failed to fetch
     for t, pos in state["holdings"].items():
         cmps.setdefault(t, pos["entryPrice"])
     state["prices"] = {t: {"cmp": round(v, 2)} for t, v in cmps.items()}
 
     sold, bought = [], []
 
-    # ---- DAILY EXITS (every day) ----
-    if not stops_ran_today:
-        for t, pos in list(state["holdings"].items()):
-            cmp = cmps.get(t, pos["entryPrice"])
-            hit, reason = check_daily_exit(pos, cmp)
-            if hit:
-                print(f"  📢 {t}: DAILY EXIT → {reason}")
-                sold.append(close_position(state, t, cmps, today, reason, c["sell"]))
-    else:
-        print("Stops already ran today — skipping duplicate pass.")
-
-    # ---- MONTHLY REBALANCE ----
+    # ---- MONTHLY REBALANCE (the ONLY place trades happen) ----
     if do_rebalance:
         ranked = rank_enhanced({t: h for t, h in histories.items() if t in UNIVERSE})
+        # Buy set: top TOP_N after sector cap.
         picked = apply_sector_cap(ranked, TOP_N, MAX_SECTOR_PCT)
         picked_tickers = [p["ticker"] for p in picked]
+        # Hold set: hysteresis band — names still inside top HOLD_RANK (post
+        # sector cap) are kept even if they slipped below TOP_N.
+        hold_ok = set(t["ticker"] for t in apply_sector_cap(ranked, HOLD_RANK, 100.0))
         print(f"Rebalance top-{TOP_N}: {picked_tickers}")
 
         if not nifty_ok:
-            # Regime OFF → sell everything, go to cash (matches backtest)
-            print("🛑 REGIME OFF (Nifty<200DMA): liquidating to cash, no buys.")
+            # Regime OFF -> sell everything, go to cash (matches backtest)
+            print("REGIME OFF (Nifty<200DMA): liquidating to cash, no buys.")
             for t in list(state["holdings"].keys()):
                 sold.append(close_position(state, t, cmps, today, "REGIME_OFF", c["sell"]))
         else:
-            # Rank-drop sells
+            # Rank-drop sells: exit only names that fell out of the HOLD band.
             for t in list(state["holdings"].keys()):
-                if t not in picked_tickers:
+                if t not in hold_ok:
                     sold.append(close_position(state, t, cmps, today, "RANK_DROP", c["sell"]))
-            # Buys — equal weight to TOP_N, net of buy costs
-            cash = get_cash(state)
-            nav_now = cash + get_mv(state, cmps)
+
+            # Buys — target equal weight across the FINAL book of TOP_N names.
+            # Size each new buy against nav/TOP_N (not cash/TOP_N), so already-
+            # held names count toward the book and we actually fill to TOP_N.
+            nav_now = state["cash"] + get_mv(state, cmps)
             per_stock = nav_now / TOP_N
             for p in picked:
                 if p["ticker"] in state["holdings"]:
                     continue
-                eff = p["cmp"] * (1 + c["buy"]/100)   # effective buy price incl costs
-                shares = int(per_stock / eff)
-                outlay = shares * eff
-                if shares < 1 or cash < outlay:
+                raw = p["cmp"]
+                buy_cost_rate = c["buy"] / 100
+                # shares such that raw*shares + costs <= per_stock, bounded by cash
+                budget = min(per_stock, state["cash"])
+                shares = int(budget / (raw * (1 + buy_cost_rate)))
+                if shares < 1:
                     continue
-                state["totalCostsPaid"] += shares * p["cmp"] * c["buy"]/100
-                cash -= outlay
+                gross = raw * shares
+                cost = gross * buy_cost_rate
+                outlay = gross + cost
+                if state["cash"] < outlay:
+                    continue
+                state["totalCostsPaid"] += cost
+                state["cash"] -= outlay
                 state["holdings"][p["ticker"]] = {
-                    "shares": shares, "entryPrice": round(eff, 2),
-                    "entryDate": today, "peakPrice": p["cmp"]
+                    "shares": shares,
+                    "entryPrice": round(raw, 2),   # RAW fill, not cost-inflated
+                    "entryDate": today
                 }
                 bought.append(p["ticker"])
 
         state["lastRebalanceMonth"] = month
     else:
-        print("Not a rebalance run — holding, no ranking/buys.")
+        print("Not a rebalance run — MTM only, no ranking/trades.")
 
     # ---- JOURNAL + NAV ----
     nav = get_nav(state, cmps)
@@ -379,14 +389,14 @@ def run_algo():
         existing["navCr"] = round(nav / 10_000_000, 3)
         existing["monthReturn"] = round(mom, 2)
         existing["totalReturn"] = round(total, 2)
-        existing["cash"] = round(get_cash(state))
+        existing["cash"] = round(state["cash"])
         existing["holdingsCount"] = len(state["holdings"])
         existing["held"] = [t for t in state["holdings"] if t not in existing["bought"]]
     else:
         state["monthlyJournal"].append({
             "month": month, "date": today, "nav": round(nav),
             "navCr": round(nav / 10_000_000, 3), "monthReturn": round(mom, 2),
-            "totalReturn": round(total, 2), "cash": round(get_cash(state)),
+            "totalReturn": round(total, 2), "cash": round(state["cash"]),
             "holdingsCount": len(state["holdings"]), "bought": bought,
             "sold": sold, "held": [t for t in state["holdings"] if t not in bought],
             "winsThisMonth": 0, "lossesThisMonth": 0
@@ -409,7 +419,7 @@ def run_algo():
     win_rate = wins / (wins + losses) * 100 if (wins + losses) else 0
 
     print(f"\n{'='*60}")
-    print(f"SUMMARY - {today} ({'REBALANCE' if do_rebalance else 'stops-only'})")
+    print(f"SUMMARY - {today} ({'REBALANCE' if do_rebalance else 'MTM-only'})")
     print(f"{'='*60}")
     print(f"MARKET: Nifty {'BULLISH' if nifty_ok else 'BEARISH'} ({nifty_price} vs {nifty_dma})")
     print(f"BOUGHT ({len(bought)}): {bought}")
@@ -417,7 +427,7 @@ def run_algo():
     print(f"NAV: Rs {nav/10_000_000:.3f} Cr | Total {total:+.2f}%")
     print(f"Booked P&L: Rs {sum(t['pnlAbs'] for t in state['completedTrades'])/100000:+.2f}L")
     print(f"Costs paid to date: Rs {state['totalCostsPaid']/100000:.2f}L")
-    print(f"Holdings: {len(state['holdings'])}/{TOP_N} | Cash {get_cash(state)/nav*100:.1f}%")
+    print(f"Holdings: {len(state['holdings'])}/{TOP_N} | Cash {state['cash']/nav*100:.1f}%")
     print(f"Win Rate: {win_rate:.1f}% ({wins}W/{losses}L)")
     print(f"{'='*60}\n")
 
