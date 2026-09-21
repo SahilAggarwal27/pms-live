@@ -1,24 +1,44 @@
 {
   "holdings": {},
-  "monthlyJournal": [],
+  "monthlyJournal": [
+    {
+      "month": "2026-09",
+      "date": "2026-09-21",
+      "nav": 10000000,
+      "navCr": 1.0,
+      "monthReturn": 0.0,
+      "totalReturn": 0.0,
+      "cash": 10000000,
+      "holdingsCount": 0,
+      "bought": [],
+      "sold": [],
+      "held": [],
+      "winsThisMonth": 0,
+      "lossesThisMonth": 0
+    }
+  ],
   "completedTrades": [],
   "navHistory": [
     {
       "date": "2026-09-18",
       "nav": 10000000
+    },
+    {
+      "date": "2026-09-21",
+      "nav": 10000000
     }
   ],
   "startDate": "2026-09-18",
   "cash": 10000000,
-  "lastExecuteDate": null,
+  "lastExecuteDate": "2026-09-21",
   "lastRebalanceMonth": null,
-  "lastRun": null,
+  "lastRun": "2026-09-21T09:52:44.518450",
   "todayExecutedBuys": [],
   "todayExecutedSells": [],
   "prices": {},
   "note": "This file is auto-updated by GitHub Actions daily at 9:45 AM IST. Ledger reset 2026-09-18 to clean state (pure rank-only strategy); prior journal/trades from -8%-stop era discarded.",
   "niftyAbove200DMA": false,
-  "niftyPrice": 23361.95,
-  "nifty200DMA": 24494.34,
+  "niftyPrice": 23429.0,
+  "nifty200DMA": 24480.33,
   "totalCostsPaid": 0.0
 }
