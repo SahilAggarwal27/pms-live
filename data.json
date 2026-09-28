@@ -42,19 +42,696 @@
     {
       "date": "2026-09-25",
       "nav": 10000000
+    },
+    {
+      "date": "2026-09-28",
+      "nav": 10000000
     }
   ],
   "startDate": "2026-09-18",
   "cash": 10000000,
-  "lastExecuteDate": "2026-09-25",
-  "lastRebalanceMonth": null,
-  "lastRun": "2026-09-25T09:34:46.564744",
+  "lastExecuteDate": "2026-09-28",
+  "lastRebalanceMonth": "2026-09",
+  "lastRun": "2026-09-28T10:50:51.321203",
   "todayExecutedBuys": [],
   "todayExecutedSells": [],
-  "prices": {},
+  "prices": {
+    "AARTIIND": {
+      "cmp": 476.6
+    },
+    "ABBOTINDIA": {
+      "cmp": 26740.0
+    },
+    "ACC": {
+      "cmp": 1213.5
+    },
+    "ADANIENT": {
+      "cmp": 2831.1
+    },
+    "ADANIPORTS": {
+      "cmp": 1743.7
+    },
+    "ADANIPOWER": {
+      "cmp": 196.14
+    },
+    "AJANTPHARM": {
+      "cmp": 3525.2
+    },
+    "ALKEM": {
+      "cmp": 5175.0
+    },
+    "ALLCARGO": {
+      "cmp": 10.82
+    },
+    "AMBUJACEM": {
+      "cmp": 374.35
+    },
+    "APLAPOLLO": {
+      "cmp": 2197.0
+    },
+    "APOLLOHOSP": {
+      "cmp": 8860.0
+    },
+    "APOLLOTYRE": {
+      "cmp": 389.6
+    },
+    "ASHOKLEY": {
+      "cmp": 155.22
+    },
+    "ASIANPAINT": {
+      "cmp": 2420.0
+    },
+    "ATUL": {
+      "cmp": 5991.0
+    },
+    "AUBANK": {
+      "cmp": 995.3
+    },
+    "AUROPHARMA": {
+      "cmp": 1697.5
+    },
+    "AXISBANK": {
+      "cmp": 1209.9
+    },
+    "BAJAJ-AUTO": {
+      "cmp": 11024.0
+    },
+    "BAJAJFINSV": {
+      "cmp": 1752.0
+    },
+    "BAJFINANCE": {
+      "cmp": 985.0
+    },
+    "BALKRISIND": {
+      "cmp": 2153.8
+    },
+    "BANDHANBNK": {
+      "cmp": 181.0
+    },
+    "BANKBARODA": {
+      "cmp": 227.5
+    },
+    "BANKINDIA": {
+      "cmp": 129.99
+    },
+    "BEL": {
+      "cmp": 385.5
+    },
+    "BEML": {
+      "cmp": 1995.1
+    },
+    "BHARATFORG": {
+      "cmp": 1957.0
+    },
+    "BHARTIARTL": {
+      "cmp": 1771.4
+    },
+    "BHEL": {
+      "cmp": 411.9
+    },
+    "BIKAJI": {
+      "cmp": 557.9
+    },
+    "BIOCON": {
+      "cmp": 374.9
+    },
+    "BIRLACORPN": {
+      "cmp": 839.1
+    },
+    "BLUEDART": {
+      "cmp": 4749.6
+    },
+    "BOSCHLTD": {
+      "cmp": 47020.0
+    },
+    "BPCL": {
+      "cmp": 302.25
+    },
+    "BRIGADE": {
+      "cmp": 583.9
+    },
+    "BRITANNIA": {
+      "cmp": 4915.0
+    },
+    "CANBK": {
+      "cmp": 120.65
+    },
+    "CDSL": {
+      "cmp": 1289.0
+    },
+    "CEATLTD": {
+      "cmp": 3274.7
+    },
+    "CENTRALBK": {
+      "cmp": 30.59
+    },
+    "CGPOWER": {
+      "cmp": 865.0
+    },
+    "CHOLAFIN": {
+      "cmp": 1634.2
+    },
+    "CIPLA": {
+      "cmp": 1383.7
+    },
+    "COALINDIA": {
+      "cmp": 422.5
+    },
+    "COCHINSHIP": {
+      "cmp": 1329.0
+    },
+    "COFORGE": {
+      "cmp": 1773.0
+    },
+    "COLPAL": {
+      "cmp": 1845.9
+    },
+    "CONCOR": {
+      "cmp": 450.0
+    },
+    "COROMANDEL": {
+      "cmp": 1899.1
+    },
+    "CROMPTON": {
+      "cmp": 218.8
+    },
+    "CSBBANK": {
+      "cmp": 323.75
+    },
+    "CUMMINSIND": {
+      "cmp": 4855.0
+    },
+    "DABUR": {
+      "cmp": 385.75
+    },
+    "DALBHARAT": {
+      "cmp": 1651.6
+    },
+    "DEEPAKNTR": {
+      "cmp": 1550.8
+    },
+    "DEVYANI": {
+      "cmp": 131.09
+    },
+    "DIVISLAB": {
+      "cmp": 9550.0
+    },
+    "DIXON": {
+      "cmp": 13640.0
+    },
+    "DRREDDY": {
+      "cmp": 1221.0
+    },
+    "EICHERMOT": {
+      "cmp": 7213.5
+    },
+    "EMAMILTD": {
+      "cmp": 388.75
+    },
+    "EQUITASBNK": {
+      "cmp": 66.02
+    },
+    "ESCORTS": {
+      "cmp": 2740.7
+    },
+    "EXIDEIND": {
+      "cmp": 411.75
+    },
+    "FEDERALBNK": {
+      "cmp": 325.0
+    },
+    "FORTIS": {
+      "cmp": 830.75
+    },
+    "GAIL": {
+      "cmp": 172.45
+    },
+    "GILLETTE": {
+      "cmp": 6925.5
+    },
+    "GLAXO": {
+      "cmp": 2896.4
+    },
+    "GLENMARK": {
+      "cmp": 2325.7
+    },
+    "GODFRYPHLP": {
+      "cmp": 1931.5
+    },
+    "GODREJCP": {
+      "cmp": 868.0
+    },
+    "GODREJIND": {
+      "cmp": 1076.1
+    },
+    "GODREJPROP": {
+      "cmp": 1669.8
+    },
+    "GRANULES": {
+      "cmp": 851.4
+    },
+    "GRASIM": {
+      "cmp": 3150.0
+    },
+    "GVKPIL": {
+      "cmp": 2.66
+    },
+    "HAL": {
+      "cmp": 4738.0
+    },
+    "HAVELLS": {
+      "cmp": 1085.0
+    },
+    "HCLTECH": {
+      "cmp": 1252.6
+    },
+    "HDFCBANK": {
+      "cmp": 719.05
+    },
+    "HDFCLIFE": {
+      "cmp": 531.6
+    },
+    "HEIDELBERG": {
+      "cmp": 131.45
+    },
+    "HEROMOTOCO": {
+      "cmp": 5390.0
+    },
+    "HGINFRA": {
+      "cmp": 444.55
+    },
+    "HINDALCO": {
+      "cmp": 955.9
+    },
+    "HINDCOPPER": {
+      "cmp": 479.6
+    },
+    "HINDUNILVR": {
+      "cmp": 1896.0
+    },
+    "HINDZINC": {
+      "cmp": 573.0
+    },
+    "ICICIBANK": {
+      "cmp": 1302.0
+    },
+    "IDBI": {
+      "cmp": 84.39
+    },
+    "IDEA": {
+      "cmp": 13.47
+    },
+    "IDFCFIRSTB": {
+      "cmp": 80.55
+    },
+    "IEX": {
+      "cmp": 111.35
+    },
+    "IGL": {
+      "cmp": 143.44
+    },
+    "INDHOTEL": {
+      "cmp": 711.0
+    },
+    "INDIACEM": {
+      "cmp": 312.4
+    },
+    "INDIAMART": {
+      "cmp": 1637.0
+    },
+    "INDIANB": {
+      "cmp": 802.45
+    },
+    "INDIGO": {
+      "cmp": 4874.5
+    },
+    "INDUSINDBK": {
+      "cmp": 909.7
+    },
+    "INFY": {
+      "cmp": 1003.2
+    },
+    "IOC": {
+      "cmp": 133.32
+    },
+    "IPCALAB": {
+      "cmp": 1919.3
+    },
+    "IRB": {
+      "cmp": 17.14
+    },
+    "IRCTC": {
+      "cmp": 453.5
+    },
+    "IRFC": {
+      "cmp": 78.55
+    },
+    "ITC": {
+      "cmp": 265.2
+    },
+    "JINDALSAW": {
+      "cmp": 276.15
+    },
+    "JINDALSTEL": {
+      "cmp": 1139.6
+    },
+    "JKCEMENT": {
+      "cmp": 4993.5
+    },
+    "JKTYRE": {
+      "cmp": 337.8
+    },
+    "JPPOWER": {
+      "cmp": 15.52
+    },
+    "JSWENERGY": {
+      "cmp": 495.0
+    },
+    "JSWSTEEL": {
+      "cmp": 1264.1
+    },
+    "JUBLFOOD": {
+      "cmp": 478.7
+    },
+    "JYOTHYLAB": {
+      "cmp": 189.66
+    },
+    "KNRCON": {
+      "cmp": 117.39
+    },
+    "KOLTEPATIL": {
+      "cmp": 425.6
+    },
+    "KOTAKBANK": {
+      "cmp": 401.55
+    },
+    "KPITTECH": {
+      "cmp": 509.0
+    },
+    "KTKBANK": {
+      "cmp": 321.85
+    },
+    "LALPATHLAB": {
+      "cmp": 1942.1
+    },
+    "LAURUSLABS": {
+      "cmp": 2010.7
+    },
+    "LEMONTREE": {
+      "cmp": 103.82
+    },
+    "LICHSGFIN": {
+      "cmp": 564.15
+    },
+    "LT": {
+      "cmp": 3766.4
+    },
+    "LUPIN": {
+      "cmp": 2062.0
+    },
+    "M&M": {
+      "cmp": 2995.0
+    },
+    "MAHABANK": {
+      "cmp": 80.85
+    },
+    "MAHLIFE": {
+      "cmp": 363.1
+    },
+    "MAHLOG": {
+      "cmp": 421.8
+    },
+    "MARICO": {
+      "cmp": 813.25
+    },
+    "MARKSANS": {
+      "cmp": 331.55
+    },
+    "MARUTI": {
+      "cmp": 12008.0
+    },
+    "MAXHEALTH": {
+      "cmp": 1000.1
+    },
+    "MAZDOCK": {
+      "cmp": 2138.0
+    },
+    "MCX": {
+      "cmp": 3263.5
+    },
+    "METROPOLIS": {
+      "cmp": 572.3
+    },
+    "MFSL": {
+      "cmp": 1444.0
+    },
+    "MMTC": {
+      "cmp": 56.4
+    },
+    "MOIL": {
+      "cmp": 242.05
+    },
+    "MOTHERSON": {
+      "cmp": 162.37
+    },
+    "MPHASIS": {
+      "cmp": 2237.5
+    },
+    "MRF": {
+      "cmp": 123425.0
+    },
+    "MRPL": {
+      "cmp": 169.8
+    },
+    "MUTHOOTFIN": {
+      "cmp": 2760.0
+    },
+    "NAUKRI": {
+      "cmp": 1253.9
+    },
+    "NAVINFLUOR": {
+      "cmp": 8432.5
+    },
+    "NBCC": {
+      "cmp": 80.21
+    },
+    "NCC": {
+      "cmp": 130.29
+    },
+    "NESTLEIND": {
+      "cmp": 1346.0
+    },
+    "NHPC": {
+      "cmp": 74.5
+    },
+    "NLCINDIA": {
+      "cmp": 256.7
+    },
+    "NMDC": {
+      "cmp": 77.43
+    },
+    "NTPC": {
+      "cmp": 321.1
+    },
+    "OBEROIRLTY": {
+      "cmp": 1830.0
+    },
+    "OFSS": {
+      "cmp": 10800.0
+    },
+    "OIL": {
+      "cmp": 468.0
+    },
+    "ONGC": {
+      "cmp": 230.0
+    },
+    "ORIENTCEM": {
+      "cmp": 119.43
+    },
+    "PAGEIND": {
+      "cmp": 37500.0
+    },
+    "PERSISTENT": {
+      "cmp": 5328.5
+    },
+    "PFC": {
+      "cmp": 330.0
+    },
+    "PFIZER": {
+      "cmp": 3968.0
+    },
+    "PHOENIXLTD": {
+      "cmp": 1952.2
+    },
+    "PIIND": {
+      "cmp": 2349.0
+    },
+    "PNB": {
+      "cmp": 112.6
+    },
+    "POWERGRID": {
+      "cmp": 261.85
+    },
+    "PRESTIGE": {
+      "cmp": 1470.8
+    },
+    "RADICO": {
+      "cmp": 4478.3
+    },
+    "RAMCOCEM": {
+      "cmp": 848.65
+    },
+    "RBLBANK": {
+      "cmp": 407.0
+    },
+    "RCOM": {
+      "cmp": 0.89
+    },
+    "RECLTD": {
+      "cmp": 303.25
+    },
+    "RELAXO": {
+      "cmp": 290.75
+    },
+    "RELIANCE": {
+      "cmp": 1197.6
+    },
+    "RVNL": {
+      "cmp": 202.75
+    },
+    "SAIL": {
+      "cmp": 184.2
+    },
+    "SANOFI": {
+      "cmp": 3103.5
+    },
+    "SBILIFE": {
+      "cmp": 1728.1
+    },
+    "SBIN": {
+      "cmp": 962.0
+    },
+    "SHREECEM": {
+      "cmp": 22170.0
+    },
+    "SHRIRAMFIN": {
+      "cmp": 976.3
+    },
+    "SIEMENS": {
+      "cmp": 3785.5
+    },
+    "SOLARINDS": {
+      "cmp": 19150.0
+    },
+    "SOUTHBANK": {
+      "cmp": 48.64
+    },
+    "SRF": {
+      "cmp": 2491.5
+    },
+    "STAR": {
+      "cmp": 1151.4
+    },
+    "STARCEMENT": {
+      "cmp": 182.42
+    },
+    "SUNPHARMA": {
+      "cmp": 1838.0
+    },
+    "SUNTECK": {
+      "cmp": 276.75
+    },
+    "SUZLON": {
+      "cmp": 39.66
+    },
+    "TATACONSUM": {
+      "cmp": 960.0
+    },
+    "TATAELXSI": {
+      "cmp": 3191.0
+    },
+    "TATAPOWER": {
+      "cmp": 361.9
+    },
+    "TATASTEEL": {
+      "cmp": 186.3
+    },
+    "TCI": {
+      "cmp": 864.85
+    },
+    "TCS": {
+      "cmp": 2070.7
+    },
+    "TECHM": {
+      "cmp": 1542.2
+    },
+    "THERMAX": {
+      "cmp": 3386.0
+    },
+    "TITAN": {
+      "cmp": 4819.5
+    },
+    "TMB": {
+      "cmp": 861.75
+    },
+    "TORNTPHARM": {
+      "cmp": 4869.0
+    },
+    "TORNTPOWER": {
+      "cmp": 1237.2
+    },
+    "TRENT": {
+      "cmp": 2626.0
+    },
+    "TVSMOTOR": {
+      "cmp": 4095.0
+    },
+    "UBL": {
+      "cmp": 1217.4
+    },
+    "ULTRACEMCO": {
+      "cmp": 11025.0
+    },
+    "UNIONBANK": {
+      "cmp": 171.75
+    },
+    "UPL": {
+      "cmp": 549.5
+    },
+    "VBL": {
+      "cmp": 430.0
+    },
+    "VEDL": {
+      "cmp": 259.0
+    },
+    "VINATIORGA": {
+      "cmp": 1191.0
+    },
+    "VOLTAS": {
+      "cmp": 1135.5
+    },
+    "VRLLOG": {
+      "cmp": 287.0
+    },
+    "VSTIND": {
+      "cmp": 204.0
+    },
+    "WELCORP": {
+      "cmp": 2739.7
+    },
+    "WESTLIFE": {
+      "cmp": 579.85
+    },
+    "WIPRO": {
+      "cmp": 161.56
+    },
+    "YESBANK": {
+      "cmp": 21.18
+    }
+  },
   "note": "This file is auto-updated by GitHub Actions daily at 9:45 AM IST. Ledger reset 2026-09-18 to clean state (pure rank-only strategy); prior journal/trades from -8%-stop era discarded.",
   "niftyAbove200DMA": false,
-  "niftyPrice": 23112.2,
-  "nifty200DMA": 24436.31,
+  "niftyPrice": 22780.25,
+  "nifty200DMA": 24406.9,
   "totalCostsPaid": 0.0
 }
