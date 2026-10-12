@@ -97,19 +97,23 @@
     {
       "date": "2026-10-09",
       "nav": 10000000
+    },
+    {
+      "date": "2026-10-12",
+      "nav": 10000000
     }
   ],
   "startDate": "2026-09-18",
   "cash": 10000000,
-  "lastExecuteDate": "2026-10-09",
+  "lastExecuteDate": "2026-10-12",
   "lastRebalanceMonth": "2026-09",
-  "lastRun": "2026-10-09T11:17:11.456818",
+  "lastRun": "2026-10-12T11:53:21.330754",
   "todayExecutedBuys": [],
   "todayExecutedSells": [],
   "prices": {},
   "note": "This file is auto-updated by GitHub Actions daily at 9:45 AM IST. Ledger reset 2026-09-18 to clean state (pure rank-only strategy); prior journal/trades from -8%-stop era discarded.",
   "niftyAbove200DMA": false,
-  "niftyPrice": 22520.45,
-  "nifty200DMA": 24271.24,
+  "niftyPrice": 22363.35,
+  "nifty200DMA": 24253.97,
   "totalCostsPaid": 0.0
 }
