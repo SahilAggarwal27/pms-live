@@ -236,13 +236,17 @@
     {
       "date": "2026-11-23",
       "nav": 10000000
+    },
+    {
+      "date": "2026-11-24",
+      "nav": 10000000
     }
   ],
   "startDate": "2026-09-18",
   "cash": 10000000,
-  "lastExecuteDate": "2026-11-23",
+  "lastExecuteDate": "2026-11-24",
   "lastRebalanceMonth": "2026-10",
-  "lastRun": "2026-11-23T14:29:57.688472",
+  "lastRun": "2026-11-24T14:47:02.609493",
   "todayExecutedBuys": [],
   "todayExecutedSells": [],
   "prices": {},
